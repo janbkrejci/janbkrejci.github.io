@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+    <title>pool extractor</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+
+        html, body {
+            height: 100%;
+        }
+
+        .full-height {
+            height: 100%;
+        }
+
+        * {
+            outline: none;
+        }
+        
+        #source {
+            overflow: auto;
+            height: 483px;
+            margin-top: 0;
+        }
+        
+        .clickable {
+            margin-right: 1em;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        
+        #morning, #evening, #interest {
+            padding-left: 10px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.process = function() {
+            const
+                SCANNING = 1,
+                SKIPPING_LINES = 2,
+                PROCESSING_INTEREST = 3
+
+            let state = SCANNING
+
+            const
+                START_BALANCE = 'Číslo účtu 8323242 (CZK) Počáteční zůstatek ',
+                DATE = 'Datum od ',
+                END_BALANCE = 'Konečný zůstatek ',
+                CREDIT_SWEEP = 'KREDITNÍ SWEEP CASH POOL ',
+                DEBET_SWEEP = 'DEBETNÍ SWEEP CASH POOL ',
+                INTEREST_BANK = 'DEBETNÍ ÚROK ',
+                INTEREST_DEBET = 'ÚROK Z MEZIPODNIK. PŮJČEK Trn:',
+                INTEREST_CREDIT = 'DOŠLÁ PLATBA Trn:'
+
+            const
+                result_morning = {},
+                result_evening = {},
+                result_interest = {}
+            
+            let
+                result_date = '',
+                result_start_balance = '',
+                result_end_balance = ''
+
+            const companies = ['MPC', 'MMA', 'MGA', 'MAI', 'MEC', 'MRE', 'MAT', 'MHO', 'MDE', 'MAD', 'MFO']
+            
+            let actual_collection = undefined
+            let actual_company = undefined
+            let lines_to_skip = 0
+
+            source.textContent.split('\n').forEach(function(line) {
+                switch (state) {
+                    case SCANNING:
+                        if (line.startsWith(START_BALANCE)) {
+                            result_start_balance = line.substring(START_BALANCE.length).replace(' CZK', '')
+                        } else if (line.startsWith(DATE)) {
+                            result_date = line.substring(DATE.length).replace(/ do.*/, '')
+                        } else if (line.startsWith(END_BALANCE)) {
+                            result_end_balance = line.substring(END_BALANCE.length).replace(' CZK', '')
+                        } else if (line.startsWith(CREDIT_SWEEP) || line.startsWith(DEBET_SWEEP)) {
+                            let len = line.startsWith(CREDIT_SWEEP) ? CREDIT_SWEEP.length : DEBET_SWEEP.length
+                            actual_company = line.substring(len)
+                            actual_collection = result_evening[actual_company] ? result_morning : result_evening
+                            lines_to_skip = 6
+                            state = SKIPPING_LINES
+                        } else if (line.startsWith(INTEREST_BANK)) {
+                            actual_company = 'MHO'
+                            actual_collection = result_interest
+                            lines_to_skip = 2
+                            state = SKIPPING_LINES
+                        } else if (line.startsWith(INTEREST_DEBET) || line.startsWith(INTEREST_CREDIT)) {
+                            state = PROCESSING_INTEREST
+                            actual_collection = result_interest
+                        }
+                        break
+                    case PROCESSING_INTEREST:
+                        if (line.match(/on.*CASH POOL /)) {
+                            actual_company = line.replace(/on.*CASH POOL /, '')
+                            lines_to_skip = 5
+                            state = SKIPPING_LINES
+                        } else if (line.match(/MESIT holding, a.s./)) {
+                            actual_company = 'MHO'
+                          lines_to_skip = 5
+                          state = SKIPPING_LINES
+                        }
+                        break
+                    case SKIPPING_LINES:
+                        lines_to_skip--
+                        if (!lines_to_skip) {
+                            actual_collection[actual_company] = line.replace(' CZK', '').replace(/ /g, '')
+                            state = SCANNING
+                        }
+                        break
+                }
+            })
+
+            datum.innerHTML = result_date
+            start_balance.innerHTML = result_start_balance
+            end_balance.innerHTML = result_end_balance
+
+            company.innerHTML = ''
+            morning.innerHTML = ''
+            evening.innerHTML = ''
+            interest.innerHTML = ''
+
+            companies.forEach(function(comp) {
+                company.innerHTML += comp + '<br>'
+                morning.innerHTML += (result_morning[comp] || '') + '<br>'
+                evening.innerHTML += (result_evening[comp] || '') + '<br>'
+                interest.innerHTML += (result_interest[comp] || '0') + '<br>'
+            })
+            
+            result.style.display = 'block'
+        }
+        
+        window.copy = function(containerid) {
+            if (document.selection) { // IE
+                var range = document.body.createTextRange();
+                range.moveToElementText(document.getElementById(containerid));
+                range.select();
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById(containerid));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+            }
+            document.execCommand("copy")
+            
+            msg.style.display = "block"
+            setTimeout(function() {
+                msg.style.display = "none"
+            }, 2000)
+        }
+    </script>
+</head>
+<body>
+    <div class="w3-container full-height">
+        <div class="w3-row full-height">
+            <div class="w3-half w3-container">
+                <h2>Vlož data...</h2>
+                <div class="w3-card-4">
+                    <pre id="source" contenteditable="true" class="w3-padding" oninput="process()" autofocus></pre>
+                </div>
+            </div>
+            <div id="result" class="w3-half w3-container hidden w3-animate-opacity">
+                <h2>Výsledek...</h2>
+                <div class="w3-row">
+                    <div class="w3-card-4 w3-half w3-padding">
+                        <table class="w3-table">
+                            <tr>
+                              <th>Datum</th><td class="w3-right" id="datum"></td>
+                            </tr>
+                            <tr>
+                              <th>Počáteční zůstatek</th><td class="w3-right" id="start_balance"></td>
+                            </tr>
+                            <tr>
+                              <th>Konečný zůstatek</th><td class="w3-right" id="end_balance"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="w3-panel w3-card-4 w3-container">
+                    <div class="w3-row w3-margin-top w3-margin-bottom">
+                        <div class="w3-col s3">
+                            <h3>Firma</h3>
+                            <div id="company"></div>
+                        </div>
+                        <div class="w3-col s3">
+                            <h3 class="clickable w3-hover-green" onclick="copy('morning')">Ráno</h3>
+                            <div id="morning"></div>
+                        </div>
+                        <div class="w3-col s3">
+                            <h3 class="clickable w3-hover-green" onclick="copy('evening')">Večer</h3>
+                            <div id="evening"></div>
+                        </div>
+                        <div class="w3-col s3">
+                            <h3 class="clickable w3-hover-green" onclick="copy('interest')">Úroky</h3>
+                            <div id="interest"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="msg" class="w3-green w3-panel w3-card-4 w3-padding hidden w3-animate-opacity">Zkopírováno do schránky</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
