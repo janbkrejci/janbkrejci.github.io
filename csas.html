@@ -121,7 +121,7 @@
                             if (!actual_collection[actual_company]) {
                                 actual_collection[actual_company] = 0
                             }
-                            actual_collection[actual_company] += parseFloat(line.replace(' CZK', '').replace(/ /g, ''))
+                            actual_collection[actual_company] += parseFloat(line.replace(' CZK', '').replace(/ /g, '').replace(/,/g, '.'))
                             console.log('col, comp, val', actual_collection, actual_company, actual_collection[actual_company])
                             state = SCANNING
                         }
@@ -140,9 +140,9 @@
 
             companies.forEach(function(comp) {
                 company.innerHTML += comp + '<br>'
-                morning.innerHTML += (result_morning[comp] || '') + '<br>'
-                evening.innerHTML += (result_evening[comp] || '') + '<br>'
-                interest.innerHTML += (result_interest[comp] || '0') + '<br>'
+                morning.innerHTML += (result_morning[comp].replace('.', ',') || '') + '<br>'
+                evening.innerHTML += (result_evening[comp].replace('.', ',') || '') + '<br>'
+                interest.innerHTML += (result_interest[comp].remplace('.', ',') || '') + '<br>'
             })
             
             result.style.display = 'block'
