@@ -140,9 +140,9 @@
 
             companies.forEach(function(comp) {
                 company.innerHTML += comp + '<br>'
-                morning.innerHTML += (result_morning[comp]).toString().replace('.', ',') + '<br>'
-                evening.innerHTML += (result_evening[comp]).toString().replace('.', ',') + '<br>'
-                interest.innerHTML += (result_interest[comp]).toString().remplace('.', ',') + '<br>'
+                morning.innerHTML += (result_morning[comp] || 0).toString().replace('.', ',') + '<br>'
+                evening.innerHTML += (result_evening[comp] || 0).toString().replace('.', ',') + '<br>'
+                interest.innerHTML += (result_interest[comp] || 0).toString().remplace('.', ',') + '<br>'
             })
             
             result.style.display = 'block'
