@@ -118,7 +118,10 @@
                     case SKIPPING_LINES:
                         lines_to_skip--
                         if (!lines_to_skip) {
-                            actual_collection[actual_company] = line.replace(' CZK', '').replace(/ /g, '')
+                            if (!actual_collection[actual_company]) {
+                                actual_collection[actual_company] = 0
+                            }
+                            actual_collection[actual_company] += parseFloat(line.replace(' CZK', '').replace(/ /g, ''))
                             state = SCANNING
                         }
                         break
