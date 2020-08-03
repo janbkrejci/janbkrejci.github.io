@@ -53,9 +53,11 @@
                 END_BALANCE = 'Konečný zůstatek ',
                 CREDIT_SWEEP = 'KREDITNÍ SWEEP CASH POOL ',
                 DEBET_SWEEP = 'DEBETNÍ SWEEP CASH POOL ',
-                INTEREST_BANK = 'DEBETNÍ ÚROK ',
+                INTEREST_BANK = 'DEBETNÍ ÚROK',
                 INTEREST_DEBET = 'ÚROK Z MEZIPODNIK. PŮJČEK Trn:',
-                INTEREST_CREDIT = 'DOŠLÁ PLATBA Trn:'
+                INTEREST_CREDIT = 'DOŠLÁ PLATBA Trn:',
+                FEE_START = 'DEBETNÍ TRANS.ÚVĚRY SPLÁTKA',
+                FEE_END = 'POPLATKU'
 
             const
                 result_morning = {},
@@ -67,7 +69,7 @@
                 result_start_balance = '',
                 result_end_balance = ''
 
-            const companies = ['MPC', 'MMA', 'MGA', 'MAI', 'MEC', 'MRE', 'MAT', 'MHO', 'MDE', 'MAD', 'MFO']
+            const companies = ['MPC', 'MMA', 'MGA', 'MAI', 'MEC', 'MNE', 'MRE', 'MAT', 'MHO', 'MDE', 'MAD', 'MFO']
             
             let actual_collection = undefined
             let actual_company = undefined
@@ -93,7 +95,7 @@
                             actual_collection = result_interest
                             lines_to_skip = 2
                             state = SKIPPING_LINES
-                        } else if (line.startsWith(INTEREST_DEBET) || line.startsWith(INTEREST_CREDIT)) {
+                        } else if (line.startsWith(INTEREST_DEBET) || line.startsWith(INTEREST_CREDIT) || line.startsWith(FEE_START)) {
                             state = PROCESSING_INTEREST
                             actual_collection = result_interest
                         }
@@ -105,8 +107,12 @@
                             state = SKIPPING_LINES
                         } else if (line.match(/MESIT holding, a.s./)) {
                             actual_company = 'MHO'
-                          lines_to_skip = 5
-                          state = SKIPPING_LINES
+                            lines_to_skip = 5
+                            state = SKIPPING_LINES
+                        } else if (line.match(FEE_END)) {
+                            actual_company = 'MHO'
+                            lines_to_skip = 3
+                            state = SKIPPING_LINES
                         }
                         break
                     case SKIPPING_LINES:
