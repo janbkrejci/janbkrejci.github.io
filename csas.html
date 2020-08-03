@@ -122,6 +122,7 @@
                                 actual_collection[actual_company] = 0
                             }
                             actual_collection[actual_company] += parseFloat(line.replace(' CZK', '').replace(/ /g, ''))
+                            console.log('col, comp, val', actual_collection, actual_company, actual_collection[actual_company])
                             state = SCANNING
                         }
                         break
