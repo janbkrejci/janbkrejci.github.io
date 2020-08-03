@@ -93,7 +93,7 @@
                         } else if (line.startsWith(INTEREST_BANK)) {
                             actual_company = 'MHO'
                             actual_collection = result_interest
-                            lines_to_skip = 2
+                            lines_to_skip = 3
                             state = SKIPPING_LINES
                         } else if (line.startsWith(INTEREST_DEBET) || line.startsWith(INTEREST_CREDIT) || line.startsWith(FEE_START)) {
                             state = PROCESSING_INTEREST
