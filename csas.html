@@ -57,7 +57,8 @@
                 INTEREST_DEBET = 'ÚROK Z MEZIPODNIK. PŮJČEK Trn:',
                 INTEREST_CREDIT = 'DOŠLÁ PLATBA Trn:',
                 FEE_START = 'DEBETNÍ TRANS.ÚVĚRY SPLÁTKA',
-                FEE_END = 'POPLATKU'
+                FEE_END = 'POPLATKU',
+                FEE_POOL = 'POPLATEK - CASH POOLING'
 
             const
                 result_morning = {},
@@ -98,6 +99,11 @@
                         } else if (line.startsWith(INTEREST_DEBET) || line.startsWith(INTEREST_CREDIT) || line.startsWith(FEE_START)) {
                             state = PROCESSING_INTEREST
                             actual_collection = result_interest
+                        } else if (line.startsWith(FEE_POOL)) {
+                            actual_company = 'MHO'
+                            actual_collection = result_interest
+                            lines_to_skip = 4
+                            state = SKIPPING_LINES
                         }
                         break
                     case PROCESSING_INTEREST:
