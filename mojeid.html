@@ -37,10 +37,10 @@
          formCallback: fillForm,
          claims: [
              ['name', true],
-             ['mojeid_valid', true],
              ['email', true],
              ['email_verified', true],
              ['mojeid_address_def_city', true],
+             ['mojeid_address_mail_verified', true],
              ['mojeid_age', true]
          ],
          registrationSuccessCallback: function () {
@@ -88,7 +88,7 @@
    </style>
   </head>
   <body>
-   <h1>Osobní údaje...</h1>
+   <h1>Osobní údaje</h1>
    <form>
      <div><label>Jméno:</label><input type="text" name="name"/></div>
      <div><label>Validní:</label><input type="text" name="mojeid_valid"/></div>
