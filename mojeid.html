@@ -2,13 +2,14 @@
 <html lang="cs">
   <head>
    <meta charset="UTF-8">
-   <title>Ukázkový formulář</title>
+   <title>Hlas voličů</title>
    <script id="mojeid-connect-script" src="https://www.mojeid.cz/public/media/1542958574/150/"
      data-jsrsasign="https://www.mojeid.cz/public/media/1542956522/149/"></script>
    <script>
      document.addEventListener("DOMContentLoaded", function () {
  
        function parseClaims(clientClaims) {
+         debugger;
          var claims = {}
          for (var name in clientClaims) {
              claims[clientClaims[name][0]] = {'essential': clientClaims[name][1]}
@@ -17,6 +18,7 @@
        }
  
        function fillForm(uiDict) {
+         debugger;
          for (var field_name in uiDict) {
            var nodes = document.querySelectorAll(
                  "input[name=" + field_name + "], " +
@@ -30,20 +32,16 @@
        }
  
        var mojeID = createMojeidConnect({
-         clientName: "Ukázkový formulář",
+         clientName: "Hlas voličů",
          parseClaimsCallback: parseClaims,
          formCallback: fillForm,
          claims: [
-             ['given_name', true],
-             ['family_name', true],
+             ['name', true],
+             ['mojeid_valid', true],
              ['email', true],
-             ['phone_number', true],
-             ['nickname', false],
-             ['address', false],
-             ['birthdate', false],
-             ['gender', false],
-             ['website', false],
-             ['profile', false]
+             ['email_verified', true],
+             ['mojeid_address_def_city', true],
+             ['mojeid_age', true]
          ],
          registrationSuccessCallback: function () {
            document.getElementById("button-prefill").removeAttribute("disabled");
@@ -92,24 +90,16 @@
   <body>
    <h1>Předvyplnění ukázkového formuláře</h1>
    <form>
-     <div><label class="required">Jméno:</label><input type="text" name="given_name"/></div>
-     <div><label class="required">Příjmení:</label><input type="text" name="family_name"/></div>
-     <div><label class="required">Email:</label><input type="text" name="email"/></div>
-     <div><label class="required">Telefon:</label><input type="text" name="phone_number"/></div>
-     <div><label>Adresa:</label><textarea cols="25" rows="5" name="address"></textarea></div>
-     <div><label>Datum narození:</label><input type="date" name="birthdate"/></div>
-     <div>
-       <label>Pohlaví:</label>
-       <input type="radio" name="gender" value="F"/> Ženské
-       <input type="radio" name="gender" value="M"/> Mužské
-     </div>
-     <div><label>Přezdívka:</label><input type="text" name="nickname"/></div>
-     <div><label>Web:</label><input type="text" name="website"/></div>
-     <div><label>Osobní stránka:</label><input type="text" name="profile"/></div>
+     <div><label>Jméno:</label><input type="text" name="name"/></div>
+     <div><label>Validní:</label><input type="text" name="mojeid_valid"/></div>
+     <div><label>Email:</label><input type="text" name="email"/></div>
+     <div><label class="required">Email ověřen:</label><input type="text" name="email_verified"/></div>
+     <div><label>Obec:</label><input type="text" name="mojeid_address_def_city"></input></div>
+     <div><label>Věk:</label><input type="text" name="mojeid_age"/></div>
      </form>
     
    <div class="button-frame">
-     <button id="button-prefill" disabled>Předvyplnit pomocí mojeID</button>
+     <button id="button-prefill" disabled>Přihlásit pomocí mojeID</button>
      <p class="error-message">Probíhá registrace klienta...</p>
    </div>
    <noscript>
