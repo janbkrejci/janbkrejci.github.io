@@ -1,110 +1,74 @@
-
 <html lang="cs">
-  <head>
-   <meta charset="UTF-8">
-   <title>Hlas voličů</title>
-   <script id="mojeid-connect-script" src="https://www.mojeid.cz/public/media/1542958574/150/"
-     data-jsrsasign="https://www.mojeid.cz/public/media/1542956522/149/"></script>
-   <script>
-     document.addEventListener("DOMContentLoaded", function () {
- 
-       function parseClaims(clientClaims) {
-         debugger;
-         var claims = {}
-         for (var name in clientClaims) {
-             claims[clientClaims[name][0]] = {'essential': clientClaims[name][1]}
-         }
-         return claims
-       }
- 
-       function fillForm(uiDict) {
-         debugger;
-         for (var field_name in uiDict) {
-           var nodes = document.querySelectorAll(
-                 "input[name=" + field_name + "], " +
-                 "select[name=" + field_name + "], " +
-                 "textarea[name=" + field_name + "]"
-             )
-             if (nodes.length) {
-                 this.setValueToElements(nodes, this.decodeValue(uiDict[field_name]))
-             }
-         }
-       }
- 
-       var mojeID = createMojeidConnect({
-         clientName: "Hlas voličů",
-         parseClaimsCallback: parseClaims,
-         formCallback: fillForm,
-         claims: [
-             ['name', true],
-             ['email', true],
-             ['email_verified', true],
-             ['mojeid_address_mail_city', true],
-             ['mojeid_address_mail_verified', true],
-             ['mojeid_age', true]
-         ],
-         registrationSuccessCallback: function () {
-           document.getElementById("button-prefill").removeAttribute("disabled");
-           document.getElementsByClassName("error-message")[0].textContent = "";
-         },
-         registrationFailureCallback: function () {
-           document.getElementsByClassName("error-message")[0].textContent = "Registrace klienta se nezdařila.";
-         }
-       });
-       document.getElementById("button-prefill").addEventListener("click", mojeID.requestAuthentication.bind(mojeID));
-     });
-   </script>
-   <style>
-     .button-frame {
-         margin-top: 1em;
-         margin-left: 11em;
-     }
-     form div {
-         margin-bottom: 0.6em;
-     }
-     form label {
-         /* To make sure that all labels have the same size and are properly aligned */
-         display: inline-block;
-         width: 10em;
-         text-align: right;
-         margin-right: 1em;
-     }
-     .error-message {
-       color: red;
-     }
-     label:not(.required) {
-       position: relative;
-       left: -1em;
-     }
-     label.required:after {
-       content: " *";
-       color: red;
-       font-size: 120%;
-       font-weight: bold;
-     }
-     form label {
-       vertical-align: top;
-     }
-   </style>
-  </head>
-  <body>
-   <h1>Osobní údaje:</h1>
-   <form>
-     <div><label>Jméno:</label><input type="text" name="name"/></div>
-     <div><label>Věk:</label><input type="text" name="mojeid_age"/></div>
-     <div><label>Email:</label><input type="text" name="email"/></div>
-     <div><label>Email ověřen:</label><input type="text" name="email_verified"/></div>
-     <div><label>Obec:</label><input type="text" name="mojeid_address_mail_city"></input></div>
-     <div><label>Adresa ověřena:</label><input type="text" name="mojeid_address_mail_verified"/></div>
-     </form>
-    
-   <div class="button-frame">
-     <button id="button-prefill" disabled>Přihlásit pomocí mojeID</button>
-     <p class="error-message">Probíhá registrace klienta...</p>
-   </div>
-   <noscript>
-     <p class="error">Pro předvyplnění formuláře je nutné mít zapnutý javascript.</p>
-   </noscript>
- </body>
- </html>
- 
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hlas voličů</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <script id="mojeid-connect-script" src="https://www.mojeid.cz/public/media/1542958574/150/"
+    data-jsrsasign="https://www.mojeid.cz/public/media/1542956522/149/"></script>
+  <script id="mojeid">
+    document.addEventListener("DOMContentLoaded", function () {
+      function parseClaims(clientClaims) {
+        var claims = {}
+        for (var name in clientClaims) {
+          claims[clientClaims[name][0]] = { 'essential': clientClaims[name][1] }
+        }
+        return claims
+      }
+
+      function fillForm(uiDict) {
+        
+        if (uiDict) {
+          console.dir(document.getElementById("input1").value);
+          console.dir(uiDict);
+        }
+      }
+
+      var mojeID = createMojeidConnect({
+        clientId: "1P5QKcJDdQuT",
+        clientName: "Hlas voličů",
+        parseClaimsCallback: parseClaims,
+        formCallback: fillForm,
+        claims: [
+          ['name', true],
+          ['email', true],
+          ['email_verified', true],
+          ['mojeid_address_mail_city', true],
+          ['mojeid_address_mail_verified', true],
+          ['mojeid_age', true]
+        ],
+        registrationSuccessCallback: function () {
+          document.getElementById("button-prefill").removeAttribute("disabled");
+          document.getElementsByClassName("error-message")[0].textContent = "";
+        },
+        registrationFailureCallback: function () {
+          document.getElementsByClassName("error-message")[0].textContent = "Registrace klienta se nezdařila.";
+        }
+      });
+      document.getElementById("button-prefill").addEventListener("click", mojeID.requestAuthentication.bind(mojeID));
+    });
+  </script>
+</head>
+
+<body>
+  <div class="w3-container w3-card">
+    <h1>Hlas voličů</h1>
+    <button class="w3-button" id="button-prefill" disabled>Přihlásit pomocí mojeID</button>
+    <p class="error-message">Probíhá registrace klienta...</p>
+    <input class="w3-input" id="input1"></input>
+  </div>
+  <noscript>
+    <p class="w3-panel w3-red">Pro předvyplnění formuláře je nutné mít zapnutý javascript.</p>
+  </noscript>
+</body>
+
+</html>
