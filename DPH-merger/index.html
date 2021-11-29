@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DPH Merger</title>
+    <link rel="stylesheet" href="./w3.css" />
+  </head>
+  <body>
+    <div class="w3-container">
+      <h1>MESIT DPH Merger</h1>
+      <div class="w3-row">
+        <div class="w3-card w3-col m4 l3 w3-padding">
+          <p>
+            Tento nástroj slouží k sloučení XML souborů s podáními přiznání k
+            DPH, kontrolního hlášení a souhrnného hlášení od více než jedné
+            účetní jednotky.
+          </p>
+          <p>
+            <b>Krok 1:</b> vyberte hlavní soubor, do kterého budou sloučeny
+            vedlejší soubory (soubor účetní jednotky, která bude podávat
+            sloučené podání):
+          </p>
+          <p>
+            <input type="file" id="master_file" class="w3-input" />
+          </p>
+          <p>
+            <b>Krok 2:</b> vyberte soubory stejného typu podání od ostatních
+            účetních jednotek, které chcete sloučit do hlavního souboru.
+          </p>
+          <p>
+            <input type="file" id="slave_files" multiple class="w3-input" />
+          </p>
+          <p>
+            <b>Krok 3:</b> spusťte zpracování souborů. Pokud se vše podaří,
+            výsledek bude uložen do složky Stažené.
+          </p>
+          <p>
+            <button class="w3-button w3-green w3-input" onclick="processData()">
+              Spustit zpracování
+            </button>
+          </p>
+          <p>
+            <b>Hotovo!</b> nahrajte výsledný soubor na
+            <a
+              target="_blank"
+              href="https://adisepo.mfcr.cz/adistc/adis/idpr_epo/epo2/spol/soubor_vyber.faces"
+              >portál daňové správy</a
+            >, pečlivě ho zkontrolujte a uložte si XML k podání datovou
+            schránkou spolu s úplným opisem formuláře.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="modal" class="w3-modal">
+      <div
+        class="w3-modal-content w3-pale-red w3-text-red w3-card w3-animate-top"
+      >
+        <div class="w3-container">
+          <span
+            onclick="document.getElementById('modal').style.display='none'"
+            class="w3-button w3-display-topright w3-hover-red"
+            >&times;</span
+          >
+          <h2>Chyba!</h2>
+          <p id="modal_text"></p>
+          <p class="w3-center">
+            <button class="w3-button w3-red" onclick="closeModal()">
+              Zavřít
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

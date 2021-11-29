@@ -1,32 +1,39 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Auto navigation</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
-    </head>
-    <body>
-        <div class="w3-sidebar w3-bar-block w3-card" id="sidebar" style="width:30%; display: none">
-            <a class="w3-bar-item w3-blue">Navigace</a>
-            <a href="{{ url }}" class="w3-bar-item w3-button" w3-repeat="items">{{ name }}</a>
-        </div>
-        <script>
-            let items = [
-                {
-                    url: 'csas.html',
-                    name: 'Pool extractor'
-                },
-                {
-                    url: 'mojeid.html',
-                    name: 'MojeID'
-                },
-                {
-                    url: 'gun.html',
-                    name: 'Pačka'
-                },
-            ];
-            w3.displayObject('sidebar', {items: items})
-            w3.show('#sidebar')
-        </script>
-    </body>
+
+<head>
+    <title>Auto navigation</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body>
+    <div class="w3-sidebar w3-bar-block w3-card" id="sidebar" style="width:30%; display: none">
+        <a class="w3-bar-item w3-blue">Navigace</a>
+        <a href="{{ url }}" class="w3-bar-item w3-button" w3-repeat="items">{{ name }}</a>
+    </div>
+    <script>
+        let items = [
+            {
+                url: 'csas.html',
+                name: 'Pool extractor'
+            },
+            {
+                url: 'DPH-merger',
+                name: 'DPH-merger'
+            },
+            {
+                url: 'mojeid.html',
+                name: 'MojeID'
+            },
+            {
+                url: 'gun.html',
+                name: 'Pačka'
+            },
+        ];
+        w3.displayObject('sidebar', { items: items })
+        w3.show('#sidebar')
+    </script>
+</body>
+
 </html>
