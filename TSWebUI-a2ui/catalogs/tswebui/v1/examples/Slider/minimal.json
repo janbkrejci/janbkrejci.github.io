@@ -1,0 +1,24 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "slider",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "slider",
+      "components": [
+        {
+          "id": "root",
+          "component": "Slider",
+          "label": "Volume",
+          "value": 40,
+          "max": 100
+        }
+      ]
+    }
+  }
+]

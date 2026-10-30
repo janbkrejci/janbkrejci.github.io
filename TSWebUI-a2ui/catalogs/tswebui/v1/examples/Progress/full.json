@@ -1,0 +1,40 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "progress",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "progress",
+      "components": [
+        {
+          "id": "root",
+          "component": "Progress",
+          "value": {
+            "path": "/upload/progress"
+          },
+          "indeterminate": false,
+          "label": "Uploading files",
+          "tone": "success",
+          "showValue": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "progress",
+      "path": "/",
+      "value": {
+        "upload": {
+          "progress": 0.42
+        }
+      }
+    }
+  }
+]

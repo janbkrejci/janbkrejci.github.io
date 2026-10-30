@@ -1,0 +1,96 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "address-autocomplete",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "address-autocomplete",
+      "components": [
+        {
+          "id": "root",
+          "component": "AddressAutocomplete",
+          "label": "Delivery address",
+          "value": {
+            "path": "/address"
+          },
+          "placeholder": "Start typing the street and number…",
+          "minChars": 3,
+          "debounceMs": 300,
+          "showDetail": true,
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Pick the address from the suggestions.",
+          "error": {
+            "path": "/errors/address"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/address"
+                  }
+                }
+              },
+              "message": "Pick an address."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "addressChanged",
+              "context": {
+                "field": "address"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "addressEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "addressEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "address-autocomplete",
+      "path": "/",
+      "value": {
+        "address": {
+          "kod": 22282475,
+          "text": "Na Petřinách 276/10, Veleslavín, 16200 Praha 6",
+          "line1": "Na Petřinách 276/10",
+          "line2": "Veleslavín",
+          "line3": "16200 Praha 6",
+          "ulice": "Na Petřinách",
+          "cisloDomovni": "276",
+          "cisloOrientacni": "10",
+          "castObce": "Veleslavín",
+          "obec": "Praha",
+          "psc": "16200",
+          "okres": "Hlavní město Praha"
+        },
+        "errors": {}
+      }
+    }
+  }
+]

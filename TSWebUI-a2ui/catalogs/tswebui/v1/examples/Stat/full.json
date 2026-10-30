@@ -1,0 +1,57 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "stat",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "stat",
+      "components": [
+        {
+          "id": "root",
+          "component": "Stat",
+          "label": "Revenue",
+          "value": {
+            "path": "/kpi/revenue"
+          },
+          "format": "currency",
+          "currency": "EUR",
+          "delta": {
+            "path": "/kpi/delta"
+          },
+          "hint": "vs. last month",
+          "spark": {
+            "path": "/kpi/trend"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "stat",
+      "path": "/",
+      "value": {
+        "kpi": {
+          "revenue": 48290.5,
+          "delta": 0.124,
+          "trend": [
+            31,
+            34,
+            33,
+            38,
+            41,
+            40,
+            46,
+            48
+          ]
+        }
+      }
+    }
+  }
+]

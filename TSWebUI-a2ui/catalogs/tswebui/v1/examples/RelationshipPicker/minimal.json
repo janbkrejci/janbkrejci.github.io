@@ -1,0 +1,35 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "relationship-picker",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "relationship-picker",
+      "components": [
+        {
+          "id": "root",
+          "component": "RelationshipPicker",
+          "options": [
+            {
+              "id": 1,
+              "name": "Alice"
+            },
+            {
+              "id": 2,
+              "name": "Bob"
+            },
+            {
+              "id": 3,
+              "name": "Carol"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

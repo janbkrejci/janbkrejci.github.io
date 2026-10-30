@@ -1,0 +1,41 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "list",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "list",
+      "components": [
+        {
+          "id": "root",
+          "component": "List",
+          "children": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "id": "a",
+          "component": "Text",
+          "text": "Apples"
+        },
+        {
+          "id": "b",
+          "component": "Text",
+          "text": "Bananas"
+        },
+        {
+          "id": "c",
+          "component": "Text",
+          "text": "Cherries"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "chart",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "chart",
+      "components": [
+        {
+          "id": "root",
+          "component": "Chart",
+          "kind": "bar",
+          "stacked": true,
+          "series": [
+            {
+              "name": "Online",
+              "data": [
+                1200,
+                1500,
+                1800,
+                1600,
+                2100,
+                2400
+              ]
+            },
+            {
+              "name": {
+                "path": "/seriesName"
+              },
+              "data": [
+                800,
+                700,
+                900,
+                1100,
+                1000,
+                1300
+              ],
+              "color": "chart-3"
+            },
+            {
+              "data": [
+                300,
+                400,
+                350,
+                500,
+                450,
+                600
+              ]
+            }
+          ],
+          "labels": {
+            "path": "/months"
+          },
+          "height": 260,
+          "showGrid": true,
+          "showLegend": true,
+          "yFormat": "currency",
+          "currency": "EUR"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "chart",
+      "path": "/",
+      "value": {
+        "months": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
+        "seriesName": "Retail"
+      }
+    }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "app-shell",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "app-shell",
+      "components": [
+        {
+          "id": "root",
+          "component": "AppShell",
+          "content": "main",
+          "topBar": "top",
+          "sidebar": "nav",
+          "windows": [
+            "notice"
+          ],
+          "sidebarOpen": {
+            "path": "/ui/sidebarOpen"
+          },
+          "sidebarCollapsed": {
+            "path": "/ui/sidebarCollapsed"
+          },
+          "mobileBreakpoint": 768,
+          "sidebarWidth": "16rem",
+          "collapsedWidth": "4rem"
+        },
+        {
+          "id": "top",
+          "component": "Row",
+          "children": [
+            "brand"
+          ]
+        },
+        {
+          "id": "brand",
+          "component": "Text",
+          "text": "TSWebUI"
+        },
+        {
+          "id": "nav",
+          "component": "Column",
+          "children": [
+            "navTitle",
+            "navOrders"
+          ]
+        },
+        {
+          "id": "navTitle",
+          "component": "Text",
+          "text": "Navigation",
+          "variant": "caption"
+        },
+        {
+          "id": "navOrders",
+          "component": "Button",
+          "child": "navOrdersLabel",
+          "action": {
+            "event": {
+              "name": "navigate",
+              "context": {
+                "page": "orders"
+              }
+            }
+          }
+        },
+        {
+          "id": "navOrdersLabel",
+          "component": "Text",
+          "text": "Orders"
+        },
+        {
+          "id": "main",
+          "component": "Column",
+          "children": [
+            "heading",
+            "intro"
+          ]
+        },
+        {
+          "id": "heading",
+          "component": "Text",
+          "text": "Dashboard",
+          "variant": "h2"
+        },
+        {
+          "id": "intro",
+          "component": "Text",
+          "text": "Welcome back."
+        },
+        {
+          "id": "notice",
+          "component": "Card",
+          "child": "noticeText"
+        },
+        {
+          "id": "noticeText",
+          "component": "Text",
+          "text": "Release notes"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "app-shell",
+      "path": "/",
+      "value": {
+        "ui": {
+          "sidebarOpen": true,
+          "sidebarCollapsed": false
+        }
+      }
+    }
+  }
+]

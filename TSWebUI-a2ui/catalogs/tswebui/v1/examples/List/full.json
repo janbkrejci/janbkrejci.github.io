@@ -1,0 +1,63 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "list",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "list",
+      "components": [
+        {
+          "id": "root",
+          "component": "List",
+          "children": {
+            "componentId": "item",
+            "path": "/fruits"
+          },
+          "direction": "vertical",
+          "align": "stretch",
+          "gap": "md",
+          "divided": true,
+          "emptyText": {
+            "path": "/empty"
+          },
+          "accessibility": {
+            "label": "Fruits"
+          }
+        },
+        {
+          "id": "item",
+          "component": "Text",
+          "text": {
+            "path": "name"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "list",
+      "path": "/",
+      "value": {
+        "empty": "No fruit yet",
+        "fruits": [
+          {
+            "name": "Apples"
+          },
+          {
+            "name": "Bananas"
+          },
+          {
+            "name": "Cherries"
+          }
+        ]
+      }
+    }
+  }
+]

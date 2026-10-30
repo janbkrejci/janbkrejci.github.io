@@ -1,0 +1,45 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "image",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "image",
+      "components": [
+        {
+          "id": "root",
+          "component": "Image",
+          "url": {
+            "path": "/photo/url"
+          },
+          "description": {
+            "path": "/photo/alt"
+          },
+          "fit": "scaleDown",
+          "variant": "largeFeature",
+          "accessibility": {
+            "label": "Landscape photo"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "image",
+      "path": "/",
+      "value": {
+        "photo": {
+          "url": "https://picsum.photos/id/1036/1200/800",
+          "alt": "Mountain lake at dawn"
+        }
+      }
+    }
+  }
+]

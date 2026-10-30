@@ -1,0 +1,301 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "form",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "form",
+      "components": [
+        {
+          "id": "root",
+          "component": "Form",
+          "accessibility": {
+            "label": "Customer"
+          },
+          "rows": [
+            {
+              "items": [
+                {
+                  "child": "summary"
+                }
+              ]
+            }
+          ],
+          "tabs": [
+            {
+              "title": "Contact",
+              "visible": true,
+              "rows": [
+                {
+                  "items": [
+                    {
+                      "child": "first",
+                      "width": "2fr"
+                    },
+                    {
+                      "child": "last",
+                      "width": "1fr"
+                    },
+                    {
+                      "child": "nickname",
+                      "width": "200px"
+                    }
+                  ]
+                },
+                {
+                  "items": [
+                    {
+                      "child": "email",
+                      "width": "minmax(0,1fr)"
+                    },
+                    {
+                      "width": "auto"
+                    },
+                    {
+                      "child": "lookup",
+                      "width": "auto",
+                      "align": "end"
+                    }
+                  ]
+                },
+                {
+                  "items": [
+                    {
+                      "child": "section"
+                    }
+                  ]
+                },
+                {
+                  "items": [
+                    {
+                      "child": "newsletter",
+                      "align": "start"
+                    },
+                    {
+                      "child": "help",
+                      "align": "center"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Details",
+              "visible": {
+                "path": "/ui/showDetails"
+              },
+              "rows": [
+                {
+                  "items": [
+                    {
+                      "child": "note"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "footer": [
+            {
+              "child": "reset",
+              "position": "start"
+            },
+            {
+              "child": "cancel",
+              "position": "center"
+            },
+            {
+              "child": "submit"
+            }
+          ],
+          "dataPath": "/form",
+          "errors": {
+            "path": "/form_errors"
+          },
+          "readOnly": false,
+          "disabled": false,
+          "activeTab": {
+            "path": "/ui/tab"
+          },
+          "tabChangeAction": {
+            "event": {
+              "name": "formTabChanged"
+            }
+          },
+          "changeAction": {
+            "event": {
+              "name": "formChanged"
+            }
+          },
+          "submitOnEnter": true,
+          "validationMode": "touched",
+          "fill": false
+        },
+        {
+          "id": "summary",
+          "component": "Text",
+          "text": "Customer summary"
+        },
+        {
+          "id": "first",
+          "component": "TextField",
+          "label": "First name",
+          "value": {
+            "path": "/form/first"
+          },
+          "enterBehavior": "next"
+        },
+        {
+          "id": "last",
+          "component": "TextField",
+          "label": "Last name",
+          "value": {
+            "path": "/form/last"
+          }
+        },
+        {
+          "id": "nickname",
+          "component": "TextField",
+          "label": "Nickname",
+          "visible": false,
+          "excludeFromSubmit": true,
+          "value": {
+            "path": "/form/nickname"
+          }
+        },
+        {
+          "id": "email",
+          "component": "TextField",
+          "label": "E-mail",
+          "value": {
+            "path": "/form/email"
+          }
+        },
+        {
+          "id": "lookup",
+          "component": "Button",
+          "child": "lookupLabel",
+          "action": {
+            "event": {
+              "name": "lookup"
+            }
+          }
+        },
+        {
+          "id": "lookupLabel",
+          "component": "Text",
+          "text": "Look up"
+        },
+        {
+          "id": "section",
+          "component": "Divider"
+        },
+        {
+          "id": "newsletter",
+          "component": "CheckBox",
+          "label": "Newsletter",
+          "value": {
+            "path": "/form/newsletter"
+          }
+        },
+        {
+          "id": "help",
+          "component": "Text",
+          "text": "We never share your e-mail."
+        },
+        {
+          "id": "note",
+          "component": "TextField",
+          "label": "Note",
+          "value": {
+            "path": "/form/note"
+          },
+          "autofocus": true
+        },
+        {
+          "id": "submit",
+          "component": "Button",
+          "variant": "primary",
+          "formRole": "submit",
+          "child": "submitLabel",
+          "action": {
+            "event": {
+              "name": "save"
+            }
+          },
+          "confirmation": {
+            "title": "Save customer?",
+            "text": "The customer record will be updated."
+          }
+        },
+        {
+          "id": "submitLabel",
+          "component": "Text",
+          "text": "Save"
+        },
+        {
+          "id": "reset",
+          "component": "Button",
+          "variant": "ghost",
+          "formRole": "reset",
+          "child": "resetLabel",
+          "action": {
+            "event": {
+              "name": "reset"
+            }
+          }
+        },
+        {
+          "id": "resetLabel",
+          "component": "Text",
+          "text": "Reset"
+        },
+        {
+          "id": "cancel",
+          "component": "Button",
+          "formRole": "cancel",
+          "child": "cancelLabel",
+          "action": {
+            "event": {
+              "name": "cancel"
+            }
+          }
+        },
+        {
+          "id": "cancelLabel",
+          "component": "Text",
+          "text": "Cancel"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "form",
+      "path": "/",
+      "value": {
+        "form": {
+          "first": "Jana",
+          "last": "Nováková",
+          "nickname": "",
+          "email": "jana@example.com",
+          "newsletter": true,
+          "note": ""
+        },
+        "form_errors": {
+          "/form/email": "This e-mail is already registered"
+        },
+        "ui": {
+          "tab": 0,
+          "showDetails": true
+        }
+      }
+    }
+  }
+]

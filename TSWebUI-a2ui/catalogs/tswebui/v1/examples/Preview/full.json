@@ -1,0 +1,43 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "preview",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "preview",
+      "components": [
+        {
+          "id": "root",
+          "component": "Preview",
+          "src": {
+            "path": "/doc/src"
+          },
+          "kind": "image",
+          "height": 320,
+          "caption": {
+            "path": "/doc/caption"
+          },
+          "emptyText": "No image selected"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "preview",
+      "path": "/",
+      "value": {
+        "doc": {
+          "src": "https://picsum.photos/id/106/1280/720",
+          "caption": "Blooming flower"
+        }
+      }
+    }
+  }
+]

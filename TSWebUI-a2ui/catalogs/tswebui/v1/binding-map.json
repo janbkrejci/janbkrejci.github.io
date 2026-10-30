@@ -1,0 +1,3558 @@
+{
+  "Accordion": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.child",
+      "kind": "childId"
+    },
+    {
+      "path": "items.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "multiple",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "AddressAutocomplete": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "debounceMs",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "minChars",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "showDetail",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Alert": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "child",
+      "kind": "childId"
+    },
+    {
+      "path": "closable",
+      "kind": "literal"
+    },
+    {
+      "path": "dismissAction",
+      "kind": "action"
+    },
+    {
+      "path": "icon",
+      "kind": "literal"
+    },
+    {
+      "path": "text",
+      "kind": "dynamic"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "AppShell": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "collapsedWidth",
+      "kind": "literal"
+    },
+    {
+      "path": "content",
+      "kind": "childId"
+    },
+    {
+      "path": "mobileBreakpoint",
+      "kind": "literal"
+    },
+    {
+      "path": "sidebar",
+      "kind": "childId"
+    },
+    {
+      "path": "sidebarCollapsed",
+      "kind": "dynamic"
+    },
+    {
+      "path": "sidebarOpen",
+      "kind": "dynamic"
+    },
+    {
+      "path": "sidebarWidth",
+      "kind": "literal"
+    },
+    {
+      "path": "topBar",
+      "kind": "childId"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    },
+    {
+      "path": "windows",
+      "kind": "childList"
+    }
+  ],
+  "AudioPlayer": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "url",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Avatar": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "name",
+      "kind": "dynamic"
+    },
+    {
+      "path": "size",
+      "kind": "literal"
+    },
+    {
+      "path": "src",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Badge": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "dot",
+      "kind": "literal"
+    },
+    {
+      "path": "icon",
+      "kind": "literal"
+    },
+    {
+      "path": "text",
+      "kind": "dynamic"
+    },
+    {
+      "path": "tone",
+      "kind": "literal"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Button": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "action",
+      "kind": "action"
+    },
+    {
+      "path": "block",
+      "kind": "literal"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "child",
+      "kind": "childId"
+    },
+    {
+      "path": "confirmation.buttons.*.action",
+      "kind": "action"
+    },
+    {
+      "path": "confirmation.buttons.*.confirm",
+      "kind": "literal"
+    },
+    {
+      "path": "confirmation.buttons.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "confirmation.buttons.*.position",
+      "kind": "literal"
+    },
+    {
+      "path": "confirmation.buttons.*.variant",
+      "kind": "literal"
+    },
+    {
+      "path": "confirmation.text",
+      "kind": "dynamic"
+    },
+    {
+      "path": "confirmation.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "formRole",
+      "kind": "literal"
+    },
+    {
+      "path": "loading",
+      "kind": "dynamic"
+    },
+    {
+      "path": "size",
+      "kind": "literal"
+    },
+    {
+      "path": "tooltip",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "ButtonGroup": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Calendar": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "createAction",
+      "kind": "action"
+    },
+    {
+      "path": "events",
+      "kind": "dynamic"
+    },
+    {
+      "path": "events.*.date",
+      "kind": "literal"
+    },
+    {
+      "path": "events.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "events.*.title",
+      "kind": "literal"
+    },
+    {
+      "path": "events.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "maxVisible",
+      "kind": "literal"
+    },
+    {
+      "path": "month",
+      "kind": "dynamic"
+    },
+    {
+      "path": "navigateAction",
+      "kind": "action"
+    },
+    {
+      "path": "openAction",
+      "kind": "action"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Card": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "child",
+      "kind": "childId"
+    },
+    {
+      "path": "description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "footer",
+      "kind": "childId"
+    },
+    {
+      "path": "padding",
+      "kind": "literal"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Chart": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "currency",
+      "kind": "literal"
+    },
+    {
+      "path": "donutLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "height",
+      "kind": "literal"
+    },
+    {
+      "path": "kind",
+      "kind": "literal"
+    },
+    {
+      "path": "labels",
+      "kind": "dynamic"
+    },
+    {
+      "path": "series",
+      "kind": "dynamic"
+    },
+    {
+      "path": "series.*.color",
+      "kind": "literal"
+    },
+    {
+      "path": "series.*.data",
+      "kind": "literal"
+    },
+    {
+      "path": "series.*.name",
+      "kind": "dynamic"
+    },
+    {
+      "path": "showGrid",
+      "kind": "literal"
+    },
+    {
+      "path": "showLegend",
+      "kind": "literal"
+    },
+    {
+      "path": "stacked",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    },
+    {
+      "path": "yFormat",
+      "kind": "literal"
+    }
+  ],
+  "CheckBox": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "ChoicePicker": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "displayStyle",
+      "kind": "literal"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "filterable",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Column": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "align",
+      "kind": "literal"
+    },
+    {
+      "path": "children",
+      "kind": "childList"
+    },
+    {
+      "path": "gap",
+      "kind": "literal"
+    },
+    {
+      "path": "justify",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    },
+    {
+      "path": "wrap",
+      "kind": "literal"
+    }
+  ],
+  "Combobox": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "allowCustom",
+      "kind": "literal"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "clearable",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "loading",
+      "kind": "dynamic"
+    },
+    {
+      "path": "minQueryLength",
+      "kind": "literal"
+    },
+    {
+      "path": "notFoundMessage",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "searchAction",
+      "kind": "action"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "DateTimeInput": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "clearButtonText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "disableFuture",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "displayFormat",
+      "kind": "literal"
+    },
+    {
+      "path": "enableDate",
+      "kind": "literal"
+    },
+    {
+      "path": "enableTime",
+      "kind": "literal"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "max",
+      "kind": "dynamic"
+    },
+    {
+      "path": "min",
+      "kind": "dynamic"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "selectAllOnFocus",
+      "kind": "literal"
+    },
+    {
+      "path": "showClearButton",
+      "kind": "literal"
+    },
+    {
+      "path": "showTodayButton",
+      "kind": "literal"
+    },
+    {
+      "path": "todayButtonText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Divider": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "axis",
+      "kind": "literal"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "labelAlign",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "FileUpload": [
+    {
+      "path": "accept",
+      "kind": "literal"
+    },
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "addFileLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "dropLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "maxFiles",
+      "kind": "literal"
+    },
+    {
+      "path": "maxSize",
+      "kind": "literal"
+    },
+    {
+      "path": "multiple",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "showDropZone",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Form": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "activeTab",
+      "kind": "dynamic"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "dataPath",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "errors",
+      "kind": "dynamic"
+    },
+    {
+      "path": "fill",
+      "kind": "literal"
+    },
+    {
+      "path": "footer.*.child",
+      "kind": "childId"
+    },
+    {
+      "path": "footer.*.position",
+      "kind": "literal"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "rows.*.items.*.align",
+      "kind": "literal"
+    },
+    {
+      "path": "rows.*.items.*.child",
+      "kind": "childId"
+    },
+    {
+      "path": "rows.*.items.*.width",
+      "kind": "literal"
+    },
+    {
+      "path": "submitOnEnter",
+      "kind": "literal"
+    },
+    {
+      "path": "tabChangeAction",
+      "kind": "action"
+    },
+    {
+      "path": "tabs.*.rows.*.items.*.align",
+      "kind": "literal"
+    },
+    {
+      "path": "tabs.*.rows.*.items.*.child",
+      "kind": "childId"
+    },
+    {
+      "path": "tabs.*.rows.*.items.*.width",
+      "kind": "literal"
+    },
+    {
+      "path": "tabs.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "tabs.*.visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "validationMode",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Icon": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "name",
+      "kind": "dynamic"
+    },
+    {
+      "path": "name.svgPath",
+      "kind": "literal"
+    },
+    {
+      "path": "size",
+      "kind": "literal"
+    },
+    {
+      "path": "tone",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Image": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "fit",
+      "kind": "literal"
+    },
+    {
+      "path": "url",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "ImageUpload": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "addFileLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "dropLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "maxFiles",
+      "kind": "literal"
+    },
+    {
+      "path": "maxSize",
+      "kind": "literal"
+    },
+    {
+      "path": "multiple",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "showDropZone",
+      "kind": "literal"
+    },
+    {
+      "path": "thumbnailSize",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Kanban": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "cards",
+      "kind": "dynamic"
+    },
+    {
+      "path": "cards.*.badge",
+      "kind": "literal"
+    },
+    {
+      "path": "cards.*.column",
+      "kind": "literal"
+    },
+    {
+      "path": "cards.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "cards.*.subtitle",
+      "kind": "literal"
+    },
+    {
+      "path": "cards.*.title",
+      "kind": "literal"
+    },
+    {
+      "path": "columns",
+      "kind": "dynamic"
+    },
+    {
+      "path": "columns.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "columns.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "emptyText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "moveAction",
+      "kind": "action"
+    },
+    {
+      "path": "openAction",
+      "kind": "action"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "List": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "align",
+      "kind": "literal"
+    },
+    {
+      "path": "children",
+      "kind": "childList"
+    },
+    {
+      "path": "direction",
+      "kind": "literal"
+    },
+    {
+      "path": "divided",
+      "kind": "literal"
+    },
+    {
+      "path": "emptyText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "gap",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Markdown": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "content",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Modal": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "closeAction",
+      "kind": "action"
+    },
+    {
+      "path": "content",
+      "kind": "childId"
+    },
+    {
+      "path": "description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "dismissible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "open",
+      "kind": "dynamic"
+    },
+    {
+      "path": "size",
+      "kind": "literal"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "trigger",
+      "kind": "childId"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "MultiSelect": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "allowCustom",
+      "kind": "literal"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "notFoundMessage",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "NumberField": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "currency",
+      "kind": "literal"
+    },
+    {
+      "path": "decimals",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "max",
+      "kind": "literal"
+    },
+    {
+      "path": "min",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "selectAllOnFocus",
+      "kind": "literal"
+    },
+    {
+      "path": "unit",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Preview": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "caption",
+      "kind": "dynamic"
+    },
+    {
+      "path": "emptyText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "height",
+      "kind": "literal"
+    },
+    {
+      "path": "kind",
+      "kind": "literal"
+    },
+    {
+      "path": "src",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Progress": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "indeterminate",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "showValue",
+      "kind": "literal"
+    },
+    {
+      "path": "tone",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "RadioGroup": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "orientation",
+      "kind": "literal"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "RelationshipPicker": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "chipDisplayFields",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.align",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.canBeCopied",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.cell",
+      "kind": "childId"
+    },
+    {
+      "path": "columns.*.clickable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.copyOnly",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.currency",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.decimalPlaces",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterOptions",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterWidget",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.key",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.sortable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "columns.*.type",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.unshowable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.visible",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.width",
+      "kind": "literal"
+    },
+    {
+      "path": "createAction",
+      "kind": "action"
+    },
+    {
+      "path": "dialogWidth",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "displayFields",
+      "kind": "literal"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "loading",
+      "kind": "dynamic"
+    },
+    {
+      "path": "maxChips",
+      "kind": "literal"
+    },
+    {
+      "path": "mode",
+      "kind": "literal"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "rowMenu.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenuAction",
+      "kind": "action"
+    },
+    {
+      "path": "searchAction",
+      "kind": "action"
+    },
+    {
+      "path": "table.filterable",
+      "kind": "literal"
+    },
+    {
+      "path": "table.pageSize",
+      "kind": "literal"
+    },
+    {
+      "path": "table.pageSizeOptions",
+      "kind": "literal"
+    },
+    {
+      "path": "table.paginated",
+      "kind": "literal"
+    },
+    {
+      "path": "table.reorderable",
+      "kind": "literal"
+    },
+    {
+      "path": "table.resizable",
+      "kind": "literal"
+    },
+    {
+      "path": "table.showColumnSelector",
+      "kind": "literal"
+    },
+    {
+      "path": "table.showSearch",
+      "kind": "literal"
+    },
+    {
+      "path": "table.sortable",
+      "kind": "literal"
+    },
+    {
+      "path": "table.unhideableColumns",
+      "kind": "literal"
+    },
+    {
+      "path": "targetEntity",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "valueField",
+      "kind": "literal"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Row": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "align",
+      "kind": "literal"
+    },
+    {
+      "path": "children",
+      "kind": "childList"
+    },
+    {
+      "path": "gap",
+      "kind": "literal"
+    },
+    {
+      "path": "justify",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    },
+    {
+      "path": "wrap",
+      "kind": "literal"
+    }
+  ],
+  "Select": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "clearable",
+      "kind": "literal"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "options.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "options.*.value",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Sidebar": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "activeItem",
+      "kind": "dynamic"
+    },
+    {
+      "path": "collapsibleSections",
+      "kind": "literal"
+    },
+    {
+      "path": "footer",
+      "kind": "childId"
+    },
+    {
+      "path": "items",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.action",
+      "kind": "action"
+    },
+    {
+      "path": "items.*.badge",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.items.*.action",
+      "kind": "action"
+    },
+    {
+      "path": "items.*.items.*.badge",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.items.*.disabled",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.items.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.items.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "items.*.items.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "items.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "logo.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "logo.imageUrl",
+      "kind": "dynamic"
+    },
+    {
+      "path": "logo.text",
+      "kind": "dynamic"
+    },
+    {
+      "path": "navigateAction",
+      "kind": "action"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Slider": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "max",
+      "kind": "literal"
+    },
+    {
+      "path": "min",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "showValue",
+      "kind": "literal"
+    },
+    {
+      "path": "step",
+      "kind": "literal"
+    },
+    {
+      "path": "unit",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Stat": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "currency",
+      "kind": "literal"
+    },
+    {
+      "path": "delta",
+      "kind": "dynamic"
+    },
+    {
+      "path": "format",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "spark",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Stepper": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "active",
+      "kind": "dynamic"
+    },
+    {
+      "path": "steps.*.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "steps.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Switch": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Table": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "bulkAction",
+      "kind": "action"
+    },
+    {
+      "path": "bulkMenu.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "bulkMenu.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "bulkMenu.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "bulkMenu.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "clickFilterColumns",
+      "kind": "literal"
+    },
+    {
+      "path": "clickableColumns",
+      "kind": "literal"
+    },
+    {
+      "path": "columns",
+      "kind": "dynamic"
+    },
+    {
+      "path": "columns.*.align",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.canBeCopied",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.cell",
+      "kind": "childId"
+    },
+    {
+      "path": "columns.*.clickable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.copyOnly",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.currency",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.decimalPlaces",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterOptions",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterWidget",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.filterable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.key",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.sortable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "columns.*.type",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.unshowable",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.visible",
+      "kind": "literal"
+    },
+    {
+      "path": "columns.*.width",
+      "kind": "literal"
+    },
+    {
+      "path": "createAction",
+      "kind": "action"
+    },
+    {
+      "path": "createLabel",
+      "kind": "dynamic"
+    },
+    {
+      "path": "defaultSorting.*.dir",
+      "kind": "literal"
+    },
+    {
+      "path": "defaultSorting.*.key",
+      "kind": "literal"
+    },
+    {
+      "path": "emptyText",
+      "kind": "dynamic"
+    },
+    {
+      "path": "filterable",
+      "kind": "literal"
+    },
+    {
+      "path": "loading",
+      "kind": "dynamic"
+    },
+    {
+      "path": "maxHeight",
+      "kind": "literal"
+    },
+    {
+      "path": "mode",
+      "kind": "literal"
+    },
+    {
+      "path": "pageSize",
+      "kind": "literal"
+    },
+    {
+      "path": "pageSizeOptions",
+      "kind": "literal"
+    },
+    {
+      "path": "paginated",
+      "kind": "literal"
+    },
+    {
+      "path": "pinnedColumnCount",
+      "kind": "literal"
+    },
+    {
+      "path": "predefinedFilters",
+      "kind": "literal"
+    },
+    {
+      "path": "query",
+      "kind": "dynamic"
+    },
+    {
+      "path": "queryAction",
+      "kind": "action"
+    },
+    {
+      "path": "reorderable",
+      "kind": "literal"
+    },
+    {
+      "path": "resizable",
+      "kind": "literal"
+    },
+    {
+      "path": "rowAction",
+      "kind": "action"
+    },
+    {
+      "path": "rowCount",
+      "kind": "dynamic"
+    },
+    {
+      "path": "rowKey",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.id",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenu.*.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "rowMenu.*.tone",
+      "kind": "literal"
+    },
+    {
+      "path": "rowMenuAction",
+      "kind": "action"
+    },
+    {
+      "path": "rows",
+      "kind": "dynamic"
+    },
+    {
+      "path": "selectable",
+      "kind": "literal"
+    },
+    {
+      "path": "selection",
+      "kind": "dynamic"
+    },
+    {
+      "path": "showColumnSelector",
+      "kind": "literal"
+    },
+    {
+      "path": "showSearch",
+      "kind": "literal"
+    },
+    {
+      "path": "sortable",
+      "kind": "literal"
+    },
+    {
+      "path": "stickyHeader",
+      "kind": "literal"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "unhideableColumns",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Tabs": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "keepMounted",
+      "kind": "literal"
+    },
+    {
+      "path": "tabs.*.badge",
+      "kind": "dynamic"
+    },
+    {
+      "path": "tabs.*.child",
+      "kind": "childId"
+    },
+    {
+      "path": "tabs.*.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "tabs.*.title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "tabs.*.visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Text": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "align",
+      "kind": "literal"
+    },
+    {
+      "path": "text",
+      "kind": "dynamic"
+    },
+    {
+      "path": "tone",
+      "kind": "literal"
+    },
+    {
+      "path": "truncate",
+      "kind": "literal"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "TextField": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autofocus",
+      "kind": "literal"
+    },
+    {
+      "path": "changeAction",
+      "kind": "action"
+    },
+    {
+      "path": "checks",
+      "kind": "checks"
+    },
+    {
+      "path": "disabled",
+      "kind": "dynamic"
+    },
+    {
+      "path": "enterAction",
+      "kind": "action"
+    },
+    {
+      "path": "enterBehavior",
+      "kind": "literal"
+    },
+    {
+      "path": "error",
+      "kind": "dynamic"
+    },
+    {
+      "path": "escapeAction",
+      "kind": "action"
+    },
+    {
+      "path": "excludeFromSubmit",
+      "kind": "literal"
+    },
+    {
+      "path": "hideLabel",
+      "kind": "literal"
+    },
+    {
+      "path": "hint",
+      "kind": "dynamic"
+    },
+    {
+      "path": "inputType",
+      "kind": "literal"
+    },
+    {
+      "path": "label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "maxLength",
+      "kind": "literal"
+    },
+    {
+      "path": "placeholder",
+      "kind": "dynamic"
+    },
+    {
+      "path": "readOnly",
+      "kind": "dynamic"
+    },
+    {
+      "path": "required",
+      "kind": "literal"
+    },
+    {
+      "path": "rows",
+      "kind": "literal"
+    },
+    {
+      "path": "selectAllOnFocus",
+      "kind": "literal"
+    },
+    {
+      "path": "validationRegexp",
+      "kind": "literal"
+    },
+    {
+      "path": "value",
+      "kind": "dynamic"
+    },
+    {
+      "path": "variant",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Toaster": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "duration",
+      "kind": "literal"
+    },
+    {
+      "path": "items",
+      "kind": "dynamic"
+    },
+    {
+      "path": "position",
+      "kind": "literal"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "TopBar": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "bordered",
+      "kind": "literal"
+    },
+    {
+      "path": "center",
+      "kind": "childList"
+    },
+    {
+      "path": "end",
+      "kind": "childList"
+    },
+    {
+      "path": "height",
+      "kind": "literal"
+    },
+    {
+      "path": "homeAction",
+      "kind": "action"
+    },
+    {
+      "path": "localeChangeAction",
+      "kind": "action"
+    },
+    {
+      "path": "logo.icon",
+      "kind": "literal"
+    },
+    {
+      "path": "logo.imageUrl",
+      "kind": "dynamic"
+    },
+    {
+      "path": "showConnectionStatus",
+      "kind": "literal"
+    },
+    {
+      "path": "showLocaleToggle",
+      "kind": "literal"
+    },
+    {
+      "path": "showSidebarTrigger",
+      "kind": "literal"
+    },
+    {
+      "path": "showThemeToggle",
+      "kind": "literal"
+    },
+    {
+      "path": "start",
+      "kind": "childList"
+    },
+    {
+      "path": "themeChangeAction",
+      "kind": "action"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Video": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "poster",
+      "kind": "dynamic"
+    },
+    {
+      "path": "url",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    }
+  ],
+  "Window": [
+    {
+      "path": "accessibility.description",
+      "kind": "dynamic"
+    },
+    {
+      "path": "accessibility.label",
+      "kind": "dynamic"
+    },
+    {
+      "path": "autoFit",
+      "kind": "literal"
+    },
+    {
+      "path": "child",
+      "kind": "childId"
+    },
+    {
+      "path": "closable",
+      "kind": "literal"
+    },
+    {
+      "path": "closeAction",
+      "kind": "action"
+    },
+    {
+      "path": "height",
+      "kind": "literal"
+    },
+    {
+      "path": "minHeight",
+      "kind": "literal"
+    },
+    {
+      "path": "minWidth",
+      "kind": "literal"
+    },
+    {
+      "path": "modal",
+      "kind": "literal"
+    },
+    {
+      "path": "open",
+      "kind": "dynamic"
+    },
+    {
+      "path": "state",
+      "kind": "dynamic"
+    },
+    {
+      "path": "title",
+      "kind": "dynamic"
+    },
+    {
+      "path": "visible",
+      "kind": "dynamic"
+    },
+    {
+      "path": "weight",
+      "kind": "literal"
+    },
+    {
+      "path": "width",
+      "kind": "literal"
+    },
+    {
+      "path": "x",
+      "kind": "literal"
+    },
+    {
+      "path": "y",
+      "kind": "literal"
+    }
+  ]
+}

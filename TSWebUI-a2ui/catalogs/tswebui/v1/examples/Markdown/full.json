@@ -1,0 +1,41 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "markdown",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "markdown",
+      "components": [
+        {
+          "id": "root",
+          "component": "Markdown",
+          "content": {
+            "path": "/doc"
+          },
+          "accessibility": {
+            "label": "Release notes"
+          },
+          "visible": {
+            "path": "/visible"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "markdown",
+      "path": "/",
+      "value": {
+        "doc": "## Release notes\n\n- Faster rendering\n- New `Markdown` component\n- [x] Copy button on code blocks\n\n| Version | Date |\n|---|---|\n| 1.0 | 2026-10-20 |\n\nSee [A2UI](https://a2ui.org) for details.\n\n```ts\nconst greeting: string = \"hello\"\n```\n",
+        "visible": true
+      }
+    }
+  }
+]

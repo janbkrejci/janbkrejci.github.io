@@ -1,0 +1,193 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "dateTimeInput",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "dateTimeInput",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "departure",
+            "birthDate",
+            "returnDate",
+            "issued",
+            "archived",
+            "meeting",
+            "alarm"
+          ]
+        },
+        {
+          "id": "departure",
+          "component": "DateTimeInput",
+          "label": "Departure",
+          "value": {
+            "path": "/trip/departure"
+          },
+          "enableDate": true,
+          "enableTime": false,
+          "min": {
+            "path": "/limits/min"
+          },
+          "max": "2026-12-31",
+          "required": true,
+          "hint": "Pick a day before the end of the year.",
+          "showTodayButton": true,
+          "todayButtonText": "Now",
+          "clearButtonText": "Reset",
+          "autofocus": false,
+          "changeAction": {
+            "event": {
+              "name": "departureChanged",
+              "context": {
+                "field": "departure"
+              }
+            }
+          },
+          "enterBehavior": "next",
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/trip/departure"
+                  }
+                },
+                "returnType": "boolean"
+              },
+              "message": "Choose the departure day."
+            }
+          ]
+        },
+        {
+          "id": "birthDate",
+          "component": "DateTimeInput",
+          "label": "Birth date",
+          "value": {
+            "path": "/person/birthDate"
+          },
+          "disableFuture": true,
+          "displayFormat": "dd.MM.yyyy",
+          "placeholder": "dd.mm.yyyy",
+          "selectAllOnFocus": false,
+          "error": {
+            "path": "/errors/birthDate"
+          },
+          "enterAction": {
+            "event": {
+              "name": "lookupPerson"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "closeBirthDate"
+            }
+          }
+        },
+        {
+          "id": "returnDate",
+          "component": "DateTimeInput",
+          "label": "Return",
+          "value": {
+            "path": "/trip/return"
+          },
+          "showClearButton": false,
+          "hideLabel": true
+        },
+        {
+          "id": "issued",
+          "component": "DateTimeInput",
+          "label": "Issued",
+          "value": {
+            "path": "/trip/issued"
+          },
+          "readOnly": true,
+          "excludeFromSubmit": true
+        },
+        {
+          "id": "archived",
+          "component": "DateTimeInput",
+          "label": "Archived",
+          "value": {
+            "path": "/trip/archived"
+          },
+          "disabled": true
+        },
+        {
+          "id": "meeting",
+          "component": "DateTimeInput",
+          "label": "Meeting",
+          "value": {
+            "path": "/trip/meeting"
+          },
+          "enableDate": true,
+          "enableTime": true,
+          "min": "2026-10-01T08:00:00+02:00",
+          "max": {
+            "path": "/limits/meetingMax"
+          },
+          "showTodayButton": true,
+          "changeAction": {
+            "event": {
+              "name": "meetingChanged"
+            }
+          }
+        },
+        {
+          "id": "alarm",
+          "component": "DateTimeInput",
+          "label": "Alarm",
+          "value": {
+            "path": "/trip/alarm"
+          },
+          "enableDate": false,
+          "enableTime": true,
+          "min": {
+            "path": "/limits/alarmMin"
+          },
+          "max": {
+            "path": "/limits/alarmMax"
+          },
+          "placeholder": "hh:mm"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "dateTimeInput",
+      "path": "/",
+      "value": {
+        "trip": {
+          "departure": "2026-11-02",
+          "return": "",
+          "issued": "2026-10-01",
+          "archived": "2025-06-30",
+          "meeting": "2026-10-16T14:30:00+02:00",
+          "alarm": "07:30"
+        },
+        "person": {
+          "birthDate": "1990-05-17"
+        },
+        "limits": {
+          "min": "2026-10-01",
+          "meetingMax": "2026-12-31T18:00:00+01:00",
+          "alarmMin": "06:00",
+          "alarmMax": "22:00"
+        },
+        "errors": {
+          "birthDate": ""
+        }
+      }
+    }
+  }
+]

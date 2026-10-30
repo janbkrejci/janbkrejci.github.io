@@ -1,0 +1,64 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "column",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "column",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": {
+            "componentId": "item",
+            "path": "/contacts"
+          },
+          "justify": "start",
+          "align": "stretch",
+          "gap": "sm",
+          "wrap": false,
+          "visible": {
+            "path": "/show"
+          },
+          "accessibility": {
+            "label": "Contacts"
+          }
+        },
+        {
+          "id": "item",
+          "component": "Text",
+          "text": {
+            "path": "name"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "column",
+      "path": "/",
+      "value": {
+        "show": true,
+        "contacts": [
+          {
+            "name": "Alice"
+          },
+          {
+            "name": "Bob"
+          },
+          {
+            "name": "Carol"
+          }
+        ]
+      }
+    }
+  }
+]

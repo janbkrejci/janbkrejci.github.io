@@ -1,0 +1,48 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "kanban",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "kanban",
+      "components": [
+        {
+          "id": "root",
+          "component": "Kanban",
+          "columns": [
+            {
+              "id": "todo",
+              "label": "To do"
+            },
+            {
+              "id": "done",
+              "label": "Done"
+            }
+          ],
+          "cards": [
+            {
+              "id": "c1",
+              "column": "todo",
+              "title": "Write the spec"
+            },
+            {
+              "id": "c2",
+              "column": "todo",
+              "title": "Review the design"
+            },
+            {
+              "id": "c3",
+              "column": "done",
+              "title": "Set up the repository"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

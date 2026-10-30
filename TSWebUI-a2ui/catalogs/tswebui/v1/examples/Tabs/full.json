@@ -1,0 +1,99 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "tabs",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "tabs",
+      "components": [
+        {
+          "id": "root",
+          "component": "Tabs",
+          "value": {
+            "path": "/ui/tab"
+          },
+          "changeAction": {
+            "event": {
+              "name": "tabChanged",
+              "context": {
+                "source": "tabs"
+              }
+            }
+          },
+          "keepMounted": true,
+          "tabs": [
+            {
+              "title": "Overview",
+              "child": "overview",
+              "icon": "home",
+              "visible": true
+            },
+            {
+              "title": {
+                "path": "/ui/inboxTitle"
+              },
+              "child": "inbox",
+              "badge": {
+                "path": "/ui/count"
+              }
+            },
+            {
+              "title": "Favourites",
+              "child": "favourites",
+              "icon": "star",
+              "badge": "3"
+            },
+            {
+              "title": "Advanced",
+              "child": "advanced",
+              "icon": "settings",
+              "visible": {
+                "path": "/ui/showAdvanced"
+              }
+            }
+          ]
+        },
+        {
+          "id": "overview",
+          "component": "Text",
+          "text": "Account overview"
+        },
+        {
+          "id": "inbox",
+          "component": "Text",
+          "text": "Unread messages"
+        },
+        {
+          "id": "favourites",
+          "component": "Text",
+          "text": "Starred items"
+        },
+        {
+          "id": "advanced",
+          "component": "Text",
+          "text": "Advanced settings"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "tabs",
+      "path": "/",
+      "value": {
+        "ui": {
+          "tab": 0,
+          "inboxTitle": "Inbox",
+          "count": "5",
+          "showAdvanced": false
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "alert",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "alert",
+      "components": [
+        {
+          "id": "root",
+          "component": "Alert",
+          "title": "Payment overdue",
+          "text": {
+            "path": "/invoice/message"
+          },
+          "child": "alert-body",
+          "variant": "warning",
+          "icon": "schedule",
+          "closable": true,
+          "visible": {
+            "path": "/invoice/showAlert"
+          },
+          "dismissAction": {
+            "event": {
+              "name": "dismissAlert",
+              "context": {
+                "invoice": {
+                  "path": "/invoice/id"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "alert-body",
+          "component": "Text",
+          "text": "Pay within **7 days** to avoid a fee.",
+          "variant": "caption"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "alert",
+      "path": "/",
+      "value": {
+        "invoice": {
+          "id": "INV-42",
+          "message": "Invoice INV-42 is 3 days overdue.",
+          "showAlert": true
+        }
+      }
+    }
+  }
+]

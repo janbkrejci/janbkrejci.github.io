@@ -1,0 +1,62 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "toaster",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "toaster",
+      "components": [
+        {
+          "id": "root",
+          "component": "Toaster",
+          "accessibility": {
+            "label": "Sync notifications"
+          },
+          "items": {
+            "path": "/toasts"
+          },
+          "duration": 6000,
+          "position": "top-center"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "toaster",
+      "path": "/toasts",
+      "value": [
+        {
+          "id": "sync",
+          "title": "Sync",
+          "text": "Synchronization started.",
+          "tone": "info"
+        },
+        {
+          "id": 2,
+          "title": "Saved",
+          "text": "The order was saved.",
+          "tone": "success"
+        },
+        {
+          "id": "quota",
+          "title": "Storage",
+          "text": "Storage is 90 % full.",
+          "tone": "warning"
+        },
+        {
+          "id": 4,
+          "title": "Upload failed",
+          "text": "The file is too large.",
+          "tone": "danger"
+        }
+      ]
+    }
+  }
+]

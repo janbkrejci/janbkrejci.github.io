@@ -1,0 +1,139 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "numberField",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "numberField",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "quantity",
+            "price",
+            "weight",
+            "total",
+            "discount"
+          ]
+        },
+        {
+          "id": "quantity",
+          "component": "NumberField",
+          "label": "Quantity",
+          "value": {
+            "path": "/order/quantity"
+          },
+          "min": 1,
+          "max": 100,
+          "decimals": 0,
+          "required": true,
+          "placeholder": "1",
+          "hint": "Between 1 and 100 pieces; you can type 2*12.",
+          "autofocus": false,
+          "selectAllOnFocus": true,
+          "changeAction": {
+            "event": {
+              "name": "quantityChanged",
+              "context": {
+                "field": "quantity"
+              }
+            }
+          },
+          "enterBehavior": "next"
+        },
+        {
+          "id": "price",
+          "component": "NumberField",
+          "label": "Unit price",
+          "value": {
+            "path": "/order/price"
+          },
+          "currency": "EUR",
+          "decimals": 2,
+          "min": 0,
+          "error": {
+            "path": "/errors/price"
+          },
+          "enterAction": {
+            "event": {
+              "name": "recalculate"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "closePrice"
+            }
+          }
+        },
+        {
+          "id": "weight",
+          "component": "NumberField",
+          "label": "Weight",
+          "value": {
+            "path": "/order/weight"
+          },
+          "unit": "kg",
+          "max": 500,
+          "selectAllOnFocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "numeric",
+                "args": {
+                  "value": {
+                    "path": "/order/weight"
+                  },
+                  "min": 0.1
+                },
+                "returnType": "boolean"
+              },
+              "message": "The weight must be at least 0.1 kg."
+            }
+          ]
+        },
+        {
+          "id": "total",
+          "component": "NumberField",
+          "label": "Total",
+          "value": {
+            "path": "/order/total"
+          },
+          "currency": "EUR",
+          "readOnly": true,
+          "excludeFromSubmit": true
+        },
+        {
+          "id": "discount",
+          "component": "NumberField",
+          "label": "Discount",
+          "value": 5,
+          "unit": "%",
+          "hideLabel": true,
+          "disabled": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "numberField",
+      "path": "/",
+      "value": {
+        "order": {
+          "quantity": 3,
+          "price": 1234.5,
+          "weight": 12.75,
+          "total": 3703.5
+        },
+        "errors": {}
+      }
+    }
+  }
+]

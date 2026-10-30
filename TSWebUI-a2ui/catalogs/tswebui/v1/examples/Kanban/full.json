@@ -1,0 +1,92 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "kanban",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "kanban",
+      "components": [
+        {
+          "id": "root",
+          "component": "Kanban",
+          "columns": [
+            {
+              "id": "todo",
+              "label": "To do",
+              "tone": "neutral"
+            },
+            {
+              "id": "doing",
+              "label": "In progress",
+              "tone": "info"
+            },
+            {
+              "id": "done",
+              "label": "Done",
+              "tone": "success"
+            }
+          ],
+          "cards": {
+            "path": "/board/cards"
+          },
+          "moveAction": {
+            "event": {
+              "name": "moveCard",
+              "context": {
+                "title": {
+                  "path": "title"
+                }
+              }
+            }
+          },
+          "openAction": {
+            "event": {
+              "name": "openCard"
+            }
+          },
+          "emptyText": "Nothing here yet"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "kanban",
+      "path": "/",
+      "value": {
+        "board": {
+          "cards": [
+            {
+              "id": "c1",
+              "column": "todo",
+              "title": "Write the spec",
+              "subtitle": "Catalog C37",
+              "badge": "P1",
+              "assignee": "Jana"
+            },
+            {
+              "id": "c2",
+              "column": "todo",
+              "title": "Review the design",
+              "assignee": "Petr"
+            },
+            {
+              "id": "c3",
+              "column": "doing",
+              "title": "Port the model",
+              "subtitle": "kanbanModel.ts",
+              "badge": 3,
+              "assignee": "Jana"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

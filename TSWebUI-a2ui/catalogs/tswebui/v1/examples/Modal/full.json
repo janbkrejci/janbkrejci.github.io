@@ -1,0 +1,98 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "modal",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "modal",
+      "components": [
+        {
+          "id": "root",
+          "component": "Modal",
+          "trigger": "show",
+          "content": "body",
+          "open": {
+            "path": "/ui/open"
+          },
+          "title": "Order details",
+          "description": {
+            "path": "/ui/description"
+          },
+          "size": "lg",
+          "dismissible": true,
+          "closeAction": {
+            "event": {
+              "name": "modalClosed",
+              "context": {
+                "source": "modal"
+              }
+            }
+          },
+          "accessibility": {
+            "label": "Order details dialog"
+          }
+        },
+        {
+          "id": "show",
+          "component": "Button",
+          "child": "showLabel",
+          "variant": "primary",
+          "action": {
+            "event": {
+              "name": "showDetails",
+              "context": {
+                "orderId": {
+                  "path": "/order/id"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "showLabel",
+          "component": "Text",
+          "text": "Show details"
+        },
+        {
+          "id": "body",
+          "component": "Column",
+          "children": [
+            "line1",
+            "line2"
+          ]
+        },
+        {
+          "id": "line1",
+          "component": "Text",
+          "text": "Order #1024, 3 items"
+        },
+        {
+          "id": "line2",
+          "component": "Text",
+          "text": "Total: 1 250 CZK"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "modal",
+      "path": "/",
+      "value": {
+        "ui": {
+          "open": false,
+          "description": "Review the order before you pay."
+        },
+        "order": {
+          "id": "1024"
+        }
+      }
+    }
+  }
+]

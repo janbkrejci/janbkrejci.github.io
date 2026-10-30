@@ -1,0 +1,44 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "avatar",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "avatar",
+      "components": [
+        {
+          "id": "root",
+          "component": "Avatar",
+          "name": {
+            "path": "/user/name"
+          },
+          "src": {
+            "path": "/user/photo"
+          },
+          "size": "lg",
+          "accessibility": {
+            "label": "Profile photo"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "avatar",
+      "path": "/",
+      "value": {
+        "user": {
+          "name": "Jan Novák",
+          "photo": "https://i.pravatar.cc/80?img=12"
+        }
+      }
+    }
+  }
+]

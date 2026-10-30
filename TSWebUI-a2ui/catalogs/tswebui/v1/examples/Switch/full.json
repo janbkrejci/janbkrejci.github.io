@@ -1,0 +1,73 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "switch",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "switch",
+      "components": [
+        {
+          "id": "root",
+          "component": "Switch",
+          "label": "Receive email notifications",
+          "value": {
+            "path": "/notify"
+          },
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "You can turn them off at any time.",
+          "error": {
+            "path": "/errors/notify"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "path": "/notify"
+              },
+              "message": "Notifications must be turned on."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "notifyChanged",
+              "context": {
+                "field": "notify"
+              }
+            }
+          },
+          "enterAction": {
+            "event": {
+              "name": "notifyEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "notifyEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "switch",
+      "path": "/",
+      "value": {
+        "notify": true,
+        "errors": {}
+      }
+    }
+  }
+]

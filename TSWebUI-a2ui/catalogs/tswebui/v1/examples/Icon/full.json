@@ -1,0 +1,41 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "icon",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "icon",
+      "components": [
+        {
+          "id": "root",
+          "component": "Icon",
+          "name": {
+            "path": "/status/icon"
+          },
+          "size": "md",
+          "tone": "success",
+          "accessibility": {
+            "label": "Saved"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "icon",
+      "path": "/",
+      "value": {
+        "status": {
+          "icon": "checkCircle"
+        }
+      }
+    }
+  }
+]

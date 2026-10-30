@@ -1,0 +1,43 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "modal",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "modal",
+      "components": [
+        {
+          "id": "root",
+          "component": "Modal",
+          "trigger": "open",
+          "content": "body"
+        },
+        {
+          "id": "open",
+          "component": "Button",
+          "child": "openLabel",
+          "action": {
+            "event": {
+              "name": "openDialog"
+            }
+          }
+        },
+        {
+          "id": "openLabel",
+          "component": "Text",
+          "text": "Open dialog"
+        },
+        {
+          "id": "body",
+          "component": "Text",
+          "text": "Dialog content"
+        }
+      ]
+    }
+  }
+]

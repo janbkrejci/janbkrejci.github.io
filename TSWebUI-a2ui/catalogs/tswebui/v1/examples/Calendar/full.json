@@ -1,0 +1,90 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "calendar",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "calendar",
+      "components": [
+        {
+          "id": "root",
+          "component": "Calendar",
+          "month": {
+            "path": "/cal/month"
+          },
+          "events": {
+            "path": "/cal/events"
+          },
+          "navigateAction": {
+            "event": {
+              "name": "calendarNavigate"
+            }
+          },
+          "openAction": {
+            "event": {
+              "name": "openEvent"
+            }
+          },
+          "createAction": {
+            "event": {
+              "name": "createEvent"
+            }
+          },
+          "maxVisible": 2
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "calendar",
+      "path": "/cal",
+      "value": {
+        "month": "2026-02",
+        "events": [
+          {
+            "id": "e1",
+            "date": "2026-02-02",
+            "title": "Sprint planning",
+            "tone": "info"
+          },
+          {
+            "id": "e2",
+            "date": "2026-02-11",
+            "title": "Release",
+            "tone": "success"
+          },
+          {
+            "id": "e3",
+            "date": "2026-02-11",
+            "title": "Retrospective",
+            "tone": "neutral"
+          },
+          {
+            "id": "e4",
+            "date": "2026-02-11",
+            "title": "Deadline",
+            "tone": "danger"
+          },
+          {
+            "id": "e5",
+            "date": "2026-02-11",
+            "title": "Review",
+            "tone": "warning"
+          },
+          {
+            "id": 6,
+            "date": "2026-02-20",
+            "title": "Team lunch"
+          }
+        ]
+      }
+    }
+  }
+]

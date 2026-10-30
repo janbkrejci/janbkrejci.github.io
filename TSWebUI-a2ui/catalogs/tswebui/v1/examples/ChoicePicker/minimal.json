@@ -1,0 +1,48 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "choicepicker",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "choicepicker",
+      "components": [
+        {
+          "id": "root",
+          "component": "ChoicePicker",
+          "options": [
+            {
+              "label": "Red",
+              "value": "red"
+            },
+            {
+              "label": "Green",
+              "value": "green"
+            },
+            {
+              "label": "Blue",
+              "value": "blue"
+            }
+          ],
+          "value": {
+            "path": "/color"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "choicepicker",
+      "path": "/",
+      "value": {
+        "color": []
+      }
+    }
+  }
+]

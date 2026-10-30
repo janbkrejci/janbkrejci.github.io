@@ -1,0 +1,43 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "audio",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "audio",
+      "components": [
+        {
+          "id": "root",
+          "component": "AudioPlayer",
+          "url": {
+            "path": "/track/url"
+          },
+          "description": {
+            "path": "/track/title"
+          },
+          "accessibility": {
+            "label": "T-rex roar audio"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "audio",
+      "path": "/",
+      "value": {
+        "track": {
+          "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3",
+          "title": "T-rex roar"
+        }
+      }
+    }
+  }
+]

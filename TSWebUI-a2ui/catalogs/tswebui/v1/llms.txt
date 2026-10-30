@@ -1,0 +1,63 @@
+# TSWebUI A2UI catalog
+
+> A component catalog for the official A2UI v0.9.1 protocol: a superset of the basic catalog with forms, tables, an app shell and extras, rendered by a React client.
+
+Catalog id (createSurface.catalogId): https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json
+
+## Docs
+
+- [catalog.json](https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json): JSON Schema of all components and functions
+- [rules.txt](https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/rules.txt): binding rules C1–C3, functions and per-component requirements
+- [components.md](https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/components.md): props, outputs, actions and a minimal example per component
+- [Agent guide](https://github.com/janbkrejci/TSWebUI-a2ui/blob/master/docs/guide/agent-guide.md): how an agent drives the client, with validated examples
+
+## Components
+
+- Accordion: Vertically stacked collapsible sections.
+- AddressAutocomplete: An address field for Czech RÚIAN addresses: an ARIA combobox whose suggestions come from the RÚIAN proxy configured on the client.
+- Alert: A callout box with an icon, optional title, message and rich body, coloured by variant; optionally closable by the user.
+- AppShell: Application shell: an optional sticky top bar, an optional sidebar, the main content area with its left margin following the sidebar width, and a layer for windows.
+- AudioPlayer: Plays audio from a URL using the native browser player with controls at full width, with an optional caption.
+- Avatar: A round avatar for a person: an image, or initials on a colour derived from the name, or a person icon.
+- Badge: A small inline pill-shaped label for statuses, counts and categories, coloured by tone.
+- Button: A clickable button that dispatches an action.
+- ButtonGroup: A single-choice input drawn as a row of buttons, either joined (segmented) or as chevron steps (process).
+- Calendar: Month calendar (Monday first) with events.
+- Card: A bordered container (card surface) around a single child, with an optional header (title, description) and an optional footer.
+- Chart: Chart of category data in pure SVG: line, area or bar (grouped or stacked) with a y axis, grid and x labels, or a donut with the total in the centre.
+- CheckBox: A checkbox with a clickable label on its right.
+- ChoicePicker: Pick one or more options from a list, as a dropdown (displayStyle checkbox) or as a row of toggle chips (displayStyle chips).
+- Column: A layout component that arranges its children vertically.
+- Combobox: A searchable dropdown that picks one option.
+- DateTimeInput: A labelled date, date-time or time input.
+- Divider: A thin horizontal or vertical line that separates content, with an optional label on horizontal dividers.
+- FileUpload: A file upload field: a drop zone (or an add link) that uploads each chosen or dropped file, lists the files with download and remove buttons, shows a progress row with a cancel button per uploading file and a failure row with retry and remove, writes only successfully uploaded files as the file reference array to the bound path and fires changeAction with {value}.
+- Form: A form container that lays out inputs and Buttons in grid rows, optionally split into tabs, with a footer of Buttons.
+- Icon: Displays an icon from the catalog icon set or a custom SVG path.
+- Image: Displays an image from a URL with an accessibility description, a size variant and an object-fit mode.
+- ImageUpload: An image upload field: like FileUpload, but it accepts only image/* files (other dropped files are ignored) and each row shows a cover thumbnail, taken from the file url or, while uploading, from a local preview.
+- Kanban: Kanban board: columns of cards.
+- List: A scrollable list of items.
+- Markdown: Displays a long formatted Markdown (GFM) document, e.g.
+- Modal: A dialog opened by clicking its trigger component or by writing its bound open path.
+- MultiSelect: A dropdown that picks several options, shown as removable chips.
+- NumberField: A labelled number input with locale formatting.
+- Preview: Shows a preview of an image or a PDF document from a URL, with an optional caption.
+- Progress: A horizontal progress bar for a fraction 0..1 or an indeterminate busy state, with an optional label and percentage.
+- RadioGroup: A group of radio buttons that picks exactly one option.
+- RelationshipPicker: Picks related records (ids) from a table in a dialog or a dropdown popover.
+- Row: A layout component that arranges its children horizontally.
+- Select: A dropdown that picks one option from a list.
+- Sidebar: Navigation sidebar of an AppShell: flat items or titled sections, the active item and navigation actions; on mobile an overlay with a backdrop.
+- Slider: A horizontal slider for a single number between min and max.
+- Stat: A KPI tile: label, a big locale-formatted value, an optional change chip, a hint and a small trend sparkline.
+- Stepper: A horizontal progress indicator of numbered steps with done, active and to-do states joined by connector lines.
+- Switch: A toggle switch with a clickable label on its right.
+- Table: A data table with typed, locale-formatted columns.
+- Tabs: A tab bar that shows one child pane at a time.
+- Text: Displays a short piece of text: a heading, a body paragraph or a caption, with a small inline Markdown subset.
+- TextField: A labelled text input: single line, multi-line, number as text, or password.
+- Toaster: Notification toasts driven by a bound data model array.
+- TopBar: Application top bar, sticky at the top: sidebar trigger, logo and title, start, center and end slots, connection status and optional theme and language toggles.
+- Video: Plays a video from a URL using the native browser player with controls at full width.
+- Window: A floating window in the window layer with a title bar (minimize, maximize or restore, close), two-way open and state, and modal: true for agent-opened dialogs.

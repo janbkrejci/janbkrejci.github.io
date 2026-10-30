@@ -1,0 +1,106 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "multiselect",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "multiselect",
+      "components": [
+        {
+          "id": "root",
+          "component": "MultiSelect",
+          "label": "Tags",
+          "options": [
+            {
+              "label": "One",
+              "value": 1
+            },
+            {
+              "label": "Yes",
+              "value": true
+            },
+            {
+              "label": "Text",
+              "value": "text",
+              "description": "String option"
+            },
+            {
+              "label": "Retired",
+              "value": "old",
+              "disabled": true
+            }
+          ],
+          "value": {
+            "path": "/tags"
+          },
+          "placeholder": "Pick tags...",
+          "notFoundMessage": "No such tag.",
+          "allowCustom": true,
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Numbers and booleans keep their type.",
+          "error": {
+            "path": "/errors/tags"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "length",
+                "args": {
+                  "value": {
+                    "path": "/tags"
+                  },
+                  "min": 1
+                }
+              },
+              "message": "Pick at least one tag."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "tagsChanged",
+              "context": {
+                "field": "tags"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "tagsEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "tagsEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "multiselect",
+      "path": "/",
+      "value": {
+        "tags": [
+          1,
+          true
+        ],
+        "errors": {}
+      }
+    }
+  }
+]

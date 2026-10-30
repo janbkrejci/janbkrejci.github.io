@@ -1,0 +1,22 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "markdown",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "markdown",
+      "components": [
+        {
+          "id": "root",
+          "component": "Markdown",
+          "content": "# Hello\n\nSome **Markdown** text."
+        }
+      ]
+    }
+  }
+]

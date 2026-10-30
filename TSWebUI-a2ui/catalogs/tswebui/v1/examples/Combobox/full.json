@@ -1,0 +1,109 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "combobox",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "combobox",
+      "components": [
+        {
+          "id": "root",
+          "component": "Combobox",
+          "label": "City",
+          "options": {
+            "path": "/cities"
+          },
+          "value": {
+            "path": "/city"
+          },
+          "placeholder": "Pick a city...",
+          "notFoundMessage": "No such city.",
+          "allowCustom": true,
+          "clearable": true,
+          "searchAction": {
+            "event": {
+              "name": "searchCities",
+              "context": {
+                "field": "city"
+              }
+            }
+          },
+          "loading": {
+            "path": "/citiesLoading"
+          },
+          "minQueryLength": 2,
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Type two letters to search.",
+          "error": {
+            "path": "/errors/city"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/city"
+                  }
+                }
+              },
+              "message": "Pick a city."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "cityChanged",
+              "context": {
+                "field": "city"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "cityEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "cityEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "combobox",
+      "path": "/",
+      "value": {
+        "cities": [
+          {
+            "label": "Prague",
+            "value": 1
+          },
+          {
+            "label": "Brno",
+            "value": 2
+          }
+        ],
+        "city": 1,
+        "citiesLoading": false,
+        "errors": {}
+      }
+    }
+  }
+]

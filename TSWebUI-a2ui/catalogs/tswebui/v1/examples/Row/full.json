@@ -1,0 +1,65 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "row",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "row",
+      "components": [
+        {
+          "id": "root",
+          "component": "Row",
+          "children": [
+            "title",
+            "spacer",
+            "meta"
+          ],
+          "justify": "spaceBetween",
+          "align": "center",
+          "gap": "lg",
+          "wrap": true,
+          "visible": {
+            "path": "/show"
+          },
+          "accessibility": {
+            "label": "Toolbar"
+          }
+        },
+        {
+          "id": "title",
+          "component": "Text",
+          "text": "Invoices",
+          "variant": "h3",
+          "weight": 2
+        },
+        {
+          "id": "spacer",
+          "component": "Text",
+          "text": "12 open",
+          "variant": "caption"
+        },
+        {
+          "id": "meta",
+          "component": "Text",
+          "text": "Updated today",
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "row",
+      "path": "/",
+      "value": {
+        "show": true
+      }
+    }
+  }
+]

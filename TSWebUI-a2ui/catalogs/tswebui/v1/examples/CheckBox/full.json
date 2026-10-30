@@ -1,0 +1,73 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "checkBox",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "checkBox",
+      "components": [
+        {
+          "id": "root",
+          "component": "CheckBox",
+          "label": "I agree to the terms",
+          "value": {
+            "path": "/agree"
+          },
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "You can withdraw your consent at any time.",
+          "error": {
+            "path": "/errors/agree"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "path": "/agree"
+              },
+              "message": "You must accept the terms."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "agreeChanged",
+              "context": {
+                "field": "agree"
+              }
+            }
+          },
+          "enterAction": {
+            "event": {
+              "name": "agreeEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "agreeEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "checkBox",
+      "path": "/",
+      "value": {
+        "agree": true,
+        "errors": {}
+      }
+    }
+  }
+]

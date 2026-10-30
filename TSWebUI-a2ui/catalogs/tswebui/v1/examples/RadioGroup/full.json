@@ -1,0 +1,100 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "radio-group",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "radio-group",
+      "components": [
+        {
+          "id": "root",
+          "component": "RadioGroup",
+          "label": "Delivery",
+          "options": [
+            {
+              "label": "Courier",
+              "value": 1
+            },
+            {
+              "label": "Pickup",
+              "value": true,
+              "description": "Collect it at the store"
+            },
+            {
+              "label": "Post",
+              "value": "post"
+            },
+            {
+              "label": "Drone",
+              "value": "drone",
+              "disabled": true
+            }
+          ],
+          "value": {
+            "path": "/delivery"
+          },
+          "orientation": "horizontal",
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Numbers and booleans keep their type.",
+          "error": {
+            "path": "/errors/delivery"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/delivery"
+                  }
+                }
+              },
+              "message": "Pick a delivery."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "deliveryChanged",
+              "context": {
+                "field": "delivery"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "deliveryEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "deliveryEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "radio-group",
+      "path": "/",
+      "value": {
+        "delivery": 1,
+        "errors": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "multiselect",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "multiselect",
+      "components": [
+        {
+          "id": "root",
+          "component": "MultiSelect",
+          "options": [
+            "Red",
+            "Green",
+            "Blue"
+          ]
+        }
+      ]
+    }
+  }
+]

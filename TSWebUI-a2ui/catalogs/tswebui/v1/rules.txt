@@ -1,0 +1,323 @@
+# TSWebUI A2UI catalog rules
+
+Catalog id: https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json
+Every message carries "version": "v0.9.1".
+createSurface.catalogId must be https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json.
+The catalog is a superset of the basic catalog: every basic component and function is available.
+
+# Binding and outputs
+
+Dynamic props take a literal, {"path": "/absolute/path"} (or a relative path inside templates) or a function call.
+Common props of every component: accessibility.label and accessibility.description (dynamic), visible (dynamic, default true) and weight (literal number, only inside Row or Column).
+C1: anything a component produces that must outlive one event is written through a two-way bound prop (bind it to a path). Actions read it with {"path": ...} in their context. Per-event facts are added to the action context by the component.
+C2: item actions (Table row actions, Kanban, Calendar, Sidebar navigation) resolve relative paths against the item, which requires the collection prop to be bound to a path.
+C3: values are plain JSON; dates are ISO 8601 (YYYY-MM-DD, HH:mm, YYYY-MM-DDTHH:mm:ss±hh:mm); empty is "".
+
+# Functions
+
+The 14 basic functions are available: required, regex, length, numeric, email, formatString, formatNumber, formatCurrency, formatDate, pluralize, openUrl, and, or, not.
+Client functions:
+- getLocale: Returns the client's current locale as a BCP 47 tag (`cs-CZ` or `en-GB`). Use it in action contexts to learn the locale. (args: none; returns string)
+- getTheme: Returns the effective theme, `light` or `dark`. Use it in action contexts to learn the theme. (args: none; returns string)
+- setLocale: Switches the client's locale (`cs` or `en`). Use it in `action.functionCall`; it returns nothing. (args: locale (cs | en); returns void)
+- setTheme: Sets the client's theme preference. Use it in `action.functionCall`; it returns nothing. (args: preference (light | dark | system); returns void)
+
+# Components
+
+## Accordion
+Vertically stacked collapsible sections. Each header toggles its content; Enter and Space toggle, the arrow keys and Home/End move between headers.
+Required: id, items
+Bindable (dynamic): items.*.title, value
+Children: items.*.child
+
+## AddressAutocomplete
+An address field for Czech RÚIAN addresses: an ARIA combobox whose suggestions come from the RÚIAN proxy configured on the client. ArrowUp/ArrowDown move through the suggestions, Enter or a click picks one and writes its full Address to the bound path, Escape closes the list and never clears the field. changeAction gets {value} after a selection and after a clear.
+Required: id
+Bindable (dynamic): disabled, error, hint, label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Alert
+A callout box with an icon, optional title, message and rich body, coloured by variant; optionally closable by the user.
+Required: id
+Bindable (dynamic): text, title
+Actions: dismissAction
+Children: child
+
+## AppShell
+Application shell: an optional sticky top bar, an optional sidebar, the main content area with its left margin following the sidebar width, and a layer for windows. Use it as the root of the shell surface; other surfaces are shown inside its content area.
+Required: id, content
+Bindable (dynamic): sidebarCollapsed, sidebarOpen
+Children: content, sidebar, topBar, windows
+
+## AudioPlayer
+Plays audio from a URL using the native browser player with controls at full width, with an optional caption.
+Required: id, url
+Bindable (dynamic): description, url
+
+## Avatar
+A round avatar for a person: an image, or initials on a colour derived from the name, or a person icon.
+Required: id
+Bindable (dynamic): name, src
+
+## Badge
+A small inline pill-shaped label for statuses, counts and categories, coloured by tone.
+Required: id, text
+Bindable (dynamic): text
+
+## Button
+A clickable button that dispatches an action. Its label is a child component (Text, Icon, or a Row of Icon + Text). Any failing check disables it and shows the first message as its tooltip.
+Required: id, child, action
+Bindable (dynamic): confirmation.buttons.*.label, confirmation.text, confirmation.title, disabled, loading, tooltip
+Actions: action, confirmation.buttons.*.action
+Children: child
+Checks: yes
+
+## ButtonGroup
+A single-choice input drawn as a row of buttons, either joined (segmented) or as chevron steps (process). The active button is filled. Clicking an enabled, non-active button writes its typed value to the bound path and fires changeAction; clicking the active one does nothing. Keyboard: Tab enters on the active button, the arrow keys move and select. enterBehavior has no effect.
+Required: id, options
+Bindable (dynamic): disabled, error, hint, label, options, options.*.label, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Calendar
+Month calendar (Monday first) with events. Month and weekday names follow the client locale. Previous/next fire navigateAction with the target month (and write a bound `month`); a click on an event fires openAction; a click on a day fires createAction.
+Required: id
+Bindable (dynamic): events, month
+Actions: createAction, navigateAction, openAction
+
+## Card
+A bordered container (card surface) around a single child, with an optional header (title, description) and an optional footer. Nested cards stay distinct through the border.
+Required: id, child
+Bindable (dynamic): description, title
+Children: child, footer
+
+## Chart
+Chart of category data in pure SVG: line, area or bar (grouped or stacked) with a y axis, grid and x labels, or a donut with the total in the centre. Optional legend; a tooltip opens on mouse hover and on keyboard focus (arrow keys browse the values); screen readers get a summary and a data table. The width follows the container.
+Required: id, series
+Bindable (dynamic): donutLabel, labels, series, series.*.name
+
+## CheckBox
+A checkbox with a clickable label on its right. Every toggle writes the bound boolean and fires changeAction. Space toggles it.
+Required: id, label, value
+Bindable (dynamic): disabled, error, hint, label, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## ChoicePicker
+Pick one or more options from a list, as a dropdown (displayStyle checkbox) or as a row of toggle chips (displayStyle chips). The value is always a string array, also for mutuallyExclusive. Each change writes the whole array to the bound path and fires changeAction. filterable adds a search box. enterBehavior has no effect.
+Required: id, options, value
+Bindable (dynamic): disabled, error, hint, label, options.*.label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Column
+A layout component that arranges its children vertically. To create a grid layout, nest Rows within this Column. Give a child `weight` to make it grow proportionally to the other weighted children.
+Required: id, children
+Children: children
+
+## Combobox
+A searchable dropdown that picks one option. A selection writes the typed value to the bound path and fires changeAction. Enter or Space opens the list, typing filters it (or asks the server through searchAction), the first Escape clears the search and the second closes it, and the optional clear button writes null. enterBehavior has no effect.
+Required: id, options
+Bindable (dynamic): disabled, error, hint, label, loading, notFoundMessage, options, options.*.description, options.*.label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction, searchAction
+Checks: yes
+
+## DateTimeInput
+A labelled date, date-time or time input. Date mode (default): the user types a date (for example 16.10.2026, 16/10/2026, 161026 or 16.10) or picks it in the calendar; the value is "YYYY-MM-DD". Date-time mode (enableDate and enableTime): text such as 16.10.2026 14:30, a calendar with a 24h time field and Now/Close buttons; the value is ISO 8601 with the local offset, "YYYY-MM-DDTHH:mm:ss+02:00". Time-only mode (enableTime without enableDate): a time field; the value is "HH:mm" or "HH:mm:ss". An empty value is "". Supports min/max bounds, disableFuture and Today/Clear buttons.
+Required: id, value
+Bindable (dynamic): clearButtonText, disabled, error, hint, label, max, min, placeholder, readOnly, todayButtonText, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Divider
+A thin horizontal or vertical line that separates content, with an optional label on horizontal dividers.
+Required: id
+Bindable (dynamic): label
+
+## FileUpload
+A file upload field: a drop zone (or an add link) that uploads each chosen or dropped file, lists the files with download and remove buttons, shows a progress row with a cancel button per uploading file and a failure row with retry and remove, writes only successfully uploaded files as the file reference array to the bound path and fires changeAction with {value}. Inside a Form, submit is blocked while uploads are in flight. Enter or Space on the drop zone opens the picker.
+Required: id
+Bindable (dynamic): addFileLabel, disabled, dropLabel, error, hint, label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Form
+A form container that lays out inputs and Buttons in grid rows, optionally split into tabs, with a footer of Buttons. It validates its fields on submit, shows server errors, and passes readOnly and disabled to every input inside it. Requires rows or tabs.
+Required: id
+Bindable (dynamic): activeTab, disabled, errors, readOnly, tabs.*.title, tabs.*.visible
+Actions: changeAction, tabChangeAction
+Children: footer.*.child, rows.*.items.*.child, tabs.*.rows.*.items.*.child
+
+## Icon
+Displays an icon from the catalog icon set or a custom SVG path. Decorative by default; set accessibility.label to expose it to assistive technology as an image.
+Required: id, name
+Bindable (dynamic): name
+
+## Image
+Displays an image from a URL with an accessibility description, a size variant and an object-fit mode. Shows a placeholder when the image cannot be loaded.
+Required: id, url
+Bindable (dynamic): description, url
+
+## ImageUpload
+An image upload field: like FileUpload, but it accepts only image/* files (other dropped files are ignored) and each row shows a cover thumbnail, taken from the file url or, while uploading, from a local preview. Clicking a thumbnail opens a dialog with a large preview of the image. Successfully uploaded images are written as the file reference array to the bound path and changeAction fires with {value}. Inside a Form, submit is blocked while uploads are in flight. Enter or Space on the drop zone opens the picker.
+Required: id
+Bindable (dynamic): addFileLabel, disabled, dropLabel, error, hint, label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Kanban
+Kanban board: columns of cards. Cards move between columns by drag and drop, a per-card move menu or Alt+ArrowLeft/ArrowRight, each firing moveAction; a click fires openAction. The server decides: a move stays only when the server updates `cards`.
+Required: id, columns, cards
+Bindable (dynamic): cards, columns, columns.*.label, emptyText
+Actions: moveAction, openAction
+
+## List
+A scrollable list of items. Each child is rendered as a list item (role=listitem). Use a template ChildList to render one item per data-model array element; use emptyText for the empty state.
+Required: id, children
+Bindable (dynamic): emptyText
+Children: children
+
+## Markdown
+Displays a long formatted Markdown (GFM) document, e.g. help text, a report or release notes. Read-only. Use Text for short labels and headings.
+Required: id, content
+Bindable (dynamic): content
+
+## Modal
+A dialog opened by clicking its trigger component or by writing its bound open path. It traps focus, returns focus to the trigger on close, and closes on Escape, a backdrop click or the X button unless dismissible is false.
+Required: id, trigger, content
+Bindable (dynamic): description, dismissible, open, title
+Actions: closeAction
+Children: content, trigger
+
+## MultiSelect
+A dropdown that picks several options, shown as removable chips. Each toggle writes the typed value array to the bound path and fires changeAction. Enter or Space opens the list, typing filters it, the first Escape clears the search and the second closes it, and the chip remove buttons drop a value. enterBehavior has no effect.
+Required: id, options
+Bindable (dynamic): disabled, error, hint, label, notFoundMessage, options, options.*.description, options.*.label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## NumberField
+A labelled number input with locale formatting. Accepts simple math expressions (+ - * / ^ and parentheses) that are evaluated on blur or Enter. Writes a number, or null when empty. There is no stepping and no spinner buttons.
+Required: id, label
+Bindable (dynamic): disabled, error, hint, label, placeholder, readOnly, unit, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Preview
+Shows a preview of an image or a PDF document from a URL, with an optional caption. Shows a fallback notice when there is nothing to preview.
+Required: id
+Bindable (dynamic): caption, emptyText, src
+
+## Progress
+A horizontal progress bar for a fraction 0..1 or an indeterminate busy state, with an optional label and percentage.
+Required: id
+Bindable (dynamic): indeterminate, label, value
+
+## RadioGroup
+A group of radio buttons that picks exactly one option. Selecting an option (click, label click, Space, or the arrow keys, which move and select) writes its typed value to the bound path and fires changeAction. enterBehavior has no effect.
+Required: id, options
+Bindable (dynamic): disabled, error, hint, label, options, options.*.description, options.*.label, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## RelationshipPicker
+Picks related records (ids) from a table in a dialog or a dropdown popover. The trigger shows the selection as removable chips with a +N badge and a clear-all button. In single mode a row click writes the record's id and closes; in multiple mode checkboxes write an id array and Done closes.
+Required: id, options
+Bindable (dynamic): columns.*.title, disabled, error, hint, label, loading, options, placeholder, readOnly, rowMenu.*.label, targetEntity, value
+Actions: changeAction, createAction, enterAction, escapeAction, rowMenuAction, searchAction
+Children: columns.*.cell
+Checks: yes
+
+## Row
+A layout component that arranges its children horizontally. To create a grid layout, nest Columns within this Row. Give a child `weight` to make it grow proportionally to the other weighted children.
+Required: id, children
+Children: children
+
+## Select
+A dropdown that picks one option from a list. Choosing an option writes its typed value (string, number or boolean) to the bound path and fires changeAction. Space, Enter and the arrow keys open the list, typing jumps to a label, Escape closes it. enterBehavior has no effect.
+Required: id, options
+Bindable (dynamic): disabled, error, hint, label, options, options.*.description, options.*.label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Sidebar
+Navigation sidebar of an AppShell: flat items or titled sections, the active item and navigation actions; on mobile an overlay with a backdrop. Use it as the sidebar of an AppShell.
+Required: id, items
+Bindable (dynamic): activeItem, items, items.*.badge, items.*.items.*.badge, items.*.items.*.label, items.*.label, items.*.title, logo.imageUrl, logo.text
+Actions: items.*.action, items.*.items.*.action, navigateAction
+Children: footer
+
+## Slider
+A horizontal slider for a single number between min and max. Dragging or the arrow/PageUp/PageDown/Home/End keys write the bound value continuously; changeAction fires once when the drag ends or after a key step. Shows a tooltip with the formatted value on hover and while dragging. placeholder and enterBehavior have no effect.
+Required: id, value, max
+Bindable (dynamic): disabled, error, hint, label, placeholder, readOnly, unit, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Stat
+A KPI tile: label, a big locale-formatted value, an optional change chip, a hint and a small trend sparkline.
+Required: id, label, value
+Bindable (dynamic): delta, hint, label, spark, value
+
+## Stepper
+A horizontal progress indicator of numbered steps with done, active and to-do states joined by connector lines. Read-only: the steps are not clickable.
+Required: id, steps
+Bindable (dynamic): active, steps.*.description, steps.*.title
+
+## Switch
+A toggle switch with a clickable label on its right. Every toggle writes the bound boolean and fires changeAction. Space toggles it.
+Required: id, label, value
+Bindable (dynamic): disabled, error, hint, label, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Table
+A data table with typed, locale-formatted columns. Client mode sorts, filters, searches and pages the bound rows locally; server mode sends query changes as actions.
+Required: id, columns, rows
+Bindable (dynamic): bulkMenu.*.label, columns, columns.*.title, createLabel, emptyText, loading, query, rowCount, rowMenu.*.label, rows, selection, title
+Actions: bulkAction, createAction, queryAction, rowAction, rowMenuAction
+Children: columns.*.cell
+
+## Tabs
+A tab bar that shows one child pane at a time. The user switches panes by clicking a tab or with the arrow, Home and End keys; many tabs scroll horizontally.
+Required: id, tabs
+Bindable (dynamic): tabs.*.badge, tabs.*.title, tabs.*.visible, value
+Actions: changeAction
+Children: tabs.*.child
+
+## Text
+Displays a short piece of text: a heading, a body paragraph or a caption, with a small inline Markdown subset. Use Markdown for long formatted documents.
+Required: id, text
+Bindable (dynamic): text
+
+## TextField
+A labelled text input: single line, multi-line, number as text, or password. Writes the bound value on every keystroke and fires changeAction when the user commits a change (blur or Enter).
+Required: id, label
+Bindable (dynamic): disabled, error, hint, label, placeholder, readOnly, value
+Actions: changeAction, enterAction, escapeAction
+Checks: yes
+
+## Toaster
+Notification toasts driven by a bound data model array. Use at most one per surface; a second one renders nothing.
+Required: id, items
+Bindable (dynamic): items
+
+## TopBar
+Application top bar, sticky at the top: sidebar trigger, logo and title, start, center and end slots, connection status and optional theme and language toggles. Use it as the topBar of an AppShell.
+Required: id
+Bindable (dynamic): logo.imageUrl, title
+Actions: homeAction, localeChangeAction, themeChangeAction
+Children: center, end, start
+
+## Video
+Plays a video from a URL using the native browser player with controls at full width. Shows a fallback notice with a link when the video cannot be played.
+Required: id, url
+Bindable (dynamic): description, poster, url
+
+## Window
+A floating window in the window layer with a title bar (minimize, maximize or restore, close), two-way open and state, and modal: true for agent-opened dialogs. Ctrl+F6 moves focus to the next window, Tab stays inside the window. One surface per window is the recommended pattern.
+Required: id, child
+Bindable (dynamic): open, state, title
+Actions: closeAction
+Children: child

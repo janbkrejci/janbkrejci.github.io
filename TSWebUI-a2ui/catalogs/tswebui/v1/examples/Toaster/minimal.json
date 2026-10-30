@@ -1,0 +1,37 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "toaster",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "toaster",
+      "components": [
+        {
+          "id": "root",
+          "component": "Toaster",
+          "items": {
+            "path": "/toasts"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "toaster",
+      "path": "/toasts",
+      "value": [
+        {
+          "id": 1,
+          "text": "Changes saved."
+        }
+      ]
+    }
+  }
+]

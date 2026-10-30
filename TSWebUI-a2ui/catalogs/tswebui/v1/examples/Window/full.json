@@ -1,0 +1,83 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "window-full",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json",
+      "theme": {
+        "agentDisplayName": "Order agent"
+      }
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "window-full",
+      "components": [
+        {
+          "id": "root",
+          "component": "Window",
+          "child": "body",
+          "title": "Orders",
+          "open": {
+            "path": "/ui/open"
+          },
+          "state": {
+            "path": "/ui/state"
+          },
+          "x": 120,
+          "y": 80,
+          "width": 480,
+          "height": 320,
+          "minWidth": 240,
+          "minHeight": 120,
+          "autoFit": true,
+          "closable": true,
+          "modal": false,
+          "closeAction": {
+            "event": {
+              "name": "closeWindow",
+              "context": {
+                "windowId": "orders"
+              }
+            }
+          },
+          "accessibility": {
+            "label": "Orders window"
+          }
+        },
+        {
+          "id": "body",
+          "component": "Column",
+          "children": [
+            "line1",
+            "line2"
+          ]
+        },
+        {
+          "id": "line1",
+          "component": "Text",
+          "text": "Order #1024, 3 items"
+        },
+        {
+          "id": "line2",
+          "component": "Text",
+          "text": "Total: 1 250 CZK"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "window-full",
+      "path": "/",
+      "value": {
+        "ui": {
+          "open": true,
+          "state": "normal"
+        }
+      }
+    }
+  }
+]

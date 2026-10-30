@@ -1,0 +1,48 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "card",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "card",
+      "components": [
+        {
+          "id": "root",
+          "component": "Card",
+          "child": "body",
+          "title": {
+            "path": "/title"
+          },
+          "description": "Monthly summary",
+          "footer": "actions",
+          "padding": "default"
+        },
+        {
+          "id": "body",
+          "component": "Text",
+          "text": "Revenue grew by 12 % this month."
+        },
+        {
+          "id": "actions",
+          "component": "Text",
+          "text": "Updated today"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "card",
+      "path": "/",
+      "value": {
+        "title": "Revenue"
+      }
+    }
+  }
+]

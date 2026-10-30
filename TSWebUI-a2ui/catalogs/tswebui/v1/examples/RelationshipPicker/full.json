@@ -1,0 +1,192 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "relationship-picker",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "relationship-picker",
+      "components": [
+        {
+          "id": "root",
+          "component": "RelationshipPicker",
+          "label": "Customer",
+          "value": {
+            "path": "/customerIds"
+          },
+          "options": {
+            "path": "/customers"
+          },
+          "mode": "multiple",
+          "variant": "dropdown",
+          "targetEntity": "customer",
+          "placeholder": "Pick a customer...",
+          "valueField": "id",
+          "displayFields": [
+            "name",
+            "email"
+          ],
+          "chipDisplayFields": [
+            "name"
+          ],
+          "columns": [
+            {
+              "key": "name",
+              "title": "Name",
+              "sortable": true,
+              "filterable": true
+            },
+            {
+              "key": "email",
+              "title": "E-mail",
+              "sortable": true,
+              "filterable": true
+            },
+            {
+              "key": "city",
+              "title": "City",
+              "sortable": true,
+              "filterable": true
+            }
+          ],
+          "maxChips": 3,
+          "dialogWidth": "800px",
+          "table": {
+            "showSearch": true,
+            "showColumnSelector": true,
+            "sortable": true,
+            "filterable": true,
+            "paginated": true,
+            "resizable": true,
+            "reorderable": true,
+            "pageSize": 5,
+            "pageSizeOptions": [
+              5,
+              10,
+              20
+            ],
+            "unhideableColumns": [
+              "name"
+            ]
+          },
+          "searchAction": {
+            "event": {
+              "name": "searchCustomers"
+            }
+          },
+          "loading": {
+            "path": "/customersLoading"
+          },
+          "createAction": {
+            "event": {
+              "name": "createCustomer"
+            }
+          },
+          "rowMenu": [
+            {
+              "id": "edit",
+              "label": "Edit",
+              "icon": "edit"
+            }
+          ],
+          "rowMenuAction": {
+            "event": {
+              "name": "customerMenu"
+            }
+          },
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "The customer this order belongs to.",
+          "error": {
+            "path": "/errors/customerIds"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/customerIds"
+                  }
+                }
+              },
+              "message": "Pick a customer."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "customerChanged"
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "customerEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "customerEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "relationship-picker",
+      "path": "/",
+      "value": {
+        "customers": [
+          {
+            "id": 1,
+            "name": "Alice Novak",
+            "email": "alice@example.com",
+            "city": "Prague"
+          },
+          {
+            "id": 2,
+            "name": "Bob Dvorak",
+            "email": "bob@example.com",
+            "city": "Brno"
+          },
+          {
+            "id": 3,
+            "name": "Carol Svoboda",
+            "email": "carol@example.com",
+            "city": "Ostrava"
+          },
+          {
+            "id": 4,
+            "name": "Dan Cerny",
+            "email": "dan@example.com",
+            "city": "Plzen"
+          },
+          {
+            "id": 5,
+            "name": "Eva Kral",
+            "email": "eva@example.com",
+            "city": "Liberec"
+          }
+        ],
+        "customerIds": [
+          2,
+          3
+        ],
+        "customersLoading": false,
+        "errors": {}
+      }
+    }
+  }
+]

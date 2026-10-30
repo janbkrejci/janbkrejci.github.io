@@ -1,0 +1,44 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "video",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "video",
+      "components": [
+        {
+          "id": "root",
+          "component": "Video",
+          "url": {
+            "path": "/clip/url"
+          },
+          "poster": {
+            "path": "/clip/poster"
+          },
+          "description": {
+            "path": "/clip/title"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "video",
+      "path": "/",
+      "value": {
+        "clip": {
+          "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+          "poster": "https://picsum.photos/id/106/1280/720",
+          "title": "Blooming flower"
+        }
+      }
+    }
+  }
+]

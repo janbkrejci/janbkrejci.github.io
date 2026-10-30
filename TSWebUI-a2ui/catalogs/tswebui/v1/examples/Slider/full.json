@@ -1,0 +1,135 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "slider",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "slider",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "volume",
+            "weight",
+            "rating",
+            "brightness"
+          ]
+        },
+        {
+          "id": "volume",
+          "component": "Slider",
+          "label": "Volume",
+          "value": {
+            "path": "/settings/volume"
+          },
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "showValue": true,
+          "unit": "%",
+          "required": true,
+          "placeholder": "0",
+          "hint": "Drag the thumb or use the arrow keys.",
+          "error": {
+            "path": "/errors/volume"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "disabled": false,
+          "readOnly": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "numeric",
+                "args": {
+                  "value": {
+                    "path": "/settings/volume"
+                  },
+                  "min": 10
+                },
+                "returnType": "boolean"
+              },
+              "message": "The volume must be at least 10 %."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "volumeChanged",
+              "context": {
+                "field": "volume"
+              }
+            }
+          },
+          "enterAction": {
+            "event": {
+              "name": "volumeEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "volumeEscape"
+            }
+          },
+          "enterBehavior": "none",
+          "excludeFromSubmit": false,
+          "visible": true
+        },
+        {
+          "id": "weight",
+          "component": "Slider",
+          "label": "Weight",
+          "value": {
+            "path": "/settings/weight"
+          },
+          "min": 40,
+          "max": 120,
+          "step": 0.5,
+          "showValue": true,
+          "unit": "kg"
+        },
+        {
+          "id": "rating",
+          "component": "Slider",
+          "label": "Rating",
+          "value": {
+            "path": "/settings/rating"
+          },
+          "min": 1,
+          "max": 10,
+          "readOnly": true,
+          "excludeFromSubmit": true
+        },
+        {
+          "id": "brightness",
+          "component": "Slider",
+          "label": "Brightness",
+          "value": 70,
+          "max": 100,
+          "hideLabel": true,
+          "disabled": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "slider",
+      "path": "/",
+      "value": {
+        "settings": {
+          "volume": 60,
+          "weight": 72.5,
+          "rating": 8
+        },
+        "errors": {}
+      }
+    }
+  }
+]

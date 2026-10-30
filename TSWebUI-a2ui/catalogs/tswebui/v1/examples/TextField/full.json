@@ -1,0 +1,147 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "textField",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "textField",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "name",
+            "email",
+            "bio",
+            "age",
+            "password",
+            "code"
+          ]
+        },
+        {
+          "id": "name",
+          "component": "TextField",
+          "label": "Name",
+          "value": {
+            "path": "/user/name"
+          },
+          "variant": "shortText",
+          "required": true,
+          "placeholder": "Jane Doe",
+          "hint": "As printed on your ID card.",
+          "maxLength": 80,
+          "selectAllOnFocus": true,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "length",
+                "args": {
+                  "value": {
+                    "path": "/user/name"
+                  },
+                  "max": 80
+                },
+                "returnType": "boolean"
+              },
+              "message": "The name is too long."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "nameChanged",
+              "context": {
+                "field": "name"
+              }
+            }
+          },
+          "enterBehavior": "next"
+        },
+        {
+          "id": "email",
+          "component": "TextField",
+          "label": "E-mail",
+          "value": {
+            "path": "/user/email"
+          },
+          "inputType": "email",
+          "validationRegexp": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+          "error": {
+            "path": "/errors/email"
+          },
+          "enterAction": {
+            "event": {
+              "name": "lookupEmail"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "closeEmail"
+            }
+          }
+        },
+        {
+          "id": "bio",
+          "component": "TextField",
+          "label": "About you",
+          "value": {
+            "path": "/user/bio"
+          },
+          "variant": "longText",
+          "rows": 5,
+          "selectAllOnFocus": false
+        },
+        {
+          "id": "age",
+          "component": "TextField",
+          "label": "Age",
+          "value": {
+            "path": "/user/age"
+          },
+          "variant": "number",
+          "readOnly": true,
+          "excludeFromSubmit": true
+        },
+        {
+          "id": "password",
+          "component": "TextField",
+          "label": "Password",
+          "value": {
+            "path": "/user/password"
+          },
+          "variant": "obscured"
+        },
+        {
+          "id": "code",
+          "component": "TextField",
+          "label": "Invitation code",
+          "value": "DEMO-2026",
+          "hideLabel": true,
+          "disabled": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "textField",
+      "path": "/",
+      "value": {
+        "user": {
+          "name": "Jana Nováková",
+          "email": "jana@example.com",
+          "bio": "I like hiking.\nAnd reading.",
+          "age": "34",
+          "password": "secret"
+        },
+        "errors": {}
+      }
+    }
+  }
+]

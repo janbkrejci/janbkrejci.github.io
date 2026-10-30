@@ -1,0 +1,23 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "checkBox",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "checkBox",
+      "components": [
+        {
+          "id": "root",
+          "component": "CheckBox",
+          "label": "I agree to the terms",
+          "value": false
+        }
+      ]
+    }
+  }
+]

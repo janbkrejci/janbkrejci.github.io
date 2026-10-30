@@ -1,0 +1,117 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "sidebar",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "sidebar",
+      "components": [
+        {
+          "id": "root",
+          "component": "AppShell",
+          "content": "main",
+          "sidebar": "nav"
+        },
+        {
+          "id": "nav",
+          "component": "Sidebar",
+          "accessibility": {
+            "label": "Main navigation"
+          },
+          "items": {
+            "path": "/nav/sections"
+          },
+          "activeItem": {
+            "path": "/nav/active"
+          },
+          "navigateAction": {
+            "event": {
+              "name": "navigate",
+              "context": {
+                "label": {
+                  "path": "label"
+                }
+              }
+            }
+          },
+          "collapsibleSections": true,
+          "logo": {
+            "text": "TSWebUI",
+            "icon": "home"
+          },
+          "footer": "navFooter"
+        },
+        {
+          "id": "navFooter",
+          "component": "Text",
+          "text": "Signed in as Jana",
+          "variant": "caption"
+        },
+        {
+          "id": "main",
+          "component": "Text",
+          "text": "Orders",
+          "variant": "h2"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "sidebar",
+      "path": "/",
+      "value": {
+        "nav": {
+          "active": "orders",
+          "sections": [
+            {
+              "title": "Main",
+              "items": [
+                {
+                  "id": "home",
+                  "label": "Home",
+                  "icon": "home"
+                },
+                {
+                  "id": "orders",
+                  "label": "Orders",
+                  "icon": "calendarToday",
+                  "badge": "3"
+                }
+              ]
+            },
+            {
+              "title": "More",
+              "items": [
+                {
+                  "id": "reports",
+                  "label": "Reports",
+                  "disabled": true
+                },
+                {
+                  "id": "docs",
+                  "label": "Documentation",
+                  "action": {
+                    "functionCall": {
+                      "call": "openUrl",
+                      "args": {
+                        "url": "https://a2ui.org"
+                      },
+                      "returnType": "void"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

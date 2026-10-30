@@ -1,0 +1,31 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "sidebar",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "sidebar",
+      "components": [
+        {
+          "id": "root",
+          "component": "Sidebar",
+          "items": [
+            {
+              "id": "home",
+              "label": "Home"
+            },
+            {
+              "id": "orders",
+              "label": "Orders"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

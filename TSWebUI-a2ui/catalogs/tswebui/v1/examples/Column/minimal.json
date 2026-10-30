@@ -1,0 +1,35 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "column",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "column",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "id": "a",
+          "component": "Text",
+          "text": "Top"
+        },
+        {
+          "id": "b",
+          "component": "Text",
+          "text": "Bottom"
+        }
+      ]
+    }
+  }
+]

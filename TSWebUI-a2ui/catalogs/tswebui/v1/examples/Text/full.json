@@ -1,0 +1,45 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "text",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "text",
+      "components": [
+        {
+          "id": "root",
+          "component": "Text",
+          "text": {
+            "path": "/title"
+          },
+          "variant": "h1",
+          "tone": "info",
+          "align": "center",
+          "truncate": true,
+          "accessibility": {
+            "label": "Page title"
+          },
+          "visible": {
+            "path": "/visible"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "text",
+      "path": "/",
+      "value": {
+        "title": "Welcome **back**",
+        "visible": true
+      }
+    }
+  }
+]

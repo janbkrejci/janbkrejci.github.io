@@ -1,0 +1,58 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "table",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "table",
+      "components": [
+        {
+          "id": "root",
+          "component": "Table",
+          "columns": [
+            {
+              "key": "name",
+              "title": "Name"
+            },
+            {
+              "key": "city",
+              "title": "City"
+            }
+          ],
+          "rows": {
+            "path": "/rows"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "table",
+      "path": "/rows",
+      "value": [
+        {
+          "id": 1,
+          "name": "Alice",
+          "city": "Prague"
+        },
+        {
+          "id": 2,
+          "name": "Bob",
+          "city": "Brno"
+        },
+        {
+          "id": 3,
+          "name": "Carol",
+          "city": "Ostrava"
+        }
+      ]
+    }
+  }
+]

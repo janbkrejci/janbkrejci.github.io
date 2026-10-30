@@ -1,0 +1,103 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "fileupload",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "fileupload",
+      "components": [
+        {
+          "id": "root",
+          "component": "FileUpload",
+          "label": "Attachments",
+          "value": {
+            "path": "/attachments"
+          },
+          "accept": "pdf,image,.csv",
+          "multiple": true,
+          "maxSize": 10485760,
+          "maxFiles": 5,
+          "showDropZone": true,
+          "dropLabel": "Drop PDFs, images or CSV files here",
+          "addFileLabel": "Attach files",
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "placeholder": "No files yet",
+          "hint": "Up to 5 files, 10 MB each.",
+          "error": {
+            "path": "/errors/attachments"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "length",
+                "args": {
+                  "value": {
+                    "path": "/attachments"
+                  },
+                  "min": 1
+                }
+              },
+              "message": "Attach at least one file."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "attachmentsChanged",
+              "context": {
+                "field": "attachments"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "attachmentsEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "attachmentsEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "fileupload",
+      "path": "/",
+      "value": {
+        "attachments": [
+          {
+            "id": "f1",
+            "name": "report.pdf",
+            "size": 245760,
+            "type": "application/pdf",
+            "url": "/api/uploads/f1"
+          },
+          {
+            "id": "f2",
+            "name": "empty.csv",
+            "size": 0,
+            "type": "text/csv",
+            "url": "/api/uploads/f2"
+          }
+        ],
+        "errors": {}
+      }
+    }
+  }
+]

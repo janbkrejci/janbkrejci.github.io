@@ -1,0 +1,112 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "button-group",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "button-group",
+      "components": [
+        {
+          "id": "root",
+          "component": "ButtonGroup",
+          "label": "Order status",
+          "options": [
+            {
+              "label": "New",
+              "value": "new"
+            },
+            {
+              "label": "Paid",
+              "value": 1,
+              "tone": "info"
+            },
+            {
+              "label": "Shipped",
+              "value": true,
+              "tone": "success"
+            },
+            {
+              "label": "Returned",
+              "value": "returned",
+              "tone": "warning"
+            },
+            {
+              "label": "Cancelled",
+              "value": "cancelled",
+              "tone": "danger",
+              "disabled": true
+            },
+            {
+              "label": "Archived",
+              "value": "archived",
+              "tone": "neutral"
+            }
+          ],
+          "value": {
+            "path": "/status"
+          },
+          "variant": "process",
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Numbers and booleans keep their type.",
+          "error": {
+            "path": "/errors/status"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "required",
+                "args": {
+                  "value": {
+                    "path": "/status"
+                  }
+                }
+              },
+              "message": "Pick a status."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "statusChanged",
+              "context": {
+                "field": "status"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "statusEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "statusEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "button-group",
+      "path": "/",
+      "value": {
+        "status": 1,
+        "errors": {}
+      }
+    }
+  }
+]

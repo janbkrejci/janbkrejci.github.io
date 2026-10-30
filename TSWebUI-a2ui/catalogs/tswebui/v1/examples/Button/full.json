@@ -1,0 +1,344 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "button",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "button",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "submit",
+            "delete",
+            "variants"
+          ]
+        },
+        {
+          "id": "submit",
+          "component": "Button",
+          "child": "submitLabel",
+          "action": {
+            "event": {
+              "name": "submitOrder",
+              "context": {
+                "orderId": {
+                  "path": "/order/id"
+                },
+                "note": "x"
+              }
+            }
+          },
+          "variant": "primary",
+          "checks": [
+            {
+              "condition": {
+                "path": "/order/agreed"
+              },
+              "message": "Confirm the terms first"
+            }
+          ],
+          "disabled": {
+            "path": "/order/locked"
+          },
+          "loading": {
+            "path": "/order/saving"
+          },
+          "size": "md",
+          "block": false,
+          "tooltip": "Sends the order",
+          "formRole": "none"
+        },
+        {
+          "id": "delete",
+          "component": "Button",
+          "child": "deleteText",
+          "variant": "destructive",
+          "action": {
+            "event": {
+              "name": "deleteOrder",
+              "context": {
+                "orderId": {
+                  "path": "/order/id"
+                }
+              }
+            }
+          },
+          "confirmation": {
+            "title": "Delete order?",
+            "text": {
+              "path": "/order/deleteWarning"
+            },
+            "buttons": [
+              {
+                "label": "Help",
+                "variant": "link",
+                "position": "left",
+                "action": {
+                  "event": {
+                    "name": "openHelp"
+                  }
+                }
+              },
+              {
+                "label": "Archive instead",
+                "variant": "secondary",
+                "position": "center",
+                "action": {
+                  "event": {
+                    "name": "archiveOrder",
+                    "context": {
+                      "orderId": {
+                        "path": "/order/id"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "label": "Cancel"
+              },
+              {
+                "label": "Delete",
+                "variant": "destructive",
+                "confirm": true,
+                "position": "right"
+              }
+            ]
+          }
+        },
+        {
+          "id": "deleteText",
+          "component": "Text",
+          "text": "Delete order"
+        },
+        {
+          "id": "submitLabel",
+          "component": "Row",
+          "children": [
+            "submitIcon",
+            "submitText"
+          ]
+        },
+        {
+          "id": "submitIcon",
+          "component": "Icon",
+          "name": "send"
+        },
+        {
+          "id": "submitText",
+          "component": "Text",
+          "text": "Send order"
+        },
+        {
+          "id": "variants",
+          "component": "Row",
+          "children": [
+            "vDefault",
+            "vSecondary",
+            "vDestructive",
+            "vSuccess",
+            "vWarning",
+            "vInfo",
+            "vLink",
+            "vBorderless",
+            "vIcon"
+          ]
+        },
+        {
+          "id": "vDefault",
+          "component": "Button",
+          "child": "tDefault",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "default"
+              }
+            }
+          }
+        },
+        {
+          "id": "tDefault",
+          "component": "Text",
+          "text": "Default"
+        },
+        {
+          "id": "vSecondary",
+          "component": "Button",
+          "child": "tSecondary",
+          "variant": "secondary",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "secondary"
+              }
+            }
+          }
+        },
+        {
+          "id": "tSecondary",
+          "component": "Text",
+          "text": "Secondary"
+        },
+        {
+          "id": "vDestructive",
+          "component": "Button",
+          "child": "tDestructive",
+          "variant": "destructive",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "destructive"
+              }
+            }
+          }
+        },
+        {
+          "id": "tDestructive",
+          "component": "Text",
+          "text": "Delete"
+        },
+        {
+          "id": "vSuccess",
+          "component": "Button",
+          "child": "tSuccess",
+          "variant": "success",
+          "size": "sm",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "success"
+              }
+            }
+          }
+        },
+        {
+          "id": "tSuccess",
+          "component": "Text",
+          "text": "Success"
+        },
+        {
+          "id": "vWarning",
+          "component": "Button",
+          "child": "tWarning",
+          "variant": "warning",
+          "size": "lg",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "warning"
+              }
+            }
+          }
+        },
+        {
+          "id": "tWarning",
+          "component": "Text",
+          "text": "Warning"
+        },
+        {
+          "id": "vInfo",
+          "component": "Button",
+          "child": "tInfo",
+          "variant": "info",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "info"
+              }
+            }
+          }
+        },
+        {
+          "id": "tInfo",
+          "component": "Text",
+          "text": "Info"
+        },
+        {
+          "id": "vLink",
+          "component": "Button",
+          "child": "tLink",
+          "variant": "link",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "link"
+              }
+            }
+          }
+        },
+        {
+          "id": "tLink",
+          "component": "Text",
+          "text": "Link"
+        },
+        {
+          "id": "vBorderless",
+          "component": "Button",
+          "child": "tBorderless",
+          "variant": "borderless",
+          "action": {
+            "event": {
+              "name": "pick",
+              "context": {
+                "variant": "borderless"
+              }
+            }
+          }
+        },
+        {
+          "id": "tBorderless",
+          "component": "Text",
+          "text": "Borderless"
+        },
+        {
+          "id": "vIcon",
+          "component": "Button",
+          "child": "iconSettings",
+          "variant": "ghost",
+          "size": "icon",
+          "tooltip": "Settings",
+          "action": {
+            "event": {
+              "name": "openSettings"
+            }
+          }
+        },
+        {
+          "id": "iconSettings",
+          "component": "Icon",
+          "name": "settings"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "button",
+      "path": "/",
+      "value": {
+        "order": {
+          "id": "A-17",
+          "agreed": true,
+          "locked": false,
+          "saving": false,
+          "deleteWarning": "The order and its history will be removed."
+        }
+      }
+    }
+  }
+]

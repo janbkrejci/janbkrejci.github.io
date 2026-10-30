@@ -1,0 +1,50 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "form",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "form",
+      "components": [
+        {
+          "id": "root",
+          "component": "Form",
+          "rows": [
+            {
+              "items": [
+                {
+                  "child": "name"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "name",
+          "component": "TextField",
+          "label": "Name",
+          "value": {
+            "path": "/form/name"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "form",
+      "path": "/",
+      "value": {
+        "form": {
+          "name": ""
+        }
+      }
+    }
+  }
+]

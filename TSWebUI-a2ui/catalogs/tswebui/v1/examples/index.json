@@ -1,0 +1,6527 @@
+[
+  {
+    "component": "Accordion",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "accordion",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "accordion",
+          "components": [
+            {
+              "id": "root",
+              "component": "Accordion",
+              "multiple": true,
+              "value": {
+                "path": "/ui/open"
+              },
+              "items": [
+                {
+                  "title": "Order",
+                  "child": "order"
+                },
+                {
+                  "title": "Payment",
+                  "child": "payment"
+                },
+                {
+                  "title": {
+                    "path": "/ui/title"
+                  },
+                  "child": "shipping"
+                }
+              ]
+            },
+            {
+              "id": "order",
+              "component": "Text",
+              "text": "Three items in the cart"
+            },
+            {
+              "id": "payment",
+              "component": "Text",
+              "text": "Paid by card"
+            },
+            {
+              "id": "shipping",
+              "component": "Text",
+              "text": "Delivery within two days"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "accordion",
+          "path": "/",
+          "value": {
+            "ui": {
+              "open": [
+                0,
+                2
+              ],
+              "title": "Shipping"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Accordion",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "accordion",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "accordion",
+          "components": [
+            {
+              "id": "root",
+              "component": "Accordion",
+              "items": [
+                {
+                  "title": "First",
+                  "child": "a"
+                },
+                {
+                  "title": "Second",
+                  "child": "b"
+                }
+              ]
+            },
+            {
+              "id": "a",
+              "component": "Text",
+              "text": "First section"
+            },
+            {
+              "id": "b",
+              "component": "Text",
+              "text": "Second section"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "AddressAutocomplete",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "address-autocomplete",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "address-autocomplete",
+          "components": [
+            {
+              "id": "root",
+              "component": "AddressAutocomplete",
+              "label": "Delivery address",
+              "value": {
+                "path": "/address"
+              },
+              "placeholder": "Start typing the street and number…",
+              "minChars": 3,
+              "debounceMs": 300,
+              "showDetail": true,
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Pick the address from the suggestions.",
+              "error": {
+                "path": "/errors/address"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/address"
+                      }
+                    }
+                  },
+                  "message": "Pick an address."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "addressChanged",
+                  "context": {
+                    "field": "address"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "addressEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "addressEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "address-autocomplete",
+          "path": "/",
+          "value": {
+            "address": {
+              "kod": 22282475,
+              "text": "Na Petřinách 276/10, Veleslavín, 16200 Praha 6",
+              "line1": "Na Petřinách 276/10",
+              "line2": "Veleslavín",
+              "line3": "16200 Praha 6",
+              "ulice": "Na Petřinách",
+              "cisloDomovni": "276",
+              "cisloOrientacni": "10",
+              "castObce": "Veleslavín",
+              "obec": "Praha",
+              "psc": "16200",
+              "okres": "Hlavní město Praha"
+            },
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "AddressAutocomplete",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "address-autocomplete",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "address-autocomplete",
+          "components": [
+            {
+              "id": "root",
+              "component": "AddressAutocomplete"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Alert",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "alert",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "alert",
+          "components": [
+            {
+              "id": "root",
+              "component": "Alert",
+              "title": "Payment overdue",
+              "text": {
+                "path": "/invoice/message"
+              },
+              "child": "alert-body",
+              "variant": "warning",
+              "icon": "schedule",
+              "closable": true,
+              "visible": {
+                "path": "/invoice/showAlert"
+              },
+              "dismissAction": {
+                "event": {
+                  "name": "dismissAlert",
+                  "context": {
+                    "invoice": {
+                      "path": "/invoice/id"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "alert-body",
+              "component": "Text",
+              "text": "Pay within **7 days** to avoid a fee.",
+              "variant": "caption"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "alert",
+          "path": "/",
+          "value": {
+            "invoice": {
+              "id": "INV-42",
+              "message": "Invoice INV-42 is 3 days overdue.",
+              "showAlert": true
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Alert",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "alert",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "alert",
+          "components": [
+            {
+              "id": "root",
+              "component": "Alert"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "AppShell",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "app-shell",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "app-shell",
+          "components": [
+            {
+              "id": "root",
+              "component": "AppShell",
+              "content": "main",
+              "topBar": "top",
+              "sidebar": "nav",
+              "windows": [
+                "notice"
+              ],
+              "sidebarOpen": {
+                "path": "/ui/sidebarOpen"
+              },
+              "sidebarCollapsed": {
+                "path": "/ui/sidebarCollapsed"
+              },
+              "mobileBreakpoint": 768,
+              "sidebarWidth": "16rem",
+              "collapsedWidth": "4rem"
+            },
+            {
+              "id": "top",
+              "component": "Row",
+              "children": [
+                "brand"
+              ]
+            },
+            {
+              "id": "brand",
+              "component": "Text",
+              "text": "TSWebUI"
+            },
+            {
+              "id": "nav",
+              "component": "Column",
+              "children": [
+                "navTitle",
+                "navOrders"
+              ]
+            },
+            {
+              "id": "navTitle",
+              "component": "Text",
+              "text": "Navigation",
+              "variant": "caption"
+            },
+            {
+              "id": "navOrders",
+              "component": "Button",
+              "child": "navOrdersLabel",
+              "action": {
+                "event": {
+                  "name": "navigate",
+                  "context": {
+                    "page": "orders"
+                  }
+                }
+              }
+            },
+            {
+              "id": "navOrdersLabel",
+              "component": "Text",
+              "text": "Orders"
+            },
+            {
+              "id": "main",
+              "component": "Column",
+              "children": [
+                "heading",
+                "intro"
+              ]
+            },
+            {
+              "id": "heading",
+              "component": "Text",
+              "text": "Dashboard",
+              "variant": "h2"
+            },
+            {
+              "id": "intro",
+              "component": "Text",
+              "text": "Welcome back."
+            },
+            {
+              "id": "notice",
+              "component": "Card",
+              "child": "noticeText"
+            },
+            {
+              "id": "noticeText",
+              "component": "Text",
+              "text": "Release notes"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "app-shell",
+          "path": "/",
+          "value": {
+            "ui": {
+              "sidebarOpen": true,
+              "sidebarCollapsed": false
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "AppShell",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "app-shell",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "app-shell",
+          "components": [
+            {
+              "id": "root",
+              "component": "AppShell",
+              "content": "main"
+            },
+            {
+              "id": "main",
+              "component": "Text",
+              "text": "Main content"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "AudioPlayer",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "audio",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "audio",
+          "components": [
+            {
+              "id": "root",
+              "component": "AudioPlayer",
+              "url": {
+                "path": "/track/url"
+              },
+              "description": {
+                "path": "/track/title"
+              },
+              "accessibility": {
+                "label": "T-rex roar audio"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "audio",
+          "path": "/",
+          "value": {
+            "track": {
+              "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3",
+              "title": "T-rex roar"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "AudioPlayer",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "audio",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "audio",
+          "components": [
+            {
+              "id": "root",
+              "component": "AudioPlayer",
+              "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Avatar",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "avatar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "avatar",
+          "components": [
+            {
+              "id": "root",
+              "component": "Avatar",
+              "name": {
+                "path": "/user/name"
+              },
+              "src": {
+                "path": "/user/photo"
+              },
+              "size": "lg",
+              "accessibility": {
+                "label": "Profile photo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "avatar",
+          "path": "/",
+          "value": {
+            "user": {
+              "name": "Jan Novák",
+              "photo": "https://i.pravatar.cc/80?img=12"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Avatar",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "avatar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "avatar",
+          "components": [
+            {
+              "id": "root",
+              "component": "Avatar"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Badge",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "badge",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "badge",
+          "components": [
+            {
+              "id": "root",
+              "component": "Badge",
+              "text": {
+                "path": "/order/status"
+              },
+              "tone": "success",
+              "variant": "solid",
+              "dot": true,
+              "icon": "checkCircle"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "badge",
+          "path": "/",
+          "value": {
+            "order": {
+              "status": "Paid"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Badge",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "badge",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "badge",
+          "components": [
+            {
+              "id": "root",
+              "component": "Badge",
+              "text": "New"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Button",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "button",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "button",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "submit",
+                "delete",
+                "variants"
+              ]
+            },
+            {
+              "id": "submit",
+              "component": "Button",
+              "child": "submitLabel",
+              "action": {
+                "event": {
+                  "name": "submitOrder",
+                  "context": {
+                    "orderId": {
+                      "path": "/order/id"
+                    },
+                    "note": "x"
+                  }
+                }
+              },
+              "variant": "primary",
+              "checks": [
+                {
+                  "condition": {
+                    "path": "/order/agreed"
+                  },
+                  "message": "Confirm the terms first"
+                }
+              ],
+              "disabled": {
+                "path": "/order/locked"
+              },
+              "loading": {
+                "path": "/order/saving"
+              },
+              "size": "md",
+              "block": false,
+              "tooltip": "Sends the order",
+              "formRole": "none"
+            },
+            {
+              "id": "delete",
+              "component": "Button",
+              "child": "deleteText",
+              "variant": "destructive",
+              "action": {
+                "event": {
+                  "name": "deleteOrder",
+                  "context": {
+                    "orderId": {
+                      "path": "/order/id"
+                    }
+                  }
+                }
+              },
+              "confirmation": {
+                "title": "Delete order?",
+                "text": {
+                  "path": "/order/deleteWarning"
+                },
+                "buttons": [
+                  {
+                    "label": "Help",
+                    "variant": "link",
+                    "position": "left",
+                    "action": {
+                      "event": {
+                        "name": "openHelp"
+                      }
+                    }
+                  },
+                  {
+                    "label": "Archive instead",
+                    "variant": "secondary",
+                    "position": "center",
+                    "action": {
+                      "event": {
+                        "name": "archiveOrder",
+                        "context": {
+                          "orderId": {
+                            "path": "/order/id"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "label": "Cancel"
+                  },
+                  {
+                    "label": "Delete",
+                    "variant": "destructive",
+                    "confirm": true,
+                    "position": "right"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "deleteText",
+              "component": "Text",
+              "text": "Delete order"
+            },
+            {
+              "id": "submitLabel",
+              "component": "Row",
+              "children": [
+                "submitIcon",
+                "submitText"
+              ]
+            },
+            {
+              "id": "submitIcon",
+              "component": "Icon",
+              "name": "send"
+            },
+            {
+              "id": "submitText",
+              "component": "Text",
+              "text": "Send order"
+            },
+            {
+              "id": "variants",
+              "component": "Row",
+              "children": [
+                "vDefault",
+                "vSecondary",
+                "vDestructive",
+                "vSuccess",
+                "vWarning",
+                "vInfo",
+                "vLink",
+                "vBorderless",
+                "vIcon"
+              ]
+            },
+            {
+              "id": "vDefault",
+              "component": "Button",
+              "child": "tDefault",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "default"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tDefault",
+              "component": "Text",
+              "text": "Default"
+            },
+            {
+              "id": "vSecondary",
+              "component": "Button",
+              "child": "tSecondary",
+              "variant": "secondary",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "secondary"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tSecondary",
+              "component": "Text",
+              "text": "Secondary"
+            },
+            {
+              "id": "vDestructive",
+              "component": "Button",
+              "child": "tDestructive",
+              "variant": "destructive",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "destructive"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tDestructive",
+              "component": "Text",
+              "text": "Delete"
+            },
+            {
+              "id": "vSuccess",
+              "component": "Button",
+              "child": "tSuccess",
+              "variant": "success",
+              "size": "sm",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "success"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tSuccess",
+              "component": "Text",
+              "text": "Success"
+            },
+            {
+              "id": "vWarning",
+              "component": "Button",
+              "child": "tWarning",
+              "variant": "warning",
+              "size": "lg",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "warning"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tWarning",
+              "component": "Text",
+              "text": "Warning"
+            },
+            {
+              "id": "vInfo",
+              "component": "Button",
+              "child": "tInfo",
+              "variant": "info",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "info"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tInfo",
+              "component": "Text",
+              "text": "Info"
+            },
+            {
+              "id": "vLink",
+              "component": "Button",
+              "child": "tLink",
+              "variant": "link",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "link"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tLink",
+              "component": "Text",
+              "text": "Link"
+            },
+            {
+              "id": "vBorderless",
+              "component": "Button",
+              "child": "tBorderless",
+              "variant": "borderless",
+              "action": {
+                "event": {
+                  "name": "pick",
+                  "context": {
+                    "variant": "borderless"
+                  }
+                }
+              }
+            },
+            {
+              "id": "tBorderless",
+              "component": "Text",
+              "text": "Borderless"
+            },
+            {
+              "id": "vIcon",
+              "component": "Button",
+              "child": "iconSettings",
+              "variant": "ghost",
+              "size": "icon",
+              "tooltip": "Settings",
+              "action": {
+                "event": {
+                  "name": "openSettings"
+                }
+              }
+            },
+            {
+              "id": "iconSettings",
+              "component": "Icon",
+              "name": "settings"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "button",
+          "path": "/",
+          "value": {
+            "order": {
+              "id": "A-17",
+              "agreed": true,
+              "locked": false,
+              "saving": false,
+              "deleteWarning": "The order and its history will be removed."
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Button",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "button",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "button",
+          "components": [
+            {
+              "id": "root",
+              "component": "Button",
+              "child": "label",
+              "action": {
+                "event": {
+                  "name": "save"
+                }
+              }
+            },
+            {
+              "id": "label",
+              "component": "Text",
+              "text": "Save"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "ButtonGroup",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "button-group",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "button-group",
+          "components": [
+            {
+              "id": "root",
+              "component": "ButtonGroup",
+              "label": "Order status",
+              "options": [
+                {
+                  "label": "New",
+                  "value": "new"
+                },
+                {
+                  "label": "Paid",
+                  "value": 1,
+                  "tone": "info"
+                },
+                {
+                  "label": "Shipped",
+                  "value": true,
+                  "tone": "success"
+                },
+                {
+                  "label": "Returned",
+                  "value": "returned",
+                  "tone": "warning"
+                },
+                {
+                  "label": "Cancelled",
+                  "value": "cancelled",
+                  "tone": "danger",
+                  "disabled": true
+                },
+                {
+                  "label": "Archived",
+                  "value": "archived",
+                  "tone": "neutral"
+                }
+              ],
+              "value": {
+                "path": "/status"
+              },
+              "variant": "process",
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Numbers and booleans keep their type.",
+              "error": {
+                "path": "/errors/status"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/status"
+                      }
+                    }
+                  },
+                  "message": "Pick a status."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "statusChanged",
+                  "context": {
+                    "field": "status"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "statusEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "statusEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "button-group",
+          "path": "/",
+          "value": {
+            "status": 1,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "ButtonGroup",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "button-group",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "button-group",
+          "components": [
+            {
+              "id": "root",
+              "component": "ButtonGroup",
+              "options": [
+                "Day",
+                "Week",
+                "Month"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Calendar",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "calendar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "calendar",
+          "components": [
+            {
+              "id": "root",
+              "component": "Calendar",
+              "month": {
+                "path": "/cal/month"
+              },
+              "events": {
+                "path": "/cal/events"
+              },
+              "navigateAction": {
+                "event": {
+                  "name": "calendarNavigate"
+                }
+              },
+              "openAction": {
+                "event": {
+                  "name": "openEvent"
+                }
+              },
+              "createAction": {
+                "event": {
+                  "name": "createEvent"
+                }
+              },
+              "maxVisible": 2
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "calendar",
+          "path": "/cal",
+          "value": {
+            "month": "2026-02",
+            "events": [
+              {
+                "id": "e1",
+                "date": "2026-02-02",
+                "title": "Sprint planning",
+                "tone": "info"
+              },
+              {
+                "id": "e2",
+                "date": "2026-02-11",
+                "title": "Release",
+                "tone": "success"
+              },
+              {
+                "id": "e3",
+                "date": "2026-02-11",
+                "title": "Retrospective",
+                "tone": "neutral"
+              },
+              {
+                "id": "e4",
+                "date": "2026-02-11",
+                "title": "Deadline",
+                "tone": "danger"
+              },
+              {
+                "id": "e5",
+                "date": "2026-02-11",
+                "title": "Review",
+                "tone": "warning"
+              },
+              {
+                "id": 6,
+                "date": "2026-02-20",
+                "title": "Team lunch"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Calendar",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "calendar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "calendar",
+          "components": [
+            {
+              "id": "root",
+              "component": "Calendar"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Card",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "card",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "card",
+          "components": [
+            {
+              "id": "root",
+              "component": "Card",
+              "child": "body",
+              "title": {
+                "path": "/title"
+              },
+              "description": "Monthly summary",
+              "footer": "actions",
+              "padding": "default"
+            },
+            {
+              "id": "body",
+              "component": "Text",
+              "text": "Revenue grew by 12 % this month."
+            },
+            {
+              "id": "actions",
+              "component": "Text",
+              "text": "Updated today"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "card",
+          "path": "/",
+          "value": {
+            "title": "Revenue"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Card",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "card",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "card",
+          "components": [
+            {
+              "id": "root",
+              "component": "Card",
+              "child": "body"
+            },
+            {
+              "id": "body",
+              "component": "Text",
+              "text": "Card body"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Chart",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "chart",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "chart",
+          "components": [
+            {
+              "id": "root",
+              "component": "Chart",
+              "kind": "bar",
+              "stacked": true,
+              "series": [
+                {
+                  "name": "Online",
+                  "data": [
+                    1200,
+                    1500,
+                    1800,
+                    1600,
+                    2100,
+                    2400
+                  ]
+                },
+                {
+                  "name": {
+                    "path": "/seriesName"
+                  },
+                  "data": [
+                    800,
+                    700,
+                    900,
+                    1100,
+                    1000,
+                    1300
+                  ],
+                  "color": "chart-3"
+                },
+                {
+                  "data": [
+                    300,
+                    400,
+                    350,
+                    500,
+                    450,
+                    600
+                  ]
+                }
+              ],
+              "labels": {
+                "path": "/months"
+              },
+              "height": 260,
+              "showGrid": true,
+              "showLegend": true,
+              "yFormat": "currency",
+              "currency": "EUR"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "chart",
+          "path": "/",
+          "value": {
+            "months": [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun"
+            ],
+            "seriesName": "Retail"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Chart",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "chart",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "chart",
+          "components": [
+            {
+              "id": "root",
+              "component": "Chart",
+              "series": [
+                {
+                  "data": [
+                    3,
+                    5,
+                    4,
+                    7,
+                    6
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "CheckBox",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "checkBox",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "checkBox",
+          "components": [
+            {
+              "id": "root",
+              "component": "CheckBox",
+              "label": "I agree to the terms",
+              "value": {
+                "path": "/agree"
+              },
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "You can withdraw your consent at any time.",
+              "error": {
+                "path": "/errors/agree"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "path": "/agree"
+                  },
+                  "message": "You must accept the terms."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "agreeChanged",
+                  "context": {
+                    "field": "agree"
+                  }
+                }
+              },
+              "enterAction": {
+                "event": {
+                  "name": "agreeEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "agreeEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "checkBox",
+          "path": "/",
+          "value": {
+            "agree": true,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "CheckBox",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "checkBox",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "checkBox",
+          "components": [
+            {
+              "id": "root",
+              "component": "CheckBox",
+              "label": "I agree to the terms",
+              "value": false
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "ChoicePicker",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "choicepicker",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "choicepicker",
+          "components": [
+            {
+              "id": "root",
+              "component": "ChoicePicker",
+              "label": "Colours",
+              "variant": "multipleSelection",
+              "options": [
+                {
+                  "label": "Red",
+                  "value": "red"
+                },
+                {
+                  "label": {
+                    "path": "/labels/green"
+                  },
+                  "value": "green"
+                },
+                {
+                  "label": "Blue",
+                  "value": "blue"
+                }
+              ],
+              "value": {
+                "path": "/colors"
+              },
+              "displayStyle": "chips",
+              "filterable": true,
+              "placeholder": "Pick colours...",
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Pick one or more colours.",
+              "error": {
+                "path": "/errors/colors"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "length",
+                    "args": {
+                      "value": {
+                        "path": "/colors"
+                      },
+                      "min": 1
+                    }
+                  },
+                  "message": "Pick at least one colour."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "colorsChanged",
+                  "context": {
+                    "field": "colors"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "colorsEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "colorsEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "choicepicker",
+          "path": "/",
+          "value": {
+            "colors": [
+              "red"
+            ],
+            "labels": {
+              "green": "Green"
+            },
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "ChoicePicker",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "choicepicker",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "choicepicker",
+          "components": [
+            {
+              "id": "root",
+              "component": "ChoicePicker",
+              "options": [
+                {
+                  "label": "Red",
+                  "value": "red"
+                },
+                {
+                  "label": "Green",
+                  "value": "green"
+                },
+                {
+                  "label": "Blue",
+                  "value": "blue"
+                }
+              ],
+              "value": {
+                "path": "/color"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "choicepicker",
+          "path": "/",
+          "value": {
+            "color": []
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Column",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "column",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "column",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": {
+                "componentId": "item",
+                "path": "/contacts"
+              },
+              "justify": "start",
+              "align": "stretch",
+              "gap": "sm",
+              "wrap": false,
+              "visible": {
+                "path": "/show"
+              },
+              "accessibility": {
+                "label": "Contacts"
+              }
+            },
+            {
+              "id": "item",
+              "component": "Text",
+              "text": {
+                "path": "name"
+              },
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "column",
+          "path": "/",
+          "value": {
+            "show": true,
+            "contacts": [
+              {
+                "name": "Alice"
+              },
+              {
+                "name": "Bob"
+              },
+              {
+                "name": "Carol"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Column",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "column",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "column",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "id": "a",
+              "component": "Text",
+              "text": "Top"
+            },
+            {
+              "id": "b",
+              "component": "Text",
+              "text": "Bottom"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Combobox",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "combobox",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "combobox",
+          "components": [
+            {
+              "id": "root",
+              "component": "Combobox",
+              "label": "City",
+              "options": {
+                "path": "/cities"
+              },
+              "value": {
+                "path": "/city"
+              },
+              "placeholder": "Pick a city...",
+              "notFoundMessage": "No such city.",
+              "allowCustom": true,
+              "clearable": true,
+              "searchAction": {
+                "event": {
+                  "name": "searchCities",
+                  "context": {
+                    "field": "city"
+                  }
+                }
+              },
+              "loading": {
+                "path": "/citiesLoading"
+              },
+              "minQueryLength": 2,
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Type two letters to search.",
+              "error": {
+                "path": "/errors/city"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/city"
+                      }
+                    }
+                  },
+                  "message": "Pick a city."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "cityChanged",
+                  "context": {
+                    "field": "city"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "cityEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "cityEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "combobox",
+          "path": "/",
+          "value": {
+            "cities": [
+              {
+                "label": "Prague",
+                "value": 1
+              },
+              {
+                "label": "Brno",
+                "value": 2
+              }
+            ],
+            "city": 1,
+            "citiesLoading": false,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Combobox",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "combobox",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "combobox",
+          "components": [
+            {
+              "id": "root",
+              "component": "Combobox",
+              "options": [
+                "Prague",
+                "Brno",
+                "Ostrava"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "DateTimeInput",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "dateTimeInput",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "dateTimeInput",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "departure",
+                "birthDate",
+                "returnDate",
+                "issued",
+                "archived",
+                "meeting",
+                "alarm"
+              ]
+            },
+            {
+              "id": "departure",
+              "component": "DateTimeInput",
+              "label": "Departure",
+              "value": {
+                "path": "/trip/departure"
+              },
+              "enableDate": true,
+              "enableTime": false,
+              "min": {
+                "path": "/limits/min"
+              },
+              "max": "2026-12-31",
+              "required": true,
+              "hint": "Pick a day before the end of the year.",
+              "showTodayButton": true,
+              "todayButtonText": "Now",
+              "clearButtonText": "Reset",
+              "autofocus": false,
+              "changeAction": {
+                "event": {
+                  "name": "departureChanged",
+                  "context": {
+                    "field": "departure"
+                  }
+                }
+              },
+              "enterBehavior": "next",
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/trip/departure"
+                      }
+                    },
+                    "returnType": "boolean"
+                  },
+                  "message": "Choose the departure day."
+                }
+              ]
+            },
+            {
+              "id": "birthDate",
+              "component": "DateTimeInput",
+              "label": "Birth date",
+              "value": {
+                "path": "/person/birthDate"
+              },
+              "disableFuture": true,
+              "displayFormat": "dd.MM.yyyy",
+              "placeholder": "dd.mm.yyyy",
+              "selectAllOnFocus": false,
+              "error": {
+                "path": "/errors/birthDate"
+              },
+              "enterAction": {
+                "event": {
+                  "name": "lookupPerson"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "closeBirthDate"
+                }
+              }
+            },
+            {
+              "id": "returnDate",
+              "component": "DateTimeInput",
+              "label": "Return",
+              "value": {
+                "path": "/trip/return"
+              },
+              "showClearButton": false,
+              "hideLabel": true
+            },
+            {
+              "id": "issued",
+              "component": "DateTimeInput",
+              "label": "Issued",
+              "value": {
+                "path": "/trip/issued"
+              },
+              "readOnly": true,
+              "excludeFromSubmit": true
+            },
+            {
+              "id": "archived",
+              "component": "DateTimeInput",
+              "label": "Archived",
+              "value": {
+                "path": "/trip/archived"
+              },
+              "disabled": true
+            },
+            {
+              "id": "meeting",
+              "component": "DateTimeInput",
+              "label": "Meeting",
+              "value": {
+                "path": "/trip/meeting"
+              },
+              "enableDate": true,
+              "enableTime": true,
+              "min": "2026-10-01T08:00:00+02:00",
+              "max": {
+                "path": "/limits/meetingMax"
+              },
+              "showTodayButton": true,
+              "changeAction": {
+                "event": {
+                  "name": "meetingChanged"
+                }
+              }
+            },
+            {
+              "id": "alarm",
+              "component": "DateTimeInput",
+              "label": "Alarm",
+              "value": {
+                "path": "/trip/alarm"
+              },
+              "enableDate": false,
+              "enableTime": true,
+              "min": {
+                "path": "/limits/alarmMin"
+              },
+              "max": {
+                "path": "/limits/alarmMax"
+              },
+              "placeholder": "hh:mm"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "dateTimeInput",
+          "path": "/",
+          "value": {
+            "trip": {
+              "departure": "2026-11-02",
+              "return": "",
+              "issued": "2026-10-01",
+              "archived": "2025-06-30",
+              "meeting": "2026-10-16T14:30:00+02:00",
+              "alarm": "07:30"
+            },
+            "person": {
+              "birthDate": "1990-05-17"
+            },
+            "limits": {
+              "min": "2026-10-01",
+              "meetingMax": "2026-12-31T18:00:00+01:00",
+              "alarmMin": "06:00",
+              "alarmMax": "22:00"
+            },
+            "errors": {
+              "birthDate": ""
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "DateTimeInput",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "dateTimeInput",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "dateTimeInput",
+          "components": [
+            {
+              "id": "root",
+              "component": "DateTimeInput",
+              "value": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Divider",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "divider",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "divider",
+          "components": [
+            {
+              "id": "root",
+              "component": "Divider",
+              "axis": "horizontal",
+              "label": {
+                "path": "/section/title"
+              },
+              "labelAlign": "start"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "divider",
+          "path": "/",
+          "value": {
+            "section": {
+              "title": "Billing address"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Divider",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "divider",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "divider",
+          "components": [
+            {
+              "id": "root",
+              "component": "Divider"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "FileUpload",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "fileupload",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "fileupload",
+          "components": [
+            {
+              "id": "root",
+              "component": "FileUpload",
+              "label": "Attachments",
+              "value": {
+                "path": "/attachments"
+              },
+              "accept": "pdf,image,.csv",
+              "multiple": true,
+              "maxSize": 10485760,
+              "maxFiles": 5,
+              "showDropZone": true,
+              "dropLabel": "Drop PDFs, images or CSV files here",
+              "addFileLabel": "Attach files",
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "placeholder": "No files yet",
+              "hint": "Up to 5 files, 10 MB each.",
+              "error": {
+                "path": "/errors/attachments"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "length",
+                    "args": {
+                      "value": {
+                        "path": "/attachments"
+                      },
+                      "min": 1
+                    }
+                  },
+                  "message": "Attach at least one file."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "attachmentsChanged",
+                  "context": {
+                    "field": "attachments"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "attachmentsEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "attachmentsEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "fileupload",
+          "path": "/",
+          "value": {
+            "attachments": [
+              {
+                "id": "f1",
+                "name": "report.pdf",
+                "size": 245760,
+                "type": "application/pdf",
+                "url": "/api/uploads/f1"
+              },
+              {
+                "id": "f2",
+                "name": "empty.csv",
+                "size": 0,
+                "type": "text/csv",
+                "url": "/api/uploads/f2"
+              }
+            ],
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "FileUpload",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "fileupload",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "fileupload",
+          "components": [
+            {
+              "id": "root",
+              "component": "FileUpload"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Form",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "form",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "form",
+          "components": [
+            {
+              "id": "root",
+              "component": "Form",
+              "accessibility": {
+                "label": "Customer"
+              },
+              "rows": [
+                {
+                  "items": [
+                    {
+                      "child": "summary"
+                    }
+                  ]
+                }
+              ],
+              "tabs": [
+                {
+                  "title": "Contact",
+                  "visible": true,
+                  "rows": [
+                    {
+                      "items": [
+                        {
+                          "child": "first",
+                          "width": "2fr"
+                        },
+                        {
+                          "child": "last",
+                          "width": "1fr"
+                        },
+                        {
+                          "child": "nickname",
+                          "width": "200px"
+                        }
+                      ]
+                    },
+                    {
+                      "items": [
+                        {
+                          "child": "email",
+                          "width": "minmax(0,1fr)"
+                        },
+                        {
+                          "width": "auto"
+                        },
+                        {
+                          "child": "lookup",
+                          "width": "auto",
+                          "align": "end"
+                        }
+                      ]
+                    },
+                    {
+                      "items": [
+                        {
+                          "child": "section"
+                        }
+                      ]
+                    },
+                    {
+                      "items": [
+                        {
+                          "child": "newsletter",
+                          "align": "start"
+                        },
+                        {
+                          "child": "help",
+                          "align": "center"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Details",
+                  "visible": {
+                    "path": "/ui/showDetails"
+                  },
+                  "rows": [
+                    {
+                      "items": [
+                        {
+                          "child": "note"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "footer": [
+                {
+                  "child": "reset",
+                  "position": "start"
+                },
+                {
+                  "child": "cancel",
+                  "position": "center"
+                },
+                {
+                  "child": "submit"
+                }
+              ],
+              "dataPath": "/form",
+              "errors": {
+                "path": "/form_errors"
+              },
+              "readOnly": false,
+              "disabled": false,
+              "activeTab": {
+                "path": "/ui/tab"
+              },
+              "tabChangeAction": {
+                "event": {
+                  "name": "formTabChanged"
+                }
+              },
+              "changeAction": {
+                "event": {
+                  "name": "formChanged"
+                }
+              },
+              "submitOnEnter": true,
+              "validationMode": "touched",
+              "fill": false
+            },
+            {
+              "id": "summary",
+              "component": "Text",
+              "text": "Customer summary"
+            },
+            {
+              "id": "first",
+              "component": "TextField",
+              "label": "First name",
+              "value": {
+                "path": "/form/first"
+              },
+              "enterBehavior": "next"
+            },
+            {
+              "id": "last",
+              "component": "TextField",
+              "label": "Last name",
+              "value": {
+                "path": "/form/last"
+              }
+            },
+            {
+              "id": "nickname",
+              "component": "TextField",
+              "label": "Nickname",
+              "visible": false,
+              "excludeFromSubmit": true,
+              "value": {
+                "path": "/form/nickname"
+              }
+            },
+            {
+              "id": "email",
+              "component": "TextField",
+              "label": "E-mail",
+              "value": {
+                "path": "/form/email"
+              }
+            },
+            {
+              "id": "lookup",
+              "component": "Button",
+              "child": "lookupLabel",
+              "action": {
+                "event": {
+                  "name": "lookup"
+                }
+              }
+            },
+            {
+              "id": "lookupLabel",
+              "component": "Text",
+              "text": "Look up"
+            },
+            {
+              "id": "section",
+              "component": "Divider"
+            },
+            {
+              "id": "newsletter",
+              "component": "CheckBox",
+              "label": "Newsletter",
+              "value": {
+                "path": "/form/newsletter"
+              }
+            },
+            {
+              "id": "help",
+              "component": "Text",
+              "text": "We never share your e-mail."
+            },
+            {
+              "id": "note",
+              "component": "TextField",
+              "label": "Note",
+              "value": {
+                "path": "/form/note"
+              },
+              "autofocus": true
+            },
+            {
+              "id": "submit",
+              "component": "Button",
+              "variant": "primary",
+              "formRole": "submit",
+              "child": "submitLabel",
+              "action": {
+                "event": {
+                  "name": "save"
+                }
+              },
+              "confirmation": {
+                "title": "Save customer?",
+                "text": "The customer record will be updated."
+              }
+            },
+            {
+              "id": "submitLabel",
+              "component": "Text",
+              "text": "Save"
+            },
+            {
+              "id": "reset",
+              "component": "Button",
+              "variant": "ghost",
+              "formRole": "reset",
+              "child": "resetLabel",
+              "action": {
+                "event": {
+                  "name": "reset"
+                }
+              }
+            },
+            {
+              "id": "resetLabel",
+              "component": "Text",
+              "text": "Reset"
+            },
+            {
+              "id": "cancel",
+              "component": "Button",
+              "formRole": "cancel",
+              "child": "cancelLabel",
+              "action": {
+                "event": {
+                  "name": "cancel"
+                }
+              }
+            },
+            {
+              "id": "cancelLabel",
+              "component": "Text",
+              "text": "Cancel"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "form",
+          "path": "/",
+          "value": {
+            "form": {
+              "first": "Jana",
+              "last": "Nováková",
+              "nickname": "",
+              "email": "jana@example.com",
+              "newsletter": true,
+              "note": ""
+            },
+            "form_errors": {
+              "/form/email": "This e-mail is already registered"
+            },
+            "ui": {
+              "tab": 0,
+              "showDetails": true
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Form",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "form",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "form",
+          "components": [
+            {
+              "id": "root",
+              "component": "Form",
+              "rows": [
+                {
+                  "items": [
+                    {
+                      "child": "name"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "name",
+              "component": "TextField",
+              "label": "Name",
+              "value": {
+                "path": "/form/name"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "form",
+          "path": "/",
+          "value": {
+            "form": {
+              "name": ""
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Icon",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "icon",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "icon",
+          "components": [
+            {
+              "id": "root",
+              "component": "Icon",
+              "name": {
+                "path": "/status/icon"
+              },
+              "size": "md",
+              "tone": "success",
+              "accessibility": {
+                "label": "Saved"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "icon",
+          "path": "/",
+          "value": {
+            "status": {
+              "icon": "checkCircle"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Icon",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "icon",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "icon",
+          "components": [
+            {
+              "id": "root",
+              "component": "Icon",
+              "name": "home"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Image",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "image",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "image",
+          "components": [
+            {
+              "id": "root",
+              "component": "Image",
+              "url": {
+                "path": "/photo/url"
+              },
+              "description": {
+                "path": "/photo/alt"
+              },
+              "fit": "scaleDown",
+              "variant": "largeFeature",
+              "accessibility": {
+                "label": "Landscape photo"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "image",
+          "path": "/",
+          "value": {
+            "photo": {
+              "url": "https://picsum.photos/id/1036/1200/800",
+              "alt": "Mountain lake at dawn"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Image",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "image",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "image",
+          "components": [
+            {
+              "id": "root",
+              "component": "Image",
+              "url": "https://picsum.photos/id/10/600/400"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "ImageUpload",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "imageupload",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "imageupload",
+          "components": [
+            {
+              "id": "root",
+              "component": "ImageUpload",
+              "label": "Photos",
+              "value": {
+                "path": "/photos"
+              },
+              "multiple": true,
+              "maxSize": 5242880,
+              "maxFiles": 4,
+              "thumbnailSize": "lg",
+              "showDropZone": true,
+              "dropLabel": "Drop photos here or click to upload",
+              "addFileLabel": "Add photos",
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "placeholder": "No photos yet",
+              "hint": "Up to 4 images, 5 MB each.",
+              "error": {
+                "path": "/errors/photos"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "length",
+                    "args": {
+                      "value": {
+                        "path": "/photos"
+                      },
+                      "min": 1
+                    }
+                  },
+                  "message": "Add at least one photo."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "photosChanged",
+                  "context": {
+                    "field": "photos"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "photosEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "photosEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "imageupload",
+          "path": "/",
+          "value": {
+            "photos": [
+              {
+                "id": "i1",
+                "name": "beach.svg",
+                "size": 245760,
+                "type": "image/svg+xml",
+                "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Crect width='4' height='3' fill='%2338bdf8'/%3E%3Crect y='2' width='4' height='1' fill='%23fcd34d'/%3E%3C/svg%3E"
+              },
+              {
+                "id": "i2",
+                "name": "forest.svg",
+                "size": 512000,
+                "type": "image/svg+xml",
+                "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Crect width='4' height='3' fill='%2314532d'/%3E%3Cpath d='M0 3 2 0 4 3z' fill='%2322c55e'/%3E%3C/svg%3E"
+              }
+            ],
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "ImageUpload",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "imageupload",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "imageupload",
+          "components": [
+            {
+              "id": "root",
+              "component": "ImageUpload"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Kanban",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "kanban",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "kanban",
+          "components": [
+            {
+              "id": "root",
+              "component": "Kanban",
+              "columns": [
+                {
+                  "id": "todo",
+                  "label": "To do",
+                  "tone": "neutral"
+                },
+                {
+                  "id": "doing",
+                  "label": "In progress",
+                  "tone": "info"
+                },
+                {
+                  "id": "done",
+                  "label": "Done",
+                  "tone": "success"
+                }
+              ],
+              "cards": {
+                "path": "/board/cards"
+              },
+              "moveAction": {
+                "event": {
+                  "name": "moveCard",
+                  "context": {
+                    "title": {
+                      "path": "title"
+                    }
+                  }
+                }
+              },
+              "openAction": {
+                "event": {
+                  "name": "openCard"
+                }
+              },
+              "emptyText": "Nothing here yet"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "kanban",
+          "path": "/",
+          "value": {
+            "board": {
+              "cards": [
+                {
+                  "id": "c1",
+                  "column": "todo",
+                  "title": "Write the spec",
+                  "subtitle": "Catalog C37",
+                  "badge": "P1",
+                  "assignee": "Jana"
+                },
+                {
+                  "id": "c2",
+                  "column": "todo",
+                  "title": "Review the design",
+                  "assignee": "Petr"
+                },
+                {
+                  "id": "c3",
+                  "column": "doing",
+                  "title": "Port the model",
+                  "subtitle": "kanbanModel.ts",
+                  "badge": 3,
+                  "assignee": "Jana"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Kanban",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "kanban",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "kanban",
+          "components": [
+            {
+              "id": "root",
+              "component": "Kanban",
+              "columns": [
+                {
+                  "id": "todo",
+                  "label": "To do"
+                },
+                {
+                  "id": "done",
+                  "label": "Done"
+                }
+              ],
+              "cards": [
+                {
+                  "id": "c1",
+                  "column": "todo",
+                  "title": "Write the spec"
+                },
+                {
+                  "id": "c2",
+                  "column": "todo",
+                  "title": "Review the design"
+                },
+                {
+                  "id": "c3",
+                  "column": "done",
+                  "title": "Set up the repository"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "List",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "list",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "list",
+          "components": [
+            {
+              "id": "root",
+              "component": "List",
+              "children": {
+                "componentId": "item",
+                "path": "/fruits"
+              },
+              "direction": "vertical",
+              "align": "stretch",
+              "gap": "md",
+              "divided": true,
+              "emptyText": {
+                "path": "/empty"
+              },
+              "accessibility": {
+                "label": "Fruits"
+              }
+            },
+            {
+              "id": "item",
+              "component": "Text",
+              "text": {
+                "path": "name"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "list",
+          "path": "/",
+          "value": {
+            "empty": "No fruit yet",
+            "fruits": [
+              {
+                "name": "Apples"
+              },
+              {
+                "name": "Bananas"
+              },
+              {
+                "name": "Cherries"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "List",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "list",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "list",
+          "components": [
+            {
+              "id": "root",
+              "component": "List",
+              "children": [
+                "a",
+                "b",
+                "c"
+              ]
+            },
+            {
+              "id": "a",
+              "component": "Text",
+              "text": "Apples"
+            },
+            {
+              "id": "b",
+              "component": "Text",
+              "text": "Bananas"
+            },
+            {
+              "id": "c",
+              "component": "Text",
+              "text": "Cherries"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Markdown",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "markdown",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "markdown",
+          "components": [
+            {
+              "id": "root",
+              "component": "Markdown",
+              "content": {
+                "path": "/doc"
+              },
+              "accessibility": {
+                "label": "Release notes"
+              },
+              "visible": {
+                "path": "/visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "markdown",
+          "path": "/",
+          "value": {
+            "doc": "## Release notes\n\n- Faster rendering\n- New `Markdown` component\n- [x] Copy button on code blocks\n\n| Version | Date |\n|---|---|\n| 1.0 | 2026-10-20 |\n\nSee [A2UI](https://a2ui.org) for details.\n\n```ts\nconst greeting: string = \"hello\"\n```\n",
+            "visible": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Markdown",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "markdown",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "markdown",
+          "components": [
+            {
+              "id": "root",
+              "component": "Markdown",
+              "content": "# Hello\n\nSome **Markdown** text."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Modal",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "modal",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "modal",
+          "components": [
+            {
+              "id": "root",
+              "component": "Modal",
+              "trigger": "show",
+              "content": "body",
+              "open": {
+                "path": "/ui/open"
+              },
+              "title": "Order details",
+              "description": {
+                "path": "/ui/description"
+              },
+              "size": "lg",
+              "dismissible": true,
+              "closeAction": {
+                "event": {
+                  "name": "modalClosed",
+                  "context": {
+                    "source": "modal"
+                  }
+                }
+              },
+              "accessibility": {
+                "label": "Order details dialog"
+              }
+            },
+            {
+              "id": "show",
+              "component": "Button",
+              "child": "showLabel",
+              "variant": "primary",
+              "action": {
+                "event": {
+                  "name": "showDetails",
+                  "context": {
+                    "orderId": {
+                      "path": "/order/id"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "showLabel",
+              "component": "Text",
+              "text": "Show details"
+            },
+            {
+              "id": "body",
+              "component": "Column",
+              "children": [
+                "line1",
+                "line2"
+              ]
+            },
+            {
+              "id": "line1",
+              "component": "Text",
+              "text": "Order #1024, 3 items"
+            },
+            {
+              "id": "line2",
+              "component": "Text",
+              "text": "Total: 1 250 CZK"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "modal",
+          "path": "/",
+          "value": {
+            "ui": {
+              "open": false,
+              "description": "Review the order before you pay."
+            },
+            "order": {
+              "id": "1024"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Modal",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "modal",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "modal",
+          "components": [
+            {
+              "id": "root",
+              "component": "Modal",
+              "trigger": "open",
+              "content": "body"
+            },
+            {
+              "id": "open",
+              "component": "Button",
+              "child": "openLabel",
+              "action": {
+                "event": {
+                  "name": "openDialog"
+                }
+              }
+            },
+            {
+              "id": "openLabel",
+              "component": "Text",
+              "text": "Open dialog"
+            },
+            {
+              "id": "body",
+              "component": "Text",
+              "text": "Dialog content"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "MultiSelect",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "multiselect",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "multiselect",
+          "components": [
+            {
+              "id": "root",
+              "component": "MultiSelect",
+              "label": "Tags",
+              "options": [
+                {
+                  "label": "One",
+                  "value": 1
+                },
+                {
+                  "label": "Yes",
+                  "value": true
+                },
+                {
+                  "label": "Text",
+                  "value": "text",
+                  "description": "String option"
+                },
+                {
+                  "label": "Retired",
+                  "value": "old",
+                  "disabled": true
+                }
+              ],
+              "value": {
+                "path": "/tags"
+              },
+              "placeholder": "Pick tags...",
+              "notFoundMessage": "No such tag.",
+              "allowCustom": true,
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Numbers and booleans keep their type.",
+              "error": {
+                "path": "/errors/tags"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "length",
+                    "args": {
+                      "value": {
+                        "path": "/tags"
+                      },
+                      "min": 1
+                    }
+                  },
+                  "message": "Pick at least one tag."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "tagsChanged",
+                  "context": {
+                    "field": "tags"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "tagsEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "tagsEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "multiselect",
+          "path": "/",
+          "value": {
+            "tags": [
+              1,
+              true
+            ],
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "MultiSelect",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "multiselect",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "multiselect",
+          "components": [
+            {
+              "id": "root",
+              "component": "MultiSelect",
+              "options": [
+                "Red",
+                "Green",
+                "Blue"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "NumberField",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "numberField",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "numberField",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "quantity",
+                "price",
+                "weight",
+                "total",
+                "discount"
+              ]
+            },
+            {
+              "id": "quantity",
+              "component": "NumberField",
+              "label": "Quantity",
+              "value": {
+                "path": "/order/quantity"
+              },
+              "min": 1,
+              "max": 100,
+              "decimals": 0,
+              "required": true,
+              "placeholder": "1",
+              "hint": "Between 1 and 100 pieces; you can type 2*12.",
+              "autofocus": false,
+              "selectAllOnFocus": true,
+              "changeAction": {
+                "event": {
+                  "name": "quantityChanged",
+                  "context": {
+                    "field": "quantity"
+                  }
+                }
+              },
+              "enterBehavior": "next"
+            },
+            {
+              "id": "price",
+              "component": "NumberField",
+              "label": "Unit price",
+              "value": {
+                "path": "/order/price"
+              },
+              "currency": "EUR",
+              "decimals": 2,
+              "min": 0,
+              "error": {
+                "path": "/errors/price"
+              },
+              "enterAction": {
+                "event": {
+                  "name": "recalculate"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "closePrice"
+                }
+              }
+            },
+            {
+              "id": "weight",
+              "component": "NumberField",
+              "label": "Weight",
+              "value": {
+                "path": "/order/weight"
+              },
+              "unit": "kg",
+              "max": 500,
+              "selectAllOnFocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "numeric",
+                    "args": {
+                      "value": {
+                        "path": "/order/weight"
+                      },
+                      "min": 0.1
+                    },
+                    "returnType": "boolean"
+                  },
+                  "message": "The weight must be at least 0.1 kg."
+                }
+              ]
+            },
+            {
+              "id": "total",
+              "component": "NumberField",
+              "label": "Total",
+              "value": {
+                "path": "/order/total"
+              },
+              "currency": "EUR",
+              "readOnly": true,
+              "excludeFromSubmit": true
+            },
+            {
+              "id": "discount",
+              "component": "NumberField",
+              "label": "Discount",
+              "value": 5,
+              "unit": "%",
+              "hideLabel": true,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "numberField",
+          "path": "/",
+          "value": {
+            "order": {
+              "quantity": 3,
+              "price": 1234.5,
+              "weight": 12.75,
+              "total": 3703.5
+            },
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "NumberField",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "numberField",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "numberField",
+          "components": [
+            {
+              "id": "root",
+              "component": "NumberField",
+              "label": "Amount"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Preview",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "preview",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "preview",
+          "components": [
+            {
+              "id": "root",
+              "component": "Preview",
+              "src": {
+                "path": "/doc/src"
+              },
+              "kind": "image",
+              "height": 320,
+              "caption": {
+                "path": "/doc/caption"
+              },
+              "emptyText": "No image selected"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "preview",
+          "path": "/",
+          "value": {
+            "doc": {
+              "src": "https://picsum.photos/id/106/1280/720",
+              "caption": "Blooming flower"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Preview",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "preview",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "preview",
+          "components": [
+            {
+              "id": "root",
+              "component": "Preview"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Progress",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "progress",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "progress",
+          "components": [
+            {
+              "id": "root",
+              "component": "Progress",
+              "value": {
+                "path": "/upload/progress"
+              },
+              "indeterminate": false,
+              "label": "Uploading files",
+              "tone": "success",
+              "showValue": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "progress",
+          "path": "/",
+          "value": {
+            "upload": {
+              "progress": 0.42
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Progress",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "progress",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "progress",
+          "components": [
+            {
+              "id": "root",
+              "component": "Progress"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "RadioGroup",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "radio-group",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "radio-group",
+          "components": [
+            {
+              "id": "root",
+              "component": "RadioGroup",
+              "label": "Delivery",
+              "options": [
+                {
+                  "label": "Courier",
+                  "value": 1
+                },
+                {
+                  "label": "Pickup",
+                  "value": true,
+                  "description": "Collect it at the store"
+                },
+                {
+                  "label": "Post",
+                  "value": "post"
+                },
+                {
+                  "label": "Drone",
+                  "value": "drone",
+                  "disabled": true
+                }
+              ],
+              "value": {
+                "path": "/delivery"
+              },
+              "orientation": "horizontal",
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Numbers and booleans keep their type.",
+              "error": {
+                "path": "/errors/delivery"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/delivery"
+                      }
+                    }
+                  },
+                  "message": "Pick a delivery."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "deliveryChanged",
+                  "context": {
+                    "field": "delivery"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "deliveryEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "deliveryEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "radio-group",
+          "path": "/",
+          "value": {
+            "delivery": 1,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "RadioGroup",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "radio-group",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "radio-group",
+          "components": [
+            {
+              "id": "root",
+              "component": "RadioGroup",
+              "options": [
+                "Small",
+                "Medium",
+                "Large"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "RelationshipPicker",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "relationship-picker",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "relationship-picker",
+          "components": [
+            {
+              "id": "root",
+              "component": "RelationshipPicker",
+              "label": "Customer",
+              "value": {
+                "path": "/customerIds"
+              },
+              "options": {
+                "path": "/customers"
+              },
+              "mode": "multiple",
+              "variant": "dropdown",
+              "targetEntity": "customer",
+              "placeholder": "Pick a customer...",
+              "valueField": "id",
+              "displayFields": [
+                "name",
+                "email"
+              ],
+              "chipDisplayFields": [
+                "name"
+              ],
+              "columns": [
+                {
+                  "key": "name",
+                  "title": "Name",
+                  "sortable": true,
+                  "filterable": true
+                },
+                {
+                  "key": "email",
+                  "title": "E-mail",
+                  "sortable": true,
+                  "filterable": true
+                },
+                {
+                  "key": "city",
+                  "title": "City",
+                  "sortable": true,
+                  "filterable": true
+                }
+              ],
+              "maxChips": 3,
+              "dialogWidth": "800px",
+              "table": {
+                "showSearch": true,
+                "showColumnSelector": true,
+                "sortable": true,
+                "filterable": true,
+                "paginated": true,
+                "resizable": true,
+                "reorderable": true,
+                "pageSize": 5,
+                "pageSizeOptions": [
+                  5,
+                  10,
+                  20
+                ],
+                "unhideableColumns": [
+                  "name"
+                ]
+              },
+              "searchAction": {
+                "event": {
+                  "name": "searchCustomers"
+                }
+              },
+              "loading": {
+                "path": "/customersLoading"
+              },
+              "createAction": {
+                "event": {
+                  "name": "createCustomer"
+                }
+              },
+              "rowMenu": [
+                {
+                  "id": "edit",
+                  "label": "Edit",
+                  "icon": "edit"
+                }
+              ],
+              "rowMenuAction": {
+                "event": {
+                  "name": "customerMenu"
+                }
+              },
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "The customer this order belongs to.",
+              "error": {
+                "path": "/errors/customerIds"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/customerIds"
+                      }
+                    }
+                  },
+                  "message": "Pick a customer."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "customerChanged"
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "customerEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "customerEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "relationship-picker",
+          "path": "/",
+          "value": {
+            "customers": [
+              {
+                "id": 1,
+                "name": "Alice Novak",
+                "email": "alice@example.com",
+                "city": "Prague"
+              },
+              {
+                "id": 2,
+                "name": "Bob Dvorak",
+                "email": "bob@example.com",
+                "city": "Brno"
+              },
+              {
+                "id": 3,
+                "name": "Carol Svoboda",
+                "email": "carol@example.com",
+                "city": "Ostrava"
+              },
+              {
+                "id": 4,
+                "name": "Dan Cerny",
+                "email": "dan@example.com",
+                "city": "Plzen"
+              },
+              {
+                "id": 5,
+                "name": "Eva Kral",
+                "email": "eva@example.com",
+                "city": "Liberec"
+              }
+            ],
+            "customerIds": [
+              2,
+              3
+            ],
+            "customersLoading": false,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "RelationshipPicker",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "relationship-picker",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "relationship-picker",
+          "components": [
+            {
+              "id": "root",
+              "component": "RelationshipPicker",
+              "options": [
+                {
+                  "id": 1,
+                  "name": "Alice"
+                },
+                {
+                  "id": 2,
+                  "name": "Bob"
+                },
+                {
+                  "id": 3,
+                  "name": "Carol"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Row",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "row",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "row",
+          "components": [
+            {
+              "id": "root",
+              "component": "Row",
+              "children": [
+                "title",
+                "spacer",
+                "meta"
+              ],
+              "justify": "spaceBetween",
+              "align": "center",
+              "gap": "lg",
+              "wrap": true,
+              "visible": {
+                "path": "/show"
+              },
+              "accessibility": {
+                "label": "Toolbar"
+              }
+            },
+            {
+              "id": "title",
+              "component": "Text",
+              "text": "Invoices",
+              "variant": "h3",
+              "weight": 2
+            },
+            {
+              "id": "spacer",
+              "component": "Text",
+              "text": "12 open",
+              "variant": "caption"
+            },
+            {
+              "id": "meta",
+              "component": "Text",
+              "text": "Updated today",
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "row",
+          "path": "/",
+          "value": {
+            "show": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Row",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "row",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "row",
+          "components": [
+            {
+              "id": "root",
+              "component": "Row",
+              "children": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "id": "a",
+              "component": "Text",
+              "text": "Left"
+            },
+            {
+              "id": "b",
+              "component": "Text",
+              "text": "Right"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Select",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "select",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "select",
+          "components": [
+            {
+              "id": "root",
+              "component": "Select",
+              "label": "Choice",
+              "options": [
+                {
+                  "label": "One",
+                  "value": 1
+                },
+                {
+                  "label": "Yes",
+                  "value": true,
+                  "description": "Boolean option"
+                },
+                {
+                  "label": "Text",
+                  "value": "text"
+                },
+                {
+                  "label": "Retired",
+                  "value": "old",
+                  "disabled": true
+                }
+              ],
+              "value": {
+                "path": "/choice"
+              },
+              "placeholder": "Pick one...",
+              "clearable": true,
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "Numbers and booleans keep their type.",
+              "error": {
+                "path": "/errors/choice"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "required",
+                    "args": {
+                      "value": {
+                        "path": "/choice"
+                      }
+                    }
+                  },
+                  "message": "Pick a choice."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "choiceChanged",
+                  "context": {
+                    "field": "choice"
+                  }
+                }
+              },
+              "enterBehavior": "none",
+              "enterAction": {
+                "event": {
+                  "name": "choiceEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "choiceEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "select",
+          "path": "/",
+          "value": {
+            "choice": 1,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Select",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "select",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "select",
+          "components": [
+            {
+              "id": "root",
+              "component": "Select",
+              "options": [
+                "Red",
+                "Green",
+                "Blue"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Sidebar",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "sidebar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "sidebar",
+          "components": [
+            {
+              "id": "root",
+              "component": "AppShell",
+              "content": "main",
+              "sidebar": "nav"
+            },
+            {
+              "id": "nav",
+              "component": "Sidebar",
+              "accessibility": {
+                "label": "Main navigation"
+              },
+              "items": {
+                "path": "/nav/sections"
+              },
+              "activeItem": {
+                "path": "/nav/active"
+              },
+              "navigateAction": {
+                "event": {
+                  "name": "navigate",
+                  "context": {
+                    "label": {
+                      "path": "label"
+                    }
+                  }
+                }
+              },
+              "collapsibleSections": true,
+              "logo": {
+                "text": "TSWebUI",
+                "icon": "home"
+              },
+              "footer": "navFooter"
+            },
+            {
+              "id": "navFooter",
+              "component": "Text",
+              "text": "Signed in as Jana",
+              "variant": "caption"
+            },
+            {
+              "id": "main",
+              "component": "Text",
+              "text": "Orders",
+              "variant": "h2"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "sidebar",
+          "path": "/",
+          "value": {
+            "nav": {
+              "active": "orders",
+              "sections": [
+                {
+                  "title": "Main",
+                  "items": [
+                    {
+                      "id": "home",
+                      "label": "Home",
+                      "icon": "home"
+                    },
+                    {
+                      "id": "orders",
+                      "label": "Orders",
+                      "icon": "calendarToday",
+                      "badge": "3"
+                    }
+                  ]
+                },
+                {
+                  "title": "More",
+                  "items": [
+                    {
+                      "id": "reports",
+                      "label": "Reports",
+                      "disabled": true
+                    },
+                    {
+                      "id": "docs",
+                      "label": "Documentation",
+                      "action": {
+                        "functionCall": {
+                          "call": "openUrl",
+                          "args": {
+                            "url": "https://a2ui.org"
+                          },
+                          "returnType": "void"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Sidebar",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "sidebar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "sidebar",
+          "components": [
+            {
+              "id": "root",
+              "component": "Sidebar",
+              "items": [
+                {
+                  "id": "home",
+                  "label": "Home"
+                },
+                {
+                  "id": "orders",
+                  "label": "Orders"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Slider",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "slider",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "slider",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "volume",
+                "weight",
+                "rating",
+                "brightness"
+              ]
+            },
+            {
+              "id": "volume",
+              "component": "Slider",
+              "label": "Volume",
+              "value": {
+                "path": "/settings/volume"
+              },
+              "min": 0,
+              "max": 100,
+              "step": 5,
+              "showValue": true,
+              "unit": "%",
+              "required": true,
+              "placeholder": "0",
+              "hint": "Drag the thumb or use the arrow keys.",
+              "error": {
+                "path": "/errors/volume"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "disabled": false,
+              "readOnly": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "numeric",
+                    "args": {
+                      "value": {
+                        "path": "/settings/volume"
+                      },
+                      "min": 10
+                    },
+                    "returnType": "boolean"
+                  },
+                  "message": "The volume must be at least 10 %."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "volumeChanged",
+                  "context": {
+                    "field": "volume"
+                  }
+                }
+              },
+              "enterAction": {
+                "event": {
+                  "name": "volumeEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "volumeEscape"
+                }
+              },
+              "enterBehavior": "none",
+              "excludeFromSubmit": false,
+              "visible": true
+            },
+            {
+              "id": "weight",
+              "component": "Slider",
+              "label": "Weight",
+              "value": {
+                "path": "/settings/weight"
+              },
+              "min": 40,
+              "max": 120,
+              "step": 0.5,
+              "showValue": true,
+              "unit": "kg"
+            },
+            {
+              "id": "rating",
+              "component": "Slider",
+              "label": "Rating",
+              "value": {
+                "path": "/settings/rating"
+              },
+              "min": 1,
+              "max": 10,
+              "readOnly": true,
+              "excludeFromSubmit": true
+            },
+            {
+              "id": "brightness",
+              "component": "Slider",
+              "label": "Brightness",
+              "value": 70,
+              "max": 100,
+              "hideLabel": true,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "slider",
+          "path": "/",
+          "value": {
+            "settings": {
+              "volume": 60,
+              "weight": 72.5,
+              "rating": 8
+            },
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Slider",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "slider",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "slider",
+          "components": [
+            {
+              "id": "root",
+              "component": "Slider",
+              "label": "Volume",
+              "value": 40,
+              "max": 100
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Stat",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "stat",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "stat",
+          "components": [
+            {
+              "id": "root",
+              "component": "Stat",
+              "label": "Revenue",
+              "value": {
+                "path": "/kpi/revenue"
+              },
+              "format": "currency",
+              "currency": "EUR",
+              "delta": {
+                "path": "/kpi/delta"
+              },
+              "hint": "vs. last month",
+              "spark": {
+                "path": "/kpi/trend"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "stat",
+          "path": "/",
+          "value": {
+            "kpi": {
+              "revenue": 48290.5,
+              "delta": 0.124,
+              "trend": [
+                31,
+                34,
+                33,
+                38,
+                41,
+                40,
+                46,
+                48
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Stat",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "stat",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "stat",
+          "components": [
+            {
+              "id": "root",
+              "component": "Stat",
+              "label": "Orders",
+              "value": 1284
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Stepper",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "stepper",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "stepper",
+          "components": [
+            {
+              "id": "root",
+              "component": "Stepper",
+              "steps": [
+                {
+                  "title": "Cart",
+                  "description": "3 items"
+                },
+                {
+                  "title": {
+                    "path": "/order/stepTitle"
+                  },
+                  "description": "Address and carrier"
+                },
+                {
+                  "title": "Payment",
+                  "description": "Card or transfer"
+                },
+                {
+                  "title": "Done",
+                  "description": "Order confirmation"
+                }
+              ],
+              "active": {
+                "path": "/order/step"
+              },
+              "accessibility": {
+                "label": "Order progress"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "stepper",
+          "path": "/order",
+          "value": {
+            "step": 2,
+            "stepTitle": "Shipping"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Stepper",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "stepper",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "stepper",
+          "components": [
+            {
+              "id": "root",
+              "component": "Stepper",
+              "steps": [
+                {
+                  "title": "Cart"
+                },
+                {
+                  "title": "Shipping"
+                },
+                {
+                  "title": "Payment"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Switch",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "switch",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "switch",
+          "components": [
+            {
+              "id": "root",
+              "component": "Switch",
+              "label": "Receive email notifications",
+              "value": {
+                "path": "/notify"
+              },
+              "required": true,
+              "disabled": false,
+              "readOnly": false,
+              "hint": "You can turn them off at any time.",
+              "error": {
+                "path": "/errors/notify"
+              },
+              "hideLabel": false,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "path": "/notify"
+                  },
+                  "message": "Notifications must be turned on."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "notifyChanged",
+                  "context": {
+                    "field": "notify"
+                  }
+                }
+              },
+              "enterAction": {
+                "event": {
+                  "name": "notifyEnter"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "notifyEscape"
+                }
+              },
+              "excludeFromSubmit": false,
+              "visible": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "switch",
+          "path": "/",
+          "value": {
+            "notify": true,
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Switch",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "switch",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "switch",
+          "components": [
+            {
+              "id": "root",
+              "component": "Switch",
+              "label": "Receive email notifications",
+              "value": false
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Table",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "table",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "table",
+          "components": [
+            {
+              "id": "root",
+              "component": "Table",
+              "columns": [
+                {
+                  "key": "code",
+                  "title": "Code",
+                  "type": "text",
+                  "width": "120px",
+                  "canBeCopied": true,
+                  "clickable": true
+                },
+                {
+                  "key": "name",
+                  "title": {
+                    "path": "/titles/name"
+                  },
+                  "cell": "nameCell"
+                },
+                {
+                  "key": "amount",
+                  "title": "Amount",
+                  "type": "number",
+                  "decimalPlaces": 2,
+                  "currency": "CZK",
+                  "align": "right",
+                  "width": 160
+                },
+                {
+                  "key": "qty",
+                  "title": "Quantity",
+                  "sortable": false,
+                  "type": "number",
+                  "decimalPlaces": 0,
+                  "align": "right"
+                },
+                {
+                  "key": "due",
+                  "title": "Due",
+                  "type": "date",
+                  "sortable": true
+                },
+                {
+                  "key": "updated",
+                  "title": "Updated",
+                  "type": "datetime",
+                  "filterable": false
+                },
+                {
+                  "key": "active",
+                  "title": "Active",
+                  "type": "boolean",
+                  "align": "center"
+                },
+                {
+                  "key": "customer.name",
+                  "title": "Customer",
+                  "filterWidget": "combobox",
+                  "filterOptions": [
+                    "Acme",
+                    "Globex"
+                  ],
+                  "clickable": true
+                },
+                {
+                  "key": "note",
+                  "title": "Note",
+                  "visible": false
+                },
+                {
+                  "key": "secret",
+                  "title": "Secret",
+                  "unshowable": true,
+                  "copyOnly": true
+                },
+                {
+                  "key": "actions",
+                  "title": "Open",
+                  "sortable": false,
+                  "filterable": false,
+                  "cell": "openCell"
+                }
+              ],
+              "rows": {
+                "path": "/rows"
+              },
+              "rowKey": "code",
+              "mode": "client",
+              "title": "Orders",
+              "showSearch": true,
+              "showColumnSelector": true,
+              "selectable": true,
+              "selection": {
+                "path": "/selection"
+              },
+              "sortable": true,
+              "filterable": true,
+              "paginated": true,
+              "resizable": true,
+              "reorderable": true,
+              "clickableColumns": true,
+              "clickFilterColumns": [
+                "customer.name"
+              ],
+              "pinnedColumnCount": 1,
+              "stickyHeader": true,
+              "maxHeight": 480,
+              "unhideableColumns": [
+                "code"
+              ],
+              "pageSize": 5,
+              "pageSizeOptions": [
+                5,
+                10,
+                20,
+                50,
+                100
+              ],
+              "predefinedFilters": {
+                "active": "true"
+              },
+              "defaultSorting": [
+                {
+                  "key": "due",
+                  "dir": "asc"
+                }
+              ],
+              "emptyText": "No orders yet.",
+              "rowAction": {
+                "event": {
+                  "name": "openOrder",
+                  "context": {
+                    "source": "orders",
+                    "name": {
+                      "path": "name"
+                    }
+                  }
+                }
+              },
+              "rowMenu": [
+                {
+                  "id": "edit",
+                  "label": "Edit",
+                  "icon": "edit"
+                },
+                {
+                  "id": "delete",
+                  "label": "Delete",
+                  "icon": "delete",
+                  "tone": "danger"
+                }
+              ],
+              "rowMenuAction": {
+                "event": {
+                  "name": "orderMenu"
+                }
+              },
+              "bulkMenu": [
+                {
+                  "id": "archive",
+                  "label": {
+                    "path": "/labels/archive"
+                  },
+                  "icon": "folder"
+                }
+              ],
+              "bulkAction": {
+                "event": {
+                  "name": "orderBulk"
+                }
+              },
+              "createAction": {
+                "event": {
+                  "name": "createOrder"
+                }
+              },
+              "createLabel": "New order",
+              "query": {
+                "path": "/query"
+              },
+              "rowCount": {
+                "path": "/rowCount"
+              },
+              "loading": false,
+              "queryAction": {
+                "event": {
+                  "name": "queryOrders"
+                }
+              },
+              "accessibility": {
+                "label": "Orders table"
+              }
+            },
+            {
+              "id": "nameCell",
+              "component": "Text",
+              "text": {
+                "path": "name"
+              }
+            },
+            {
+              "id": "openCell",
+              "component": "Button",
+              "child": "openCellLabel",
+              "action": {
+                "event": {
+                  "name": "openFromCell",
+                  "context": {
+                    "code": {
+                      "path": "code"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "openCellLabel",
+              "component": "Text",
+              "text": "Open"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "table",
+          "path": "/",
+          "value": {
+            "titles": {
+              "name": "Name"
+            },
+            "labels": {
+              "archive": "Archive"
+            },
+            "rows": [
+              {
+                "code": "A-001",
+                "name": "Desk",
+                "amount": 1234.5,
+                "qty": 3,
+                "due": "2026-10-16",
+                "updated": "2026-10-16T14:30:05",
+                "active": true,
+                "customer": {
+                  "name": "Acme"
+                },
+                "note": "Urgent",
+                "secret": "s1"
+              },
+              {
+                "code": "A-002",
+                "name": "Chair",
+                "amount": "1 234,5",
+                "qty": "12",
+                "due": "2026-11-01",
+                "updated": "2026-11-01T08:05:00",
+                "active": "ne",
+                "customer": {
+                  "name": "Globex"
+                },
+                "note": "",
+                "secret": "s2"
+              },
+              {
+                "code": "A-003",
+                "name": "Lamp",
+                "amount": 89.9,
+                "qty": 1,
+                "due": "2026-09-30",
+                "updated": "2026-09-30T17:45:00",
+                "active": "ano",
+                "customer": {
+                  "name": "Acme"
+                },
+                "note": "Gift wrap",
+                "secret": "s3"
+              }
+            ],
+            "selection": [
+              "A-003"
+            ],
+            "query": {
+              "page": 1,
+              "pageSize": 10,
+              "sort": [],
+              "filters": {},
+              "search": ""
+            },
+            "rowCount": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Table",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "table",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "table",
+          "components": [
+            {
+              "id": "root",
+              "component": "Table",
+              "columns": [
+                {
+                  "key": "name",
+                  "title": "Name"
+                },
+                {
+                  "key": "city",
+                  "title": "City"
+                }
+              ],
+              "rows": {
+                "path": "/rows"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "table",
+          "path": "/rows",
+          "value": [
+            {
+              "id": 1,
+              "name": "Alice",
+              "city": "Prague"
+            },
+            {
+              "id": 2,
+              "name": "Bob",
+              "city": "Brno"
+            },
+            {
+              "id": 3,
+              "name": "Carol",
+              "city": "Ostrava"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Tabs",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "tabs",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "tabs",
+          "components": [
+            {
+              "id": "root",
+              "component": "Tabs",
+              "value": {
+                "path": "/ui/tab"
+              },
+              "changeAction": {
+                "event": {
+                  "name": "tabChanged",
+                  "context": {
+                    "source": "tabs"
+                  }
+                }
+              },
+              "keepMounted": true,
+              "tabs": [
+                {
+                  "title": "Overview",
+                  "child": "overview",
+                  "icon": "home",
+                  "visible": true
+                },
+                {
+                  "title": {
+                    "path": "/ui/inboxTitle"
+                  },
+                  "child": "inbox",
+                  "badge": {
+                    "path": "/ui/count"
+                  }
+                },
+                {
+                  "title": "Favourites",
+                  "child": "favourites",
+                  "icon": "star",
+                  "badge": "3"
+                },
+                {
+                  "title": "Advanced",
+                  "child": "advanced",
+                  "icon": "settings",
+                  "visible": {
+                    "path": "/ui/showAdvanced"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "overview",
+              "component": "Text",
+              "text": "Account overview"
+            },
+            {
+              "id": "inbox",
+              "component": "Text",
+              "text": "Unread messages"
+            },
+            {
+              "id": "favourites",
+              "component": "Text",
+              "text": "Starred items"
+            },
+            {
+              "id": "advanced",
+              "component": "Text",
+              "text": "Advanced settings"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "tabs",
+          "path": "/",
+          "value": {
+            "ui": {
+              "tab": 0,
+              "inboxTitle": "Inbox",
+              "count": "5",
+              "showAdvanced": false
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Tabs",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "tabs",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "tabs",
+          "components": [
+            {
+              "id": "root",
+              "component": "Tabs",
+              "tabs": [
+                {
+                  "title": "First",
+                  "child": "a"
+                },
+                {
+                  "title": "Second",
+                  "child": "b"
+                }
+              ]
+            },
+            {
+              "id": "a",
+              "component": "Text",
+              "text": "First pane"
+            },
+            {
+              "id": "b",
+              "component": "Text",
+              "text": "Second pane"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Text",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "text",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "text",
+          "components": [
+            {
+              "id": "root",
+              "component": "Text",
+              "text": {
+                "path": "/title"
+              },
+              "variant": "h1",
+              "tone": "info",
+              "align": "center",
+              "truncate": true,
+              "accessibility": {
+                "label": "Page title"
+              },
+              "visible": {
+                "path": "/visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "text",
+          "path": "/",
+          "value": {
+            "title": "Welcome **back**",
+            "visible": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Text",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "text",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "text",
+          "components": [
+            {
+              "id": "root",
+              "component": "Text",
+              "text": "Hello, world"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "TextField",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "textField",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "textField",
+          "components": [
+            {
+              "id": "root",
+              "component": "Column",
+              "children": [
+                "name",
+                "email",
+                "bio",
+                "age",
+                "password",
+                "code"
+              ]
+            },
+            {
+              "id": "name",
+              "component": "TextField",
+              "label": "Name",
+              "value": {
+                "path": "/user/name"
+              },
+              "variant": "shortText",
+              "required": true,
+              "placeholder": "Jane Doe",
+              "hint": "As printed on your ID card.",
+              "maxLength": 80,
+              "selectAllOnFocus": true,
+              "autofocus": false,
+              "checks": [
+                {
+                  "condition": {
+                    "call": "length",
+                    "args": {
+                      "value": {
+                        "path": "/user/name"
+                      },
+                      "max": 80
+                    },
+                    "returnType": "boolean"
+                  },
+                  "message": "The name is too long."
+                }
+              ],
+              "changeAction": {
+                "event": {
+                  "name": "nameChanged",
+                  "context": {
+                    "field": "name"
+                  }
+                }
+              },
+              "enterBehavior": "next"
+            },
+            {
+              "id": "email",
+              "component": "TextField",
+              "label": "E-mail",
+              "value": {
+                "path": "/user/email"
+              },
+              "inputType": "email",
+              "validationRegexp": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+              "error": {
+                "path": "/errors/email"
+              },
+              "enterAction": {
+                "event": {
+                  "name": "lookupEmail"
+                }
+              },
+              "escapeAction": {
+                "event": {
+                  "name": "closeEmail"
+                }
+              }
+            },
+            {
+              "id": "bio",
+              "component": "TextField",
+              "label": "About you",
+              "value": {
+                "path": "/user/bio"
+              },
+              "variant": "longText",
+              "rows": 5,
+              "selectAllOnFocus": false
+            },
+            {
+              "id": "age",
+              "component": "TextField",
+              "label": "Age",
+              "value": {
+                "path": "/user/age"
+              },
+              "variant": "number",
+              "readOnly": true,
+              "excludeFromSubmit": true
+            },
+            {
+              "id": "password",
+              "component": "TextField",
+              "label": "Password",
+              "value": {
+                "path": "/user/password"
+              },
+              "variant": "obscured"
+            },
+            {
+              "id": "code",
+              "component": "TextField",
+              "label": "Invitation code",
+              "value": "DEMO-2026",
+              "hideLabel": true,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "textField",
+          "path": "/",
+          "value": {
+            "user": {
+              "name": "Jana Nováková",
+              "email": "jana@example.com",
+              "bio": "I like hiking.\nAnd reading.",
+              "age": "34",
+              "password": "secret"
+            },
+            "errors": {}
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "TextField",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "textField",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "textField",
+          "components": [
+            {
+              "id": "root",
+              "component": "TextField",
+              "label": "Name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Toaster",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "toaster",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "toaster",
+          "components": [
+            {
+              "id": "root",
+              "component": "Toaster",
+              "accessibility": {
+                "label": "Sync notifications"
+              },
+              "items": {
+                "path": "/toasts"
+              },
+              "duration": 6000,
+              "position": "top-center"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "toaster",
+          "path": "/toasts",
+          "value": [
+            {
+              "id": "sync",
+              "title": "Sync",
+              "text": "Synchronization started.",
+              "tone": "info"
+            },
+            {
+              "id": 2,
+              "title": "Saved",
+              "text": "The order was saved.",
+              "tone": "success"
+            },
+            {
+              "id": "quota",
+              "title": "Storage",
+              "text": "Storage is 90 % full.",
+              "tone": "warning"
+            },
+            {
+              "id": 4,
+              "title": "Upload failed",
+              "text": "The file is too large.",
+              "tone": "danger"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Toaster",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "toaster",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "toaster",
+          "components": [
+            {
+              "id": "root",
+              "component": "Toaster",
+              "items": {
+                "path": "/toasts"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "toaster",
+          "path": "/toasts",
+          "value": [
+            {
+              "id": 1,
+              "text": "Changes saved."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "TopBar",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "top-bar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "top-bar",
+          "components": [
+            {
+              "id": "root",
+              "component": "AppShell",
+              "content": "main",
+              "topBar": "bar"
+            },
+            {
+              "id": "bar",
+              "component": "TopBar",
+              "title": {
+                "path": "/app/title"
+              },
+              "logo": {
+                "imageUrl": {
+                  "path": "/app/logo"
+                },
+                "icon": "home"
+              },
+              "homeAction": {
+                "event": {
+                  "name": "goHome"
+                }
+              },
+              "start": [
+                "crumb"
+              ],
+              "center": [
+                "search"
+              ],
+              "end": [
+                "help"
+              ],
+              "showSidebarTrigger": true,
+              "showThemeToggle": true,
+              "showLocaleToggle": true,
+              "height": 64,
+              "bordered": true,
+              "showConnectionStatus": true,
+              "themeChangeAction": {
+                "event": {
+                  "name": "themeChanged",
+                  "context": {
+                    "theme": {
+                      "call": "getTheme",
+                      "returnType": "string"
+                    }
+                  }
+                }
+              },
+              "localeChangeAction": {
+                "event": {
+                  "name": "localeChanged",
+                  "context": {
+                    "locale": {
+                      "call": "getLocale",
+                      "returnType": "string"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "crumb",
+              "component": "Text",
+              "text": "Orders",
+              "variant": "caption"
+            },
+            {
+              "id": "search",
+              "component": "TextField",
+              "label": "Search",
+              "value": {
+                "path": "/app/query"
+              }
+            },
+            {
+              "id": "help",
+              "component": "Button",
+              "child": "helpLabel",
+              "variant": "borderless",
+              "action": {
+                "event": {
+                  "name": "openHelp"
+                }
+              }
+            },
+            {
+              "id": "helpLabel",
+              "component": "Text",
+              "text": "Help"
+            },
+            {
+              "id": "main",
+              "component": "Text",
+              "text": "Main content"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "top-bar",
+          "path": "/",
+          "value": {
+            "app": {
+              "title": "TSWebUI",
+              "logo": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8'/%3E%3C/svg%3E",
+              "query": ""
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "TopBar",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "top-bar",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "top-bar",
+          "components": [
+            {
+              "id": "root",
+              "component": "TopBar"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Video",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "video",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "video",
+          "components": [
+            {
+              "id": "root",
+              "component": "Video",
+              "url": {
+                "path": "/clip/url"
+              },
+              "poster": {
+                "path": "/clip/poster"
+              },
+              "description": {
+                "path": "/clip/title"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "video",
+          "path": "/",
+          "value": {
+            "clip": {
+              "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+              "poster": "https://picsum.photos/id/106/1280/720",
+              "title": "Blooming flower"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Video",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "video",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "video",
+          "components": [
+            {
+              "id": "root",
+              "component": "Video",
+              "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "component": "Window",
+    "name": "full",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "window-full",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json",
+          "theme": {
+            "agentDisplayName": "Order agent"
+          }
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "window-full",
+          "components": [
+            {
+              "id": "root",
+              "component": "Window",
+              "child": "body",
+              "title": "Orders",
+              "open": {
+                "path": "/ui/open"
+              },
+              "state": {
+                "path": "/ui/state"
+              },
+              "x": 120,
+              "y": 80,
+              "width": 480,
+              "height": 320,
+              "minWidth": 240,
+              "minHeight": 120,
+              "autoFit": true,
+              "closable": true,
+              "modal": false,
+              "closeAction": {
+                "event": {
+                  "name": "closeWindow",
+                  "context": {
+                    "windowId": "orders"
+                  }
+                }
+              },
+              "accessibility": {
+                "label": "Orders window"
+              }
+            },
+            {
+              "id": "body",
+              "component": "Column",
+              "children": [
+                "line1",
+                "line2"
+              ]
+            },
+            {
+              "id": "line1",
+              "component": "Text",
+              "text": "Order #1024, 3 items"
+            },
+            {
+              "id": "line2",
+              "component": "Text",
+              "text": "Total: 1 250 CZK"
+            }
+          ]
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateDataModel": {
+          "surfaceId": "window-full",
+          "path": "/",
+          "value": {
+            "ui": {
+              "open": true,
+              "state": "normal"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "component": "Window",
+    "name": "minimal",
+    "messages": [
+      {
+        "version": "v0.9.1",
+        "createSurface": {
+          "surfaceId": "window",
+          "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+        }
+      },
+      {
+        "version": "v0.9.1",
+        "updateComponents": {
+          "surfaceId": "window",
+          "components": [
+            {
+              "id": "root",
+              "component": "Window",
+              "child": "body"
+            },
+            {
+              "id": "body",
+              "component": "Text",
+              "text": "Window content"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "table",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "table",
+      "components": [
+        {
+          "id": "root",
+          "component": "Table",
+          "columns": [
+            {
+              "key": "code",
+              "title": "Code",
+              "type": "text",
+              "width": "120px",
+              "canBeCopied": true,
+              "clickable": true
+            },
+            {
+              "key": "name",
+              "title": {
+                "path": "/titles/name"
+              },
+              "cell": "nameCell"
+            },
+            {
+              "key": "amount",
+              "title": "Amount",
+              "type": "number",
+              "decimalPlaces": 2,
+              "currency": "CZK",
+              "align": "right",
+              "width": 160
+            },
+            {
+              "key": "qty",
+              "title": "Quantity",
+              "sortable": false,
+              "type": "number",
+              "decimalPlaces": 0,
+              "align": "right"
+            },
+            {
+              "key": "due",
+              "title": "Due",
+              "type": "date",
+              "sortable": true
+            },
+            {
+              "key": "updated",
+              "title": "Updated",
+              "type": "datetime",
+              "filterable": false
+            },
+            {
+              "key": "active",
+              "title": "Active",
+              "type": "boolean",
+              "align": "center"
+            },
+            {
+              "key": "customer.name",
+              "title": "Customer",
+              "filterWidget": "combobox",
+              "filterOptions": [
+                "Acme",
+                "Globex"
+              ],
+              "clickable": true
+            },
+            {
+              "key": "note",
+              "title": "Note",
+              "visible": false
+            },
+            {
+              "key": "secret",
+              "title": "Secret",
+              "unshowable": true,
+              "copyOnly": true
+            },
+            {
+              "key": "actions",
+              "title": "Open",
+              "sortable": false,
+              "filterable": false,
+              "cell": "openCell"
+            }
+          ],
+          "rows": {
+            "path": "/rows"
+          },
+          "rowKey": "code",
+          "mode": "client",
+          "title": "Orders",
+          "showSearch": true,
+          "showColumnSelector": true,
+          "selectable": true,
+          "selection": {
+            "path": "/selection"
+          },
+          "sortable": true,
+          "filterable": true,
+          "paginated": true,
+          "resizable": true,
+          "reorderable": true,
+          "clickableColumns": true,
+          "clickFilterColumns": [
+            "customer.name"
+          ],
+          "pinnedColumnCount": 1,
+          "stickyHeader": true,
+          "maxHeight": 480,
+          "unhideableColumns": [
+            "code"
+          ],
+          "pageSize": 5,
+          "pageSizeOptions": [
+            5,
+            10,
+            20,
+            50,
+            100
+          ],
+          "predefinedFilters": {
+            "active": "true"
+          },
+          "defaultSorting": [
+            {
+              "key": "due",
+              "dir": "asc"
+            }
+          ],
+          "emptyText": "No orders yet.",
+          "rowAction": {
+            "event": {
+              "name": "openOrder",
+              "context": {
+                "source": "orders",
+                "name": {
+                  "path": "name"
+                }
+              }
+            }
+          },
+          "rowMenu": [
+            {
+              "id": "edit",
+              "label": "Edit",
+              "icon": "edit"
+            },
+            {
+              "id": "delete",
+              "label": "Delete",
+              "icon": "delete",
+              "tone": "danger"
+            }
+          ],
+          "rowMenuAction": {
+            "event": {
+              "name": "orderMenu"
+            }
+          },
+          "bulkMenu": [
+            {
+              "id": "archive",
+              "label": {
+                "path": "/labels/archive"
+              },
+              "icon": "folder"
+            }
+          ],
+          "bulkAction": {
+            "event": {
+              "name": "orderBulk"
+            }
+          },
+          "createAction": {
+            "event": {
+              "name": "createOrder"
+            }
+          },
+          "createLabel": "New order",
+          "query": {
+            "path": "/query"
+          },
+          "rowCount": {
+            "path": "/rowCount"
+          },
+          "loading": false,
+          "queryAction": {
+            "event": {
+              "name": "queryOrders"
+            }
+          },
+          "accessibility": {
+            "label": "Orders table"
+          }
+        },
+        {
+          "id": "nameCell",
+          "component": "Text",
+          "text": {
+            "path": "name"
+          }
+        },
+        {
+          "id": "openCell",
+          "component": "Button",
+          "child": "openCellLabel",
+          "action": {
+            "event": {
+              "name": "openFromCell",
+              "context": {
+                "code": {
+                  "path": "code"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "openCellLabel",
+          "component": "Text",
+          "text": "Open"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "table",
+      "path": "/",
+      "value": {
+        "titles": {
+          "name": "Name"
+        },
+        "labels": {
+          "archive": "Archive"
+        },
+        "rows": [
+          {
+            "code": "A-001",
+            "name": "Desk",
+            "amount": 1234.5,
+            "qty": 3,
+            "due": "2026-10-16",
+            "updated": "2026-10-16T14:30:05",
+            "active": true,
+            "customer": {
+              "name": "Acme"
+            },
+            "note": "Urgent",
+            "secret": "s1"
+          },
+          {
+            "code": "A-002",
+            "name": "Chair",
+            "amount": "1 234,5",
+            "qty": "12",
+            "due": "2026-11-01",
+            "updated": "2026-11-01T08:05:00",
+            "active": "ne",
+            "customer": {
+              "name": "Globex"
+            },
+            "note": "",
+            "secret": "s2"
+          },
+          {
+            "code": "A-003",
+            "name": "Lamp",
+            "amount": 89.9,
+            "qty": 1,
+            "due": "2026-09-30",
+            "updated": "2026-09-30T17:45:00",
+            "active": "ano",
+            "customer": {
+              "name": "Acme"
+            },
+            "note": "Gift wrap",
+            "secret": "s3"
+          }
+        ],
+        "selection": [
+          "A-003"
+        ],
+        "query": {
+          "page": 1,
+          "pageSize": 10,
+          "sort": [],
+          "filters": {},
+          "search": ""
+        },
+        "rowCount": 3
+      }
+    }
+  }
+]

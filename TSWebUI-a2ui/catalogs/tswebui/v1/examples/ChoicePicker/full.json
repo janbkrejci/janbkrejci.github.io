@@ -1,0 +1,105 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "choicepicker",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "choicepicker",
+      "components": [
+        {
+          "id": "root",
+          "component": "ChoicePicker",
+          "label": "Colours",
+          "variant": "multipleSelection",
+          "options": [
+            {
+              "label": "Red",
+              "value": "red"
+            },
+            {
+              "label": {
+                "path": "/labels/green"
+              },
+              "value": "green"
+            },
+            {
+              "label": "Blue",
+              "value": "blue"
+            }
+          ],
+          "value": {
+            "path": "/colors"
+          },
+          "displayStyle": "chips",
+          "filterable": true,
+          "placeholder": "Pick colours...",
+          "required": true,
+          "disabled": false,
+          "readOnly": false,
+          "hint": "Pick one or more colours.",
+          "error": {
+            "path": "/errors/colors"
+          },
+          "hideLabel": false,
+          "autofocus": false,
+          "checks": [
+            {
+              "condition": {
+                "call": "length",
+                "args": {
+                  "value": {
+                    "path": "/colors"
+                  },
+                  "min": 1
+                }
+              },
+              "message": "Pick at least one colour."
+            }
+          ],
+          "changeAction": {
+            "event": {
+              "name": "colorsChanged",
+              "context": {
+                "field": "colors"
+              }
+            }
+          },
+          "enterBehavior": "none",
+          "enterAction": {
+            "event": {
+              "name": "colorsEnter"
+            }
+          },
+          "escapeAction": {
+            "event": {
+              "name": "colorsEscape"
+            }
+          },
+          "excludeFromSubmit": false,
+          "visible": true
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "choicepicker",
+      "path": "/",
+      "value": {
+        "colors": [
+          "red"
+        ],
+        "labels": {
+          "green": "Green"
+        },
+        "errors": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "button-group",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "button-group",
+      "components": [
+        {
+          "id": "root",
+          "component": "ButtonGroup",
+          "options": [
+            "Day",
+            "Week",
+            "Month"
+          ]
+        }
+      ]
+    }
+  }
+]

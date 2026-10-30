@@ -1,0 +1,127 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "top-bar",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "top-bar",
+      "components": [
+        {
+          "id": "root",
+          "component": "AppShell",
+          "content": "main",
+          "topBar": "bar"
+        },
+        {
+          "id": "bar",
+          "component": "TopBar",
+          "title": {
+            "path": "/app/title"
+          },
+          "logo": {
+            "imageUrl": {
+              "path": "/app/logo"
+            },
+            "icon": "home"
+          },
+          "homeAction": {
+            "event": {
+              "name": "goHome"
+            }
+          },
+          "start": [
+            "crumb"
+          ],
+          "center": [
+            "search"
+          ],
+          "end": [
+            "help"
+          ],
+          "showSidebarTrigger": true,
+          "showThemeToggle": true,
+          "showLocaleToggle": true,
+          "height": 64,
+          "bordered": true,
+          "showConnectionStatus": true,
+          "themeChangeAction": {
+            "event": {
+              "name": "themeChanged",
+              "context": {
+                "theme": {
+                  "call": "getTheme",
+                  "returnType": "string"
+                }
+              }
+            }
+          },
+          "localeChangeAction": {
+            "event": {
+              "name": "localeChanged",
+              "context": {
+                "locale": {
+                  "call": "getLocale",
+                  "returnType": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "crumb",
+          "component": "Text",
+          "text": "Orders",
+          "variant": "caption"
+        },
+        {
+          "id": "search",
+          "component": "TextField",
+          "label": "Search",
+          "value": {
+            "path": "/app/query"
+          }
+        },
+        {
+          "id": "help",
+          "component": "Button",
+          "child": "helpLabel",
+          "variant": "borderless",
+          "action": {
+            "event": {
+              "name": "openHelp"
+            }
+          }
+        },
+        {
+          "id": "helpLabel",
+          "component": "Text",
+          "text": "Help"
+        },
+        {
+          "id": "main",
+          "component": "Text",
+          "text": "Main content"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "top-bar",
+      "path": "/",
+      "value": {
+        "app": {
+          "title": "TSWebUI",
+          "logo": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8'/%3E%3C/svg%3E",
+          "query": ""
+        }
+      }
+    }
+  }
+]

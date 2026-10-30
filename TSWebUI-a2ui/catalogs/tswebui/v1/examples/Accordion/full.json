@@ -1,0 +1,72 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "accordion",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "accordion",
+      "components": [
+        {
+          "id": "root",
+          "component": "Accordion",
+          "multiple": true,
+          "value": {
+            "path": "/ui/open"
+          },
+          "items": [
+            {
+              "title": "Order",
+              "child": "order"
+            },
+            {
+              "title": "Payment",
+              "child": "payment"
+            },
+            {
+              "title": {
+                "path": "/ui/title"
+              },
+              "child": "shipping"
+            }
+          ]
+        },
+        {
+          "id": "order",
+          "component": "Text",
+          "text": "Three items in the cart"
+        },
+        {
+          "id": "payment",
+          "component": "Text",
+          "text": "Paid by card"
+        },
+        {
+          "id": "shipping",
+          "component": "Text",
+          "text": "Delivery within two days"
+        }
+      ]
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "accordion",
+      "path": "/",
+      "value": {
+        "ui": {
+          "open": [
+            0,
+            2
+          ],
+          "title": "Shipping"
+        }
+      }
+    }
+  }
+]

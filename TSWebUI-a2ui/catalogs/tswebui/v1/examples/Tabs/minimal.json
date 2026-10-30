@@ -1,0 +1,41 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "tabs",
+      "catalogId": "https://janbkrejci.github.io/TSWebUI-a2ui/catalogs/tswebui/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "tabs",
+      "components": [
+        {
+          "id": "root",
+          "component": "Tabs",
+          "tabs": [
+            {
+              "title": "First",
+              "child": "a"
+            },
+            {
+              "title": "Second",
+              "child": "b"
+            }
+          ]
+        },
+        {
+          "id": "a",
+          "component": "Text",
+          "text": "First pane"
+        },
+        {
+          "id": "b",
+          "component": "Text",
+          "text": "Second pane"
+        }
+      ]
+    }
+  }
+]
